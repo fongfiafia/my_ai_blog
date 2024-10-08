@@ -9,6 +9,16 @@ export type EachRoute = {
 
 export const ROUTES: EachRoute[] = [
   {
+    title: "基础教程",
+    href: "/basic",
+    noLink: true,
+    items: [
+      { title: "cursor是什么", href: "/what_is_cursor" },
+      { title: "cursor下载安装", href: "/cursor_download" },
+      { title: "科学上网", href: "/vpn" },
+    ],
+  },
+  {
     title: "Getting Started",
     href: "/getting-started",
     noLink: true,

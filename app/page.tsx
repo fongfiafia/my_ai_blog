@@ -3,6 +3,8 @@ import { page_routes } from "@/lib/routes-config";
 import { MoveUpRightIcon, TerminalSquareIcon } from "lucide-react";
 import Link from "next/link";
 
+
+// 点击logo的页面
 export default function Home() {
   return (
     <div className="flex sm:min-h-[91vh] min-h-[88vh] flex-col items-center justify-center text-center px-2 py-8">
@@ -24,7 +26,7 @@ export default function Home() {
       </p>
       <div className="flex flex-row items-center gap-5">
         <Link
-          href={`/docs${page_routes[0].href}`}
+          href={`/cursor${page_routes[0].href}`}
           className={buttonVariants({ className: "px-6", size: "lg" })}
         >
           Get Stared
