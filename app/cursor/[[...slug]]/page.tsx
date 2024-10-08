@@ -5,6 +5,7 @@ import { page_routes } from "@/lib/routes-config";
 import { notFound } from "next/navigation";
 import { getDocsForSlug } from "@/lib/markdown";
 import { Typography } from "@/components/typography";
+import Image from 'next/image';
 
 type PageProps = {
   params: { slug: string[] };
@@ -15,6 +16,7 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
   const res = await getDocsForSlug(pathName);
 
   if (!res) notFound();
+
   return (
     <div className="flex items-start gap-10">
       <div className="flex-[4.5] pt-10">
@@ -25,6 +27,27 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
             {res.frontmatter.description}
           </p>
           <div>{res.content}</div>
+          <h2 className="text-2xl -mt-1">加入我</h2>
+          <div > 如果你在学习过程中遇到什么问题，欢迎加入我的星球，随时提问，我会为你解答 </div>
+          <Image
+            src="/star.png"
+            alt="1"
+            width={900}
+            height={300}
+          />
+          关注我的微信公众号、小红书第一时间获取最新教程
+          <Image
+            src="/gzh.png"
+            alt="2"
+            width={900}
+            height={300}
+          />
+          {/* <Image
+            src="/xhs.png"
+            alt="2"
+            width={900}
+            height={300}
+          /> */}
           <Pagination pathname={pathName} />
         </Typography>
       </div>

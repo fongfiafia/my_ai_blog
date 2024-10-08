@@ -87,6 +87,13 @@ export async function getDocsTocs(slug: string) {
       href: `#${slug}`,
     });
   }
+
+  extractedHeadings.push({
+    level: 0,
+    text: "加入我",
+    href: "",
+  });
+
   return extractedHeadings;
 }
 
@@ -104,7 +111,7 @@ function sluggify(text: string) {
 }
 
 function getDocsContentPath(slug: string) {
-  return path.join(process.cwd(), "/contents/cursor/", `${slug}/index.mdx`);
+  return path.join(process.cwd(), "/contents/cursor/", `${slug}/index.mdx`); // 读取index.mdx
 }
 
 // for copying the code

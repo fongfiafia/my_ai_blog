@@ -14,8 +14,8 @@ export const ROUTES: EachRoute[] = [
     noLink: true,
     items: [
       { title: "Cursor是什么", href: "/what_is_cursor" },
-      { title: "Cursor下载安装", href: "/cursor_download" },
-      { title: "Cursor界面", href: "/Cursor_interface" },
+      { title: "Cursor下载安装与注册", href: "/cursor_download" },
+      { title: "Cursor界面布局", href: "/Cursor_interface" },
       { title: "创建第一个Cursor项目", href: "/first_project_cursor" },
       { title: "Cursor的AI辅助功能初体验", href: "/try_chat_cursor" },
       // { title: "科学上网", href: "/vpn" },
