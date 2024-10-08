@@ -21,14 +21,14 @@ export const NAVLINKS = [
   //   title: "Blog",
   //   href: "/blog",
   // },
-  {
-    title: "chatGPT合租",
-    href: "https://nf.video/HwL0y",
-  },
-  {
-    title: "科学上网",
-    href: "https://nf.video/HwL0y",
-  },
+  // {
+  //   title: "chatGPT合租",
+  //   href: "https://nf.video/HwL0y",
+  // },
+  // {
+  //   title: "科学上网",
+  //   href: "https://nf.video/HwL0y",
+  // },
   // {
   //   title: "Community",
   //   href: "https://github.com/nisabmohd/Aria-Docs/discussions",
