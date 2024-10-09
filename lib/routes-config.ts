@@ -13,11 +13,11 @@ export const ROUTES: EachRoute[] = [
     href: "/basic",
     noLink: true,
     items: [
-      { title: "Cursor是什么", href: "/what_is_cursor" },
-      { title: "Cursor下载安装与注册", href: "/cursor_download" },
-      { title: "Cursor界面布局", href: "/Cursor_interface" },
-      { title: "创建第一个Cursor项目", href: "/first_project_cursor" },
-      { title: "Cursor的AI辅助功能初体验", href: "/try_chat_cursor" },
+      { title: "Cursor 是什么", href: "/what_is_cursor" },
+      { title: "Cursor 下载安装与注册", href: "/cursor_download" },
+      { title: "Cursor 界面布局", href: "/Cursor_interface" },
+      { title: "创建第一个Cursor 项目", href: "/first_project_cursor" },
+      { title: "Cursor AI辅助功能初体验", href: "/try_chat_cursor" },
     ],
   },
   {
@@ -25,19 +25,36 @@ export const ROUTES: EachRoute[] = [
     href: "/advance",
     noLink: true,
     items: [
-      { title: "智能代码补全详解", href: "/cursor_tab" },
-      { title: "AI代码生成详解", href: "/cursor_cmdk" },
-      { title: "AI聊天详解", href: "/cursor_cmdl" },
+      { title: "Cursor 智能代码补全详解(Tab)", href: "/cursor_tab" },
+      { title: "Cursor AI代码生成详解(Cmd+K)", href: "/cursor_cmdk" },
+      { title: "Cursor AI聊天详解(Chat)", href: "/cursor_chat" },
     ],
   },
   {
     title: "高阶教程",
-    href: "/improve",
+    href: "/promote",
     noLink: true,
     items: [
-      { title: "Cursor的配置", href: "/cursor_tab" },
-      { title: "Cursor", href: "/cursor_download" },
-      { title: "AI聊天详解", href: "/Cursor_interface" },
+      { title: "Cursor 建立上下文", href: "/cursor_context" },
+      { title: "Cursor 选择模型", href: "/cursor_change_model" },
+    ],
+  },
+  {
+    title: "奇淫技巧",
+    href: "/tips",
+    noLink: true,
+    items: [
+      { title: "Cursor 搭配Git版本管理", href: "/cursor_git" },
+      { title: "Cursor 白嫖方案", href: "/cursor_free" },
+      { title: "Cursor+deepseek平民套餐组合", href: "/cursor_deepseek" },
+    ],
+  },
+  {
+    title: "教学视频",
+    href: "/video",
+    noLink: true,
+    items: [
+      { title: "Cursor 教学视频", href: "/cursor_teach_video" },
     ],
   },
 

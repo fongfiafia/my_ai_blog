@@ -17,22 +17,14 @@ export const NAVLINKS = [
     title: "AI前沿资讯",
     href: "#",
   },
-  // {
-  //   title: "Blog",
-  //   href: "/blog",
-  // },
-  // {
-  //   title: "chatGPT合租",
-  //   href: "https://nf.video/HwL0y",
-  // },
   {
-    title: "科学上网",
+    title: "Blog",
+    href: "/blog",
+  },
+  {
+    title: "ChatGPT合租",
     href: "https://nf.video/HwL0y",
   },
-  // {
-  //   title: "Community",
-  //   href: "https://github.com/nisabmohd/Aria-Docs/discussions",
-  // },
 ];
 
 export function Navbar() {

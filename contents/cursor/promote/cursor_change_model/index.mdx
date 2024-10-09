@@ -1,0 +1,72 @@
+# Cursor 模型选择和API密钥配置
+
+## 概述
+
+Cursor提供了多种AI模型供选择，并允许用户配置自己的API密钥。本教程将介绍如何选择不同的AI模型以及如何配置自定义API密钥，以帮助您充分利用Cursor的AI功能。
+
+![change_model](/change_model.png)
+
+## 选择AI模型
+
+Cursor支持多种AI模型，您可以根据需求轻松切换不同的模型。
+
+### 常规模型选择
+
+在Cursor Chat、Ctrl/⌘ K和Terminal Ctrl/⌘ K功能中，您可以在AI输入框下方找到模型下拉菜单。默认可用的模型包括:
+
+- GPT-4o
+- GPT-4
+- Claude 3.5 Sonnet
+- `cursor-small` (Cursor自定义模型，速度更快，无使用限制)
+
+### 添加自定义模型
+
+如果您想使用其他模型:
+
+1. 进入  `Cursor Settings` > `Models` > `OpenAI API Key` 
+2. 在此添加您想使用的其他模型名称
+
+## 配置API密钥
+
+Cursor允许您使用自己的API密钥，以便按照自己的需求和成本使用AI服务。
+
+### OpenAI API密钥
+
+1. 获取API密钥: 从[OpenAI官网](https://platform.openai.com/account/api-keys)获取您的API密钥
+2. 配置密钥:
+   - 进入 `Cursor设置` > `模型` > `OpenAI API密钥`
+   - 输入您的API密钥
+   - 点击"验证"按钮
+
+### Anthropic API密钥
+
+与OpenAI类似，您可以设置自己的Anthropic API密钥以使用Claude系列模型。
+
+### Google API密钥
+
+您可以设置Google API密钥以使用如`gemini-1.5-flash-500k`等Google模型。
+
+### Azure集成
+
+Cursor还支持设置Azure API密钥，以便使用Azure OpenAI模型。
+
+### 注意事项
+
+- API密钥不会被存储，但会随每个请求发送到Cursor服务器。
+- 所有请求都会通过Cursor后端路由，因为最终的提示构建在那里完成。
+
+## 使用技巧
+
+1. **选择合适的模型**: 根据任务复杂度和响应速度需求选择合适的模型，目前看下来Claude-sonet模型的表现最好。
+
+2. **利用长上下文模型**: 对于需要处理大量代码或文档的任务，考虑使用长上下文模型。
+
+3. **合理使用API密钥**: 使用自己的API密钥可以更灵活地控制成本和使用限制。
+
+4. **定期更新API密钥**: 为了安全考虑，建议定期更新您的API密钥。
+
+5. **关注模型更新**: Cursor可能会不定期添加新的模型选项，保持关注以利用最新的AI能力。
+
+## 结论
+
+通过选择合适的AI模型和配置自定义API密钥，您可以充分发挥Cursor的AI辅助编程能力。根据项目需求和个人偏好灵活调整这些设置，将帮助您在使用Cursor时获得最佳体验。随着使用经验的积累，您会发现这些自定义选项成为提升编程效率的重要工具。
