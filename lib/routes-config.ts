@@ -41,6 +41,8 @@ export const ROUTES: EachRoute[] = [
     ],
   },
 
+  // https://docs.cursor.com/cmdk/overview
+
   // {
   //   title: "入土教程",
   //   href: "/high",
