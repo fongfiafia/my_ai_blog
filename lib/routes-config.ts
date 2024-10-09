@@ -18,20 +18,26 @@ export const ROUTES: EachRoute[] = [
       { title: "Cursor界面布局", href: "/Cursor_interface" },
       { title: "创建第一个Cursor项目", href: "/first_project_cursor" },
       { title: "Cursor的AI辅助功能初体验", href: "/try_chat_cursor" },
-      // { title: "科学上网", href: "/vpn" },
     ],
   },
   {
     title: "进阶教程",
+    href: "/advance",
+    noLink: true,
+    items: [
+      { title: "智能代码补全详解", href: "/cursor_tab" },
+      { title: "AI代码生成详解", href: "/cursor_cmdk" },
+      { title: "AI聊天详解", href: "/cursor_cmdl" },
+    ],
+  },
+  {
+    title: "高阶教程",
     href: "/improve",
     noLink: true,
     items: [
-      { title: "Cursor的高级编辑功能", href: "/what_is_cursor" },
-      { title: "深入理解Cursor的AI功能", href: "/cursor_download" },
-      { title: "Cursor的版本控制集成", href: "/Cursor_interface" },
-      { title: "Cursor的扩展和自定义", href: "/first_project_cursor" },
-      // { title: "Cursor的AI辅助功能初体验", href: "/try_chat_cursor" },
-      // { title: "科学上网", href: "/vpn" },
+      { title: "Cursor的配置", href: "/cursor_tab" },
+      { title: "Cursor", href: "/cursor_download" },
+      { title: "AI聊天详解", href: "/Cursor_interface" },
     ],
   },
 
@@ -133,6 +139,7 @@ function getRecurrsiveAllLinks(node: EachRoute) {
   }
   node.items?.forEach((subNode) => {
     const temp = { ...subNode, href: `${node.href}${subNode.href}` };
+
     ans.push(...getRecurrsiveAllLinks(temp));
   });
   return ans;
