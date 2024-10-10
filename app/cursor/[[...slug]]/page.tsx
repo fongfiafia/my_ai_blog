@@ -37,17 +37,11 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
           />
           关注我的微信公众号第一时间获取最新教程
           <Image
-            src="/gzh.png"
+            src="/gzh.jpg"
             alt="2"
             width={900}
             height={300}
           />
-          {/* <Image
-            src="/xhs.png"
-            alt="2"
-            width={900}
-            height={300}
-          /> */}
           <Pagination pathname={pathName} />
         </Typography>
       </div>
