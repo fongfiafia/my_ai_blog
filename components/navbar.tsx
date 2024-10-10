@@ -13,14 +13,14 @@ export const NAVLINKS = [
     title: "Cursor学习",
     href: `/cursor${page_routes[0].href}`,
   },
-  {
-    title: "AI前沿资讯",
-    href: "#",
-  },
-  {
-    title: "Blog",
-    href: "/blog",
-  },
+  // {
+  //   title: "AI前沿资讯",
+  //   href: "#",
+  // },
+  // {
+  //   title: "Blog",
+  //   href: "/blog",
+  // },
   {
     title: "ChatGPT合租",
     href: "https://nf.video/HwL0y",
