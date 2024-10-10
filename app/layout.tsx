@@ -7,10 +7,10 @@ import { Footer } from "@/components/footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AriaDocs - Template",
-  metadataBase: new URL("https://ariadocs.vercel.app/"),
+  title: "最好的中文AI学习网站 - Cursor从入门到精通",
+  metadataBase: new URL("https://lookai.top/"),
   description:
-    "This comprehensive documentation template, crafted with Next.js and available as open-source, delivers a sleek and responsive design, tailored to meet all your project documentation requirements.",
+    "最详细的Cursor教程，最全面的Cursor使用技巧，Cursor从入门到精通；最好的中文AI学习网站，最前沿的AI编程资讯，AI编程助力每一个想法变成现实",
 };
 
 export default function RootLayout({
