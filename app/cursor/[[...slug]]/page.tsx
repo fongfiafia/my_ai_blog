@@ -35,7 +35,7 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
             width={900}
             height={300}
           />
-          关注我的微信公众号、小红书第一时间获取最新教程
+          关注我的微信公众号第一时间获取最新教程
           <Image
             src="/gzh.png"
             alt="2"

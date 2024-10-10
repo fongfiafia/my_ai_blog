@@ -15,7 +15,7 @@ export const ROUTES: EachRoute[] = [
     items: [
       { title: "Cursor 是什么", href: "/what_is_cursor" },
       { title: "Cursor 下载安装与注册", href: "/cursor_download" },
-      { title: "Cursor 界面布局", href: "/Cursor_interface" },
+      { title: "Cursor 界面布局", href: "/cursor_interface" },
       { title: "创建第一个Cursor 项目", href: "/first_project_cursor" },
       { title: "Cursor AI辅助功能初体验", href: "/try_chat_cursor" },
     ],
@@ -37,7 +37,6 @@ export const ROUTES: EachRoute[] = [
     items: [
       { title: "Cursor 建立上下文", href: "/cursor_context" },
       { title: "Cursor 选择模型", href: "/cursor_change_model" },
-      { title: "Cursor 选择模型", href: "/cursor_change_test" },
     ],
   },
   {
