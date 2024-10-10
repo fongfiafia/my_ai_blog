@@ -40,7 +40,7 @@ export const ROUTES: EachRoute[] = [
     ],
   },
   {
-    title: "奇淫技巧",
+    title: "技巧",
     href: "/tips",
     noLink: true,
     items: [
