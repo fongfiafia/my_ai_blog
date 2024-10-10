@@ -35,8 +35,8 @@ export const ROUTES: EachRoute[] = [
     href: "/promote",
     noLink: true,
     items: [
-      { title: "Cursor 建立上下文", href: "/cursor_context" },
       { title: "Cursor 选择模型", href: "/cursor_change_model" },
+      { title: "Cursor 建立上下文", href: "/cursor_context" },
     ],
   },
   {
@@ -44,9 +44,9 @@ export const ROUTES: EachRoute[] = [
     href: "/tips",
     noLink: true,
     items: [
+      { title: "Cursor 白嫖方案(不鼓励)", href: "/cursor_free" },
       { title: "Cursor 搭配Git版本管理", href: "/cursor_git" },
-      { title: "Cursor 白嫖方案", href: "/cursor_free" },
-      { title: "Cursor+deepseek平民套餐组合", href: "/cursor_deepseek" },
+      { title: "Cursor 搭配Deepseek平民套餐组合", href: "/cursor_deepseek" },
     ],
   },
   {

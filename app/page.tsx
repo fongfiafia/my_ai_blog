@@ -25,7 +25,7 @@ export default function Home() {
         最好的Cursor中文学习网站
       </h1>
       <p className="mb-8 sm:text-xl max-w-[800px] text-muted-foreground">
-        无论你是Cursor新手还是老手，这里都有适合你的内容。新手可找到入门指南，老手能探索高级技巧。我们持续更新，跟进Cursor最新发展，确保每位用户都能学到新知识，更好地运用这款工具。不管你的使用水平如何，都能在这里发现提升Cursor使用效率的方法
+        无论你是Cursor新手还是老手，这里都有适合你的内容。新手可找到入门指南，老手能探索高级技巧。我们持续更新，跟进Cursor最新发展，帮助大家更好地运用这款工具，用Cursor将你的想法创意实现
       </p>
       <div className="flex flex-row items-center gap-5">
         <Link

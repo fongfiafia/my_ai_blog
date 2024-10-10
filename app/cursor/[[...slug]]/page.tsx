@@ -27,21 +27,26 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
             {res.frontmatter.description}
           </p>
           <div>{res.content}</div>
-          <h2 className="text-2xl -mt-1">加入我</h2>
-          <div > 如果你在学习过程中遇到什么问题，欢迎加入我的星球，随时提问，我会为你解答 </div>
-          <Image
-            src="/star.png"
-            alt="1"
-            width={900}
-            height={300}
-          />
-          关注我的微信公众号第一时间获取最新教程
-          <Image
-            src="/gzh.jpg"
-            alt="2"
-            width={900}
-            height={300}
-          />
+          {!pathName.includes('context') && !pathName.includes('tips') && (
+
+            <div>
+              <h2 className="text-2xl -mt-1">加入我</h2>
+              <div>如果你在学习过程中遇到什么问题，欢迎加入我的星球，随时提问，我会为你解答</div>
+              <Image
+                src="/star.png"
+                alt="星球二维码"
+                width={900}
+                height={300}
+              />
+              <div>关注我的微信公众号第一时间获取最新教程</div>
+              <Image
+                src="/gzh.jpg"
+                alt="公众号二维码"
+                width={900}
+                height={300}
+              />
+            </div>
+          )}
           <Pagination pathname={pathName} />
         </Typography>
       </div>

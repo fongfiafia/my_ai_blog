@@ -1,83 +1,18 @@
-# Cursor 建立上下文
+   # Cursor 建立上下文
 
-## 概述
+   ## 概述
 
-Cursor的上下文功能是一个强大的工具，可以帮助AI更好地理解您的代码和项目，可以说AI的上下文更多，它回答的会越好。本教程将介绍Cursor上下文的主要功能和使用方法，帮助您充分利用这一工具提高编程效率。
+   Cursor的上下文功能是一个强大的工具，可以帮助AI更好地理解您的代码和项目，可以说AI的上下文更多，它回答的会越好。本教程将介绍Cursor上下文的主要功能和使用方法，帮助您充分利用这一工具提高编程效率。
 
-## 代码库索引
+   ## 代码库索引
 
-![codebase_indexing](/codebase_indexing.png)
+   ![codebase_indexing](/codebase_indexing.png)
 
-代码库索引是Cursor提供更准确回答的基础。下面教大家怎么给自己的项目建立好索引
+   代码库索引是Cursor提供更准确回答的基础。下面教大家怎么给自己的项目建立好索引
 
-1. **开启索引**:
-   - 点击左上角`Cursor` > `Cursor Settings` > `Feature` > `Codebase index`。
-   - 点击start indexing / resume indexing 开启后，Cursor会自动为代码库中的每个文件计算嵌入向量。
+   <Note title="以下为付费内容">
+      欢迎加入我的星球，解锁本篇文章，同时获取更多Cursor开发实战技巧
+   </Note>
 
-2. **自动同步**:
-   - 代码库索引会自动与最新的代码库变更同步。
-
-3. **高级设置**:
-   - 展开 `显示设置` 部分可以访问更多高级选项。
-   - 可以配置是否为新仓库自动开启索引。
-   - 可以设置索引时要忽略的文件，这些设置会附加到 .gitignore 的设置之上。详见忽略文件设置
-
-## 忽略文件设置
-
-使用 `.cursorignore` 文件可以设置要在Cursor功能中忽略的文件:
-
-1. **创建文件**:
-   - 点击左上角`Cursor` > `Cursor Settings` > `Feature` > `Codebase index`。
-   - 点击`Configured ignore files`。
-
-2. **语法**:
-   - 使用与 `.gitignore` 相同的语法。
-   - `.cursorignore` 会尊重 `.gitignore` 的设置。
-
-3. **示例**:
-   ```
-   # 忽略dist目录下的所有文件 -- 这是我们常见忽略的文件
-   dist/ 
-   
-   # 忽略所有.log文件
-   *.log
-   
-   # 忽略特定文件config.json
-   config.json
-   ```
-
-4. **仅包含特定文件**:
-   ```
-   # 忽略所有文件
-   *
-   # 不忽略app目录
-   !app/
-   # 不忽略app目录内的目录
-   !app/*/
-   !app/**/*/
-   # 不忽略python文件
-   !*.py
-   ```
-
-5. **我常用的cursorignore配置**
-   ```
-   /node_modules
-   /dist
-   /public
-   ```
-
-## 使用技巧
-
-1. **合理索引**: 为大型项目开启代码库索引，提高AI回答的准确性。
-
-2. **自定义AI规则**: 根据项目需求设置全局或项目特定的AI规则。
-
-3. **精细控制上下文**: 使用 `.cursorignore` 文件排除不必要的文件，提高AI理解的效率。
-
-4. **结合@符号**: 在Chat中使用@符号快速引用项目中的内容，如 `@Code`， `@Files`， `@Folders` 等。
-
-5. **定期更新设置**: 随着项目的发展，定期review和更新索引设置、AI规则和忽略文件列表。
-
-## 结论
-
-Cursor的上下文功能为AI提供了更全面、准确的项目理解。通过合理配置代码库索引、AI规则和忽略文件，您可以显著提高AI辅助编程的效果。随着使用经验的积累，您会发现Cursor的上下文功能成为提升编程效率的关键工具。
+   ![star](/star.png)
+   ## 
