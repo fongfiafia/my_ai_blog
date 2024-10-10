@@ -37,6 +37,7 @@ export const ROUTES: EachRoute[] = [
     items: [
       { title: "Cursor 建立上下文", href: "/cursor_context" },
       { title: "Cursor 选择模型", href: "/cursor_change_model" },
+      { title: "Cursor 选择模型", href: "/cursor_change_test" },
     ],
   },
   {
@@ -61,7 +62,7 @@ export const ROUTES: EachRoute[] = [
   // https://docs.cursor.com/cmdk/overview
 
   // {
-  //   title: "入土教程",
+  //   title: "入土���程",
   //   href: "/high",
   //   noLink: true,
   //   items: [

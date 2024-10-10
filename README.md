@@ -94,3 +94,6 @@ Features
 ├── Code copy
 └── Table of content observer highlight
 ```
+
+# TODO
+脚本生成sitemap.xml 现在not work

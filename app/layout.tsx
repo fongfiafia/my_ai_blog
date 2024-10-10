@@ -7,10 +7,18 @@ import { Footer } from "@/components/footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "最好的中文AI学习网站 - Cursor从入门到精通",
-  metadataBase: new URL("https://lookai.top/"),
-  description:
-    "最详细的Cursor教程，最全面的Cursor使用技巧，Cursor从入门到精通；最好的中文AI学习网站，最前沿的AI编程资讯，AI编程助力每一个想法变成现实",
+  title: 'LookAI - 最专业的Cursor AI编程教程 | 小白免费学习资源',
+  description: '提供最全面、最专业的Cursor AI编程教程。适合小白的免费学习资源，助您掌握AI编程技能。',
+  keywords: 'Cursor, 小白教程, AI编程, 免费教程, 最全面教程, 专业指导',
+  metadataBase: new URL('https://www.lookai.top'),
+  openGraph: {
+    title: 'LookAI - 最佳Cursor AI编程教程平台',
+    description: '发现最全面、最专业的Cursor AI编程免费教程，适合所有水平的学习者。',
+    url: 'https://www.lookai.top',
+    siteName: 'LookAI',
+    locale: 'zh_CN',
+    type: 'website'
+  },
 };
 
 export default function RootLayout({
@@ -20,6 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta name="google-adsense-account" content="ca-pub-1362518378038131" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1362518378038131" crossOrigin="anonymous"></script>
+      </head>
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} font-regular antialiased`}
         suppressHydrationWarning

@@ -2,7 +2,21 @@ import { buttonVariants } from "@/components/ui/button";
 import { page_routes } from "@/lib/routes-config";
 import { MoveUpRightIcon, TerminalSquareIcon } from "lucide-react";
 import Link from "next/link";
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: 'LookAI - 最专业的Cursor AI编程教程 | 小白免费学习资源',
+  description: '提供最全面、最专业的Cursor AI编程教程。适合小白的免费学习资源，助您掌握AI编程技能。',
+  keywords: 'Cursor, Cursor小白教程, AI编程, Cursor免费教程, Cursor最全面教程, Cursor专业指导',
+  openGraph: {
+    title: 'LookAI - 最佳Cursor AI编程教程平台',
+    description: '发现最全面、最专业的Cursor AI编程免费教程，适合所有水平的学习者。',
+    url: 'https://www.lookai.top',
+    siteName: 'LookAI',
+    locale: 'zh_CN',
+    type: 'website',
+  },
+};
 
 export default function Home() {
   return (
