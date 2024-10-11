@@ -31,14 +31,24 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
 
             <div>
               <h2 className="text-2xl -mt-1">加入我</h2>
-              <div>如果你在学习过程中遇到什么问题，欢迎加入我的星球，随时提问，我会为你解答</div>
+              <div>
+                <p>欢迎加入我的社群,解锁本篇文章。加入社群你将获得:</p>
+                <ul >
+                  <li>一次与圈主的语音<strong>一对一</strong>疑惑解答</li>
+                  <li>面向<strong>无编程基础</strong>的Cursor基础教程</li>
+                  <li>面向<strong>有基础</strong>的Cursor进阶付费教程和<strong>实操</strong>技巧</li>
+                  <li>Cursor和各类AI相关资讯</li>
+                </ul>
+              </div>
               <Image
                 src="/star.png"
                 alt="星球二维码"
                 width={900}
                 height={300}
               />
-              <div>关注我的微信公众号第一时间获取最新教程</div>
+
+
+              <div>关注我的微信公众号第一时间获取最新AI前沿咨询</div>
               <Image
                 src="/gzh.jpg"
                 alt="公众号二维码"

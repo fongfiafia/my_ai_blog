@@ -28,6 +28,7 @@ export const ROUTES: EachRoute[] = [
       { title: "Cursor 智能代码补全详解(Tab)", href: "/cursor_tab" },
       { title: "Cursor AI代码生成详解(Cmd+K)", href: "/cursor_cmdk" },
       { title: "Cursor AI聊天详解(Chat)", href: "/cursor_chat" },
+      { title: "Cursor Composer详解(Cmd+I)", href: "/cursor_composer" },
     ],
   },
   {
@@ -44,7 +45,7 @@ export const ROUTES: EachRoute[] = [
     href: "/tips",
     noLink: true,
     items: [
-      { title: "Cursor 白嫖方案(不鼓励)", href: "/cursor_free" },
+      { title: "Cursor 白嫖方案(低调行事)", href: "/cursor_free" },
       { title: "Cursor 搭配Git版本管理", href: "/cursor_git" },
       { title: "Cursor 搭配Deepseek平民套餐组合", href: "/cursor_deepseek" },
     ],
