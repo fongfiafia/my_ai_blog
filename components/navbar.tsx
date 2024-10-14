@@ -10,19 +10,18 @@ import { SheetClose } from "@/components/ui/sheet";
 
 export const NAVLINKS = [
   {
-    title: "Cursor学习",
+    title: "Cursor 教程篇",
     href: `/cursor${page_routes[0].href}`,
+  }, {
+    title: "Cursor 实战篇",
+    href: `#`,
   },
-  // {
-  //   title: "AI前沿资讯",
-  //   href: "#",
-  // },
   // {
   //   title: "Blog",
   //   href: "/blog",
   // },
   {
-    title: "ChatGPT合租",
+    title: "ChatGPT 合租",
     href: "https://nf.video/HwL0y",
   },
 ];

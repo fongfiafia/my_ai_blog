@@ -32,7 +32,7 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
             <div>
               <h2 className="text-2xl -mt-1">加入我</h2>
               <div>
-                <p>欢迎加入我的社群,解锁本篇文章。加入社群你将获得:</p>
+                <p>欢迎加入我的社群,加入社群你将获得:</p>
                 <ul >
                   <li>一次与圈主的语音<strong>一对一</strong>疑惑解答</li>
                   <li>面向<strong>无编程基础</strong>的Cursor基础教程</li>
