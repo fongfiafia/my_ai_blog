@@ -4,6 +4,7 @@ import { Navbar } from "@/components/navbar";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Footer } from "@/components/footer";
+import Script from 'next/script';
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -30,17 +31,6 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="google-adsense-account" content="ca-pub-1362518378038131" />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1362518378038131" crossOrigin="anonymous"></script>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-R61S9VMKCP" />
-        <script id="google-analytics">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-R61S9VMKCP');
-          `}
-        </script>
       </head>
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} font-regular antialiased`}
@@ -58,6 +48,16 @@ export default function RootLayout({
           </main>
           <Footer />
         </ThemeProvider>
+        <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1362518378038131" crossOrigin="anonymous" />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-R61S9VMKCP" />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-R61S9VMKCP');
+          `}
+        </Script>
       </body>
     </html>
   );
