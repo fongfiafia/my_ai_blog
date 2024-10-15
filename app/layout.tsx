@@ -31,6 +31,16 @@ export default function RootLayout({
       <head>
         <meta name="google-adsense-account" content="ca-pub-1362518378038131" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1362518378038131" crossOrigin="anonymous"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-R61S9VMKCP" />
+        <script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-R61S9VMKCP');
+          `}
+        </script>
       </head>
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} font-regular antialiased`}
