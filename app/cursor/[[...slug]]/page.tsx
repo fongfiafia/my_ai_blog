@@ -27,7 +27,7 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
             {res.frontmatter.description}
           </p>
           <div>{res.content}</div>
-          {!pathName.includes('context') && !pathName.includes('tips') && !pathName.includes('instruction') && (
+          {!pathName.includes('context') && !pathName.includes('tips') && (
 
             <div className="flex justify-center">
               <div className="card p-3 rounded-lg shadow-md bg-white dark:bg-gray-800 w-[300px] text-center m-0">
