@@ -8,6 +8,14 @@ export type EachRoute = {
 };
 
 export const ROUTES: EachRoute[] = [
+  // {
+  //   title: "开卷有益",
+  //   href: "/introduction",
+  //   noLink: true,
+  //   items: [
+  //     { title: "引言", href: "/instruction" },
+  //   ],
+  // },
   {
     title: "基础教程",
     href: "/basic",
@@ -15,9 +23,9 @@ export const ROUTES: EachRoute[] = [
     items: [
       { title: "Cursor 是什么", href: "/what_is_cursor" },
       { title: "Cursor 下载安装与注册", href: "/cursor_download" },
-      { title: "Cursor 界面布局", href: "/cursor_interface" },
-      { title: "创建第一个Cursor 项目", href: "/first_project_cursor" },
-      { title: "Cursor AI辅助功能初体验", href: "/try_chat_cursor" },
+      { title: "Cursor 界面布局  🎬", href: "/cursor_interface" },
+      { title: "创建第一个Cursor 项目  🎬", href: "/first_project_cursor" },
+      { title: "Cursor AI辅助功能初体验  🎬", href: "/try_chat_cursor" },
     ],
   },
   {
@@ -37,7 +45,7 @@ export const ROUTES: EachRoute[] = [
     noLink: true,
     items: [
       { title: "Cursor 选择模型", href: "/cursor_change_model" },
-      { title: "Cursor 建立上下文", href: "/cursor_context" },
+      { title: "Cursor 建立上下文🔥", href: "/cursor_context" },
     ],
   },
   {
@@ -46,8 +54,8 @@ export const ROUTES: EachRoute[] = [
     noLink: true,
     items: [
       { title: "Cursor 白嫖方案(低调行事)", href: "/cursor_free" },
-      { title: "Cursor 搭配Git版本管理", href: "/cursor_git" },
-      { title: "Cursor 搭配Deepseek平民套餐组合", href: "/cursor_deepseek" },
+      { title: "Cursor 搭配Git版本管理🔥", href: "/cursor_git" },
+      { title: "Cursor 搭配Deepseek平民套餐组合🔥", href: "/cursor_deepseek" },
     ],
   },
   {
@@ -55,7 +63,7 @@ export const ROUTES: EachRoute[] = [
     href: "/video",
     noLink: true,
     items: [
-      { title: "Cursor 教学视频", href: "/cursor_teach_video" },
+      { title: "Cursor 教学视频🔥", href: "/cursor_teach_video" },
     ],
   },
 
