@@ -27,36 +27,40 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
             {res.frontmatter.description}
           </p>
           <div>{res.content}</div>
-          {!pathName.includes('context') && !pathName.includes('tips') && (
+          {!pathName.includes('context') && !pathName.includes('tips') && !pathName.includes('instruction') && (
 
-            <div>
-              <h2 className="text-2xl -mt-1">加入我</h2>
-              <div>
-                <p>欢迎加入我的社群,加入社群你将获得:</p>
-                <ul >
+            <div className="flex justify-center">
+              <div className="card p-3 rounded-lg shadow-md bg-white dark:bg-gray-800 w-[300px] text-center m-0">
+                <h3 className="font-bold text-lg mb-2">如果文章对你有帮助<span className="text-red-500">👍</span></h3>
+                <p className="font-medium mb-4">请我喝杯咖啡 ☕️</p>
+                <Image
+                  src="/coffee.jpg"
+                  alt="赞赏二维码"
+                  width={300}
+                  height={600}
+                  className="rounded-lg mx-auto"
+                />
+              </div>
+            </div>
+          )}
+
+          {/* <div className="text-center">
+                <p className="font-bold mb-4">欢迎加入我的社群，加入社群你将获得：</p>
+                <ul className="inline-block text-left">
                   <li>一次与圈主的语音<strong>一对一</strong>疑惑解答</li>
                   <li>面向<strong>无编程基础</strong>的Cursor基础教程</li>
                   <li>面向<strong>有基础</strong>的Cursor进阶付费教程和<strong>实操</strong>技巧</li>
                   <li>Cursor和各类AI相关资讯</li>
                 </ul>
               </div>
-              <Image
-                src="/star.png"
-                alt="星球二维码"
-                width={900}
-                height={300}
-              />
-
-
-              <div>关注我的微信公众号第一时间获取最新AI前沿咨询</div>
-              <Image
-                src="/gzh.jpg"
-                alt="公众号二维码"
-                width={900}
-                height={300}
-              />
-            </div>
-          )}
+              <div className="flex justify-center mt-6">
+                <Image
+                  src="/star.png"
+                  alt="星球二维码"
+                  width={600}
+                  height={200}
+                />
+              </div> */}
           <Pagination pathname={pathName} />
         </Typography>
       </div>

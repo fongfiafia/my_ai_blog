@@ -8,14 +8,14 @@ export type EachRoute = {
 };
 
 export const ROUTES: EachRoute[] = [
-  // {
-  //   title: "开卷有益",
-  //   href: "/introduction",
-  //   noLink: true,
-  //   items: [
-  //     { title: "引言", href: "/instruction" },
-  //   ],
-  // },
+  {
+    title: "开卷有益",
+    href: "/instruction",
+    noLink: true,
+    items: [
+      { title: "引言", href: "/instruction" },
+    ],
+  },
   {
     title: "基础教程",
     href: "/basic",
@@ -54,8 +54,8 @@ export const ROUTES: EachRoute[] = [
     noLink: true,
     items: [
       { title: "Cursor 白嫖方案(低调行事)", href: "/cursor_free" },
-      { title: "Cursor 搭配Git版本管理🔥", href: "/cursor_git" },
-      { title: "Cursor 搭配Deepseek平民套餐组合🔥", href: "/cursor_deepseek" },
+      { title: "Cursor+Git版本管理🔥", href: "/cursor_git" },
+      { title: "Cursor+Deepseek平民套餐组合🔥", href: "/cursor_deepseek" },
     ],
   },
   {

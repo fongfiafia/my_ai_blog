@@ -90,7 +90,7 @@ export async function getDocsTocs(slug: string) {
 
   extractedHeadings.push({
     level: 0,
-    text: "加入我",
+    text: "关注微信公众号",
     href: "",
   });
 
