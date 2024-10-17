@@ -66,6 +66,89 @@ export default function RootLayout({
             }
           `
         }} />
+
+        {/* seo2 */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: `
+            [
+              {
+                "@context": "https://schema.org/",
+                "@type": "Article",
+                "mainEntityOfPage": {
+                  "@type": "WebPage",
+                  "@id": "https://www.lookai.top/cursor/basic/cursor_interface"
+                },
+                "headline": "Cursor 界面介绍",
+                "description": "详细介绍 Cursor AI 编程工具的界面和基本功能",
+                "image": "https://www.lookai.top/interface.jpeg",
+                "author": {
+                  "@type": "Organization",
+                  "name": "LookAI"
+                },
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "LookAI",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.lookai.top/logo.png"
+                  }
+                },
+                "datePublished": "2024-01-01",
+                "dateModified": "2024-01-15"
+              },
+              {
+                "@context": "https://schema.org/",
+                "@type": "Article",
+                "mainEntityOfPage": {
+                  "@type": "WebPage",
+                  "@id": "https://www.lookai.top/cursor/advance/cursor_tab"
+                },
+                "headline": "Cursor Tab自动补全",
+                "description": "学习如何在 Cursor 中高效管理多个标签页",
+                "image": "https://www.lookai.top/predict.jpeg",
+                "author": {
+                  "@type": "Organization",
+                  "name": "LookAI"
+                },
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "LookAI",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.lookai.top/logo.png"
+                  }
+                },
+                "datePublished": "2024-01-05",
+                "dateModified": "2024-01-20"
+              },
+              {
+                "@context": "https://schema.org/",
+                "@type": "Article",
+                "mainEntityOfPage": {
+                  "@type": "WebPage",
+                  "@id": "https://www.lookai.top/cursor/tips/cursor_git"
+                },
+                "headline": "Cursor 中的 Git 操作技巧",
+                "description": "掌握在 Cursor 中使用 Git 进行版本控制的高级技巧",
+                "image": "https://www.lookai.top/git_logo.png",
+                "author": {
+                  "@type": "Organization",
+                  "name": "LookAI"
+                },
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "LookAI",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.lookai.top/logo.png"
+                  }
+                },
+                "datePublished": "2024-01-10",
+                "dateModified": "2024-01-25"
+              }
+            ]
+          `
+        }} />
       </head>
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} font-regular antialiased`}
