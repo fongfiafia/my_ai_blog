@@ -31,6 +31,41 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="google-adsense-account" content="ca-pub-1362518378038131" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: `
+            {
+              "@context": "https://schema.org/",
+              "@type": "Course",
+              "name": "最好的Cursor教程",
+              "description": "提供最全面、最专业的Cursor AI编程教程。适合小白的免费学习资源，助您掌握AI编程技能。",
+              "provider": {
+                "@type": "Organization",
+                "name": "LookAI",
+                "url": "https://www.lookai.top"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "1000"
+              },
+              "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "CNY",
+              "availability": "https://schema.org/InStock",
+              "category": "在线教育"
+            },
+              "hasCourseInstance": [
+                {
+                  "@type": "CourseInstance",
+                  "courseMode": "online",
+                  "courseWorkload": "PT10H",
+                  "startDate": "2024-01-01"
+                }
+              ]
+            }
+          `
+        }} />
       </head>
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} font-regular antialiased`}
@@ -46,7 +81,7 @@ export default function RootLayout({
           <main className="sm:container mx-auto w-[90vw] h-auto">
             {children}
           </main>
-          <Footer />
+          {/* <Footer /> */}
         </ThemeProvider>
         <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1362518378038131" crossOrigin="anonymous" />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-R61S9VMKCP" />
@@ -58,6 +93,8 @@ export default function RootLayout({
             gtag('config', 'G-R61S9VMKCP');
           `}
         </Script>
+
+
       </body>
     </html>
   );
