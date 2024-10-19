@@ -16,6 +16,7 @@ import Note from "@/components/markdown/note";
 import { Stepper, StepperItem } from "@/components/markdown/stepper";
 import Image from "@/components/markdown/image";
 import Link from "@/components/markdown/link";
+import Countdown from "../components/Countdown";
 
 // add custom components
 const components = {
@@ -29,6 +30,7 @@ const components = {
   StepperItem,
   img: Image,
   a: Link,
+  Countdown,
 };
 
 // can be used for other pages like blogs, Guides etc
