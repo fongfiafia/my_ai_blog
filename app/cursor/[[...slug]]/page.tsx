@@ -44,23 +44,26 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
             </div>
           )}
 
-          {/* <div className="text-center">
+          {!pathName.includes('instruction') && !pathName.includes('context') && (
+            <>
+              <h2 className="text-2xl font-bold mb-4">加入社群</h2>
+              <div className="text-left mb-6">
                 <p className="font-bold mb-4">欢迎加入我的社群，加入社群你将获得：</p>
-                <ul className="inline-block text-left">
+                <ul className="list-disc pl-5">
                   <li>一次与圈主的语音<strong>一对一</strong>疑惑解答</li>
                   <li>面向<strong>无编程基础</strong>的Cursor基础教程</li>
                   <li>面向<strong>有基础</strong>的Cursor进阶付费教程和<strong>实操</strong>技巧</li>
                   <li>Cursor和各类AI相关资讯</li>
                 </ul>
               </div>
-              <div className="flex justify-center mt-6">
-                <Image
-                  src="/star.png"
-                  alt="星球二维码"
-                  width={600}
-                  height={200}
-                />
-              </div> */}
+              <Image
+                src="/star.png"
+                alt="星球二维码"
+                width={600}
+                height={200}
+              />
+            </>
+          )}
           <Pagination pathname={pathName} />
         </Typography>
       </div>
