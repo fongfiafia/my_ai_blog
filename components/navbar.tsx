@@ -13,8 +13,8 @@ export const NAVLINKS = [
     title: "Cursor 教程篇",
     href: `/cursor${page_routes[0].href}`,
   }, {
-    title: "Cursor 实战篇",
-    href: `#`,
+    title: "做点好玩的",
+    href: "/fun",
   },
   // {
   //   title: "Blog",
