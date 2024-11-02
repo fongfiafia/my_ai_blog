@@ -68,45 +68,81 @@ const visualizeCalculation = (
         canvas.height = parent.clientHeight
     }
 
+    // 计算缩放比例和偏移量，使圆居中显示
+    const scale = 0.8 // 留出一些边距
+    const maxRadius = Math.min(canvas.width, canvas.height) / 2 * scale
+    const scaleRatio = maxRadius / avgRadius
+
+    // 计算画布中心点
+    const canvasCenter = {
+        x: canvas.width / 2,
+        y: canvas.height / 2
+    }
+
     ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+    // 将所有点相对于原始圆心进行缩放和平移
+    const transformPoint = (point: Point) => ({
+        x: (point.x - center.x) * scaleRatio + canvasCenter.x,
+        y: (point.y - center.y) * scaleRatio + canvasCenter.y
+    })
 
     // 绘制原始路径
     ctx.strokeStyle = '#22c55e'
     ctx.lineWidth = 2
     ctx.beginPath()
-    ctx.moveTo(points[0].x, points[0].y)
+    const firstPoint = transformPoint(points[0])
+    ctx.moveTo(firstPoint.x, firstPoint.y)
     for (let i = 1; i < points.length; i++) {
-        ctx.lineTo(points[i].x, points[i].y)
+        const point = transformPoint(points[i])
+        ctx.lineTo(point.x, point.y)
     }
     ctx.stroke()
 
     // 绘制圆心
     ctx.fillStyle = '#3b82f6'
     ctx.beginPath()
-    ctx.arc(center.x, center.y, 5, 0, Math.PI * 2)
+    ctx.arc(canvasCenter.x, canvasCenter.y, 5, 0, Math.PI * 2)
     ctx.fill()
 
     // 绘制理想圆形
     ctx.strokeStyle = '#22c55e'
     ctx.setLineDash([5, 5])
     ctx.beginPath()
-    ctx.arc(center.x, center.y, avgRadius, 0, Math.PI * 2)
+    ctx.arc(canvasCenter.x, canvasCenter.y, maxRadius, 0, Math.PI * 2)
     ctx.stroke()
     ctx.setLineDash([])
 
     // 绘制偏差点
     points.forEach((point, index) => {
         if (index % 5 === 0) {
+            const transformedPoint = transformPoint(point)
             const distance = Math.sqrt(
-                Math.pow(point.x - center.x, 2) + Math.pow(point.y - center.y, 2)
+                Math.pow(transformedPoint.x - canvasCenter.x, 2) +
+                Math.pow(transformedPoint.y - canvasCenter.y, 2)
             )
-            const color = distance > avgRadius ? '#ef4444' : '#3b82f6'
+            const color = distance > maxRadius ? '#ef4444' : '#3b82f6'
             ctx.fillStyle = color
             ctx.beginPath()
-            ctx.arc(point.x, point.y, 3, 0, Math.PI * 2)
+            ctx.arc(transformedPoint.x, transformedPoint.y, 3, 0, Math.PI * 2)
             ctx.fill()
         }
     })
+}
+
+const calculateBeatPercentage = (score: number): number => {
+    // 调低击败比例，增加挑战性
+    if (score >= 95) return 99
+    if (score >= 90) return 90
+    if (score >= 85) return 80
+    if (score >= 80) return 70
+    if (score >= 75) return 60
+    if (score >= 70) return 50
+    if (score >= 65) return 40
+    if (score >= 60) return 30
+    if (score >= 55) return 20
+    if (score >= 50) return 15
+    return 5
 }
 
 const AnalysisModal: React.FC<AnalysisModalProps> = ({
@@ -140,15 +176,18 @@ const AnalysisModal: React.FC<AnalysisModalProps> = ({
                 </div>
                 <div className="text-center">
                     <p className="text-2xl font-bold mb-2">
-                        圆度得分: {accuracy?.toFixed(1)}%
+                        你的圆度得分: {accuracy?.toFixed(1)}%
+                    </p>
+                    <p className="text-xl text-green-500 dark:text-green-400 font-bold mb-4">
+                        击败了 {calculateBeatPercentage(accuracy || 0)}% 的玩家！
                     </p>
                     <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
                         绿色虚线为理想圆形，蓝点表示圆心，红色点表示偏离过大的位置
                     </p>
-                    <div className="flex justify-center gap-3">
+                    <div className="flex justify-center gap-2 flex-wrap sm:flex-nowrap">
                         <button
                             onClick={onRestart}
-                            className="px-6 py-2 bg-gradient-to-r from-green-500 via-yellow-500 to-red-500 
+                            className="whitespace-nowrap px-4 py-2 bg-gradient-to-r from-green-500 via-yellow-500 to-red-500 
                                      text-white rounded-lg hover:opacity-90"
                         >
                             再试一次
@@ -157,14 +196,14 @@ const AnalysisModal: React.FC<AnalysisModalProps> = ({
                             href={`http://service.weibo.com/share/share.php?url=https://www.lookai.top/fun/perfect-circle/&title=${encodeURIComponent(`我画的圆接近 ${accuracy?.toFixed(1)}% 完美！！你能打败我吗？#画出完美的圆#perfect-circle`)}&pic=https://www.lookai.top/draw_circle.png`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-6 py-2 bg-[#E6162D] text-white rounded-lg 
+                            className="whitespace-nowrap px-4 py-2 bg-[#E6162D] text-white rounded-lg 
                                      hover:bg-[#ff1a1a] transition-colors duration-300"
                         >
                             分享微博
                         </a>
                         <button
                             onClick={onShare}
-                            className="px-6 py-2 bg-blue-500 text-white rounded-lg 
+                            className="whitespace-nowrap px-4 py-2 bg-blue-500 text-white rounded-lg 
                                      hover:bg-blue-600"
                         >
                             快速分享
