@@ -196,15 +196,7 @@ const AnalysisModal: React.FC<AnalysisModalProps> = ({
                         >
                             再试一次
                         </button>
-                        <a
-                            href={`http://service.weibo.com/share/share.php?url=https://www.lookai.top/fun/perfect-circle/&title=${encodeURIComponent(`我画的圆接近 ${accuracy?.toFixed(1)}% 完美！！你能打败我吗？#画出完美的圆#perfect-circle`)}&pic=https://www.lookai.top/draw_circle.png`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="whitespace-nowrap px-4 py-2 bg-[#E6162D] text-white rounded-lg 
-                                     hover:bg-[#ff1a1a] transition-colors duration-300"
-                        >
-                            分享微博
-                        </a>
+
                         <button
                             onClick={onShare}
                             className="whitespace-nowrap px-4 py-2 bg-blue-500 text-white rounded-lg 
@@ -381,7 +373,7 @@ export default function CircleDrawerPage() {
 
     // 添加复制分享文案的函数
     const handleQuickShare = () => {
-        const shareText = `我画的圆接近 ${accuracy?.toFixed(1)}% 完美！！你能打败我吗？有本就来挑战我！ https://www.lookai.top/fun/perfect-circle `;
+        const shareText = `我画的圆接近 ${accuracy?.toFixed(1)}% 完美！！你能打败我吗？够胆就来挑战我！ https://www.lookai.top/fun/perfect-circle `;
 
         navigator.clipboard.writeText(shareText)
             .then(() => {
