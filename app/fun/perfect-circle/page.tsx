@@ -132,8 +132,12 @@ const visualizeCalculation = (
 
 const calculateBeatPercentage = (score: number): number => {
     // 调低击败比例，增加挑战性
-    if (score >= 95) return 99
-    if (score >= 90) return 90
+    if (score >= 98.5) return 99
+    if (score >= 97.5) return 98
+    if (score >= 96) return 95
+    if (score >= 95) return 94
+    if (score >= 93) return 93
+    if (score >= 90) return 92
     if (score >= 85) return 80
     if (score >= 80) return 70
     if (score >= 75) return 60
