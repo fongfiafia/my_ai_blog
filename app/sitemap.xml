@@ -96,4 +96,19 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://www.lookai.top/fun/perfect-circle</loc>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+   <url>
+    <loc>https://www.lookai.top/fun/wx-miniprogram</loc>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+
+ 
 </urlset>

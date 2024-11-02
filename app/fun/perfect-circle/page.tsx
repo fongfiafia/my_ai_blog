@@ -230,7 +230,7 @@ export default function CircleDrawerPage() {
                             再试一次
                         </button>
                         <a
-                            href={`http://service.weibo.com/share/share.php?url=https://www.lookai.top/fun/perfect-circle/&title=${encodeURIComponent(`我画的圆接近 ${accuracy.toFixed(1)}% 完美！！你能打败我吗？#画出完美的圆#perfect-circle`)}&pic=https://www.lookai.top/fun/perfect-circle/draw_circle.png`}
+                            href={`http://service.weibo.com/share/share.php?url=https://www.lookai.top/fun/perfect-circle/&title=${encodeURIComponent(`我画的圆接近 ${accuracy.toFixed(1)}% 完美！！你能打败我吗？#画出完美的圆#perfect-circle`)}&pic=https://www.lookai.top/draw_circle.png`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center justify-center w-32 px-4 py-2 bg-[#E6162D] 

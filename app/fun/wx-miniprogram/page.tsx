@@ -26,12 +26,10 @@ export default function WxMiniprogramPage() {
                         className="group relative overflow-hidden rounded-xl border bg-background p-6 shadow-md transition-shadow hover:shadow-lg"
                     >
                         <div className="flex flex-col items-center">
-                            {/* 二维码占位，等待真实图片 */}
                             <div className="relative h-48 w-48 mb-4 bg-muted rounded-lg overflow-hidden">
                                 <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-                                    二维码待上传
+                                    二维码加载中
                                 </div>
-                                取消注释并更新实际图片路径
                                 <Image
                                     src={program.qrcode}
                                     alt={`${program.name}小程序码`}
