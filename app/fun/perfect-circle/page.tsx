@@ -187,10 +187,11 @@ export default function CircleDrawerPage() {
     }
 
     return (
-        <div className="p-6 flex flex-col items-center">
+        <div className="p-6 flex flex-col items-center min-h-[calc(100vh-4rem)]">
             {gameState === 'initial' && (
-                <div className="text-center">
+                <div className="text-center" style={{ marginTop: '30%' }}>
                     <h2 className="text-xl mb-4">Can you draw a perfect circle?</h2>
+                    <h2 className="text-xl mb-4">你能画出最完美的圆吗？</h2>
                     <button
                         onClick={handleStart}
                         className="w-32 h-32 rounded-full bg-gradient-to-r from-green-500 via-yellow-500 to-red-500 
@@ -220,13 +221,24 @@ export default function CircleDrawerPage() {
                     <p className="text-2xl font-bold">
                         圆形度得分: {accuracy.toFixed(1)}%
                     </p>
-                    <button
-                        onClick={handleStart}
-                        className="mt-4 px-6 py-2 bg-gradient-to-r from-green-500 via-yellow-500 to-red-500 
-                                 text-white rounded-lg hover:opacity-90 transition-opacity duration-300"
-                    >
-                        再试一次
-                    </button>
+                    <div className="mt-4 flex flex-row items-center gap-3">
+                        <button
+                            onClick={handleStart}
+                            className="w-32 px-6 py-2 bg-gradient-to-r from-green-500 via-yellow-500 to-red-500 
+                                     text-white rounded-lg hover:opacity-90 transition-opacity duration-300"
+                        >
+                            再试一次
+                        </button>
+                        <a
+                            href={`http://service.weibo.com/share/share.php?url=https://www.lookai.top/fun/perfect-circle/&title=${encodeURIComponent(`我画的圆接近 ${accuracy.toFixed(1)}% 完美！！你能打败我吗？#画出完美的圆#perfect-circle`)}&pic=https://www.lookai.top/fun/perfect-circle/draw_circle.png`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center w-32 px-4 py-2 bg-[#E6162D] 
+                                     text-white rounded-lg hover:bg-[#ff1a1a] transition-colors duration-300"
+                        >
+                            分享微博
+                        </a>
+                    </div>
                 </div>
             )}
         </div>
