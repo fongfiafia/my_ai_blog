@@ -186,10 +186,24 @@ export default function CircleDrawerPage() {
         isDrawing.current = false
     }
 
+    // 添加复制分享文案的函数
+    const handleQuickShare = () => {
+        const shareText = `我画的圆接近 ${accuracy?.toFixed(1)}% 完美！！你能打败我吗？点击体验 https://www.lookai.top/fun/perfect-circle `;
+
+        navigator.clipboard.writeText(shareText)
+            .then(() => {
+                alert('分享文案已复制到剪贴板！');
+            })
+            .catch(err => {
+                console.error('复制失败:', err);
+                alert('复制失败，请手动复制');
+            });
+    };
+
     return (
         <div className="p-6 flex flex-col items-center min-h-[calc(100vh-4rem)]">
             {gameState === 'initial' && (
-                <div className="text-center" style={{ marginTop: '30%' }}>
+                <div className="text-center" style={{ marginTop: '10%' }}>
                     <h2 className="text-xl mb-4">Can you draw a perfect circle?</h2>
                     <h2 className="text-xl mb-4">你能画出最完美的圆吗？</h2>
                     <button
@@ -219,7 +233,7 @@ export default function CircleDrawerPage() {
             {accuracy !== null && (
                 <div className="mt-6 text-center">
                     <p className="text-2xl font-bold">
-                        圆形度得分: {accuracy.toFixed(1)}%
+                        圆度得分: {accuracy.toFixed(1)}%
                     </p>
                     <div className="mt-4 flex flex-row items-center gap-3">
                         <button
@@ -238,9 +252,60 @@ export default function CircleDrawerPage() {
                         >
                             分享微博
                         </a>
+                        <button
+                            onClick={handleQuickShare}
+                            className="w-32 px-4 py-2 bg-blue-500 text-white rounded-lg 
+                                     hover:bg-blue-600 transition-colors duration-300"
+                        >
+                            快速分享
+                        </button>
                     </div>
                 </div>
             )}
+
+            <div className="w-full max-w-2xl mt-12 mb-8">
+                <h2 className="text-2xl font-bold mb-6">常见问题 Frequent Asked Questions</h2>
+
+                <div className="space-y-6">
+                    <div className="border-b pb-4">
+                        <h3 className="font-bold mb-2">Q: 如何获得更高的圆形度分数？</h3>
+                        <p className="text-gray-600 dark:text-gray-300">
+                            A: 保持绘制速度均匀，手臂放松，以肩膀为支点画圆。建议先练习大圆，熟练后再尝试小圆。保持绘制时的流畅性和稳定性是关键。
+                        </p>
+                    </div>
+
+                    <div className="border-b pb-4">
+                        <h3 className="font-bold mb-2">Q: 为什么我画的圆分数这么低？</h3>
+                        <p className="text-gray-600 dark:text-gray-300">
+                            A: 圆形度评分基于多个因素，包括圆的半径一致性、曲线平滑度等。即使看起来像圆，如果半径不均匀也会影响得分。持续练习可以提高准确度。
+                        </p>
+                    </div>
+
+                    <div className="border-b pb-4">
+                        <h3 className="font-bold mb-2">Q: 专业画师能画出多完美的圆？</h3>
+                        <p className="text-gray-600 dark:text-gray-300">
+                            A: 经过训练的专业画师通常能达到 85-95% 的圆形度。不过这需要大量练习和正确的技巧。普通人经过练习也能达到 80% 以上的水平。
+                        </p>
+                    </div>
+
+                    <div className="border-b pb-4">
+                        <h3 className="font-bold mb-2">Q: 徒手画圆的技巧有哪些？</h3>
+                        <p className="text-gray-600 dark:text-gray-300">
+                            A: 1. 保持手腕放松，使用整个手臂的力量<br />
+                            2. 以肩膀为轴心点进行旋转运动<br />
+                            3. 保持匀速绘制，不要过快或过慢<br />
+                            4. 专注于整体形状，而不是局部细节
+                        </p>
+                    </div>
+
+                    <div className="border-b pb-4">
+                        <h3 className="font-bold mb-2">Q: 这个游戏的评分标准是什么？</h3>
+                        <p className="text-gray-600 dark:text-gray-300">
+                            A: 评分系统会计算所有点到圆心的距离标准差，完美的圆所有点到圆心的距离应该相等。评分还考虑了曲线的平滑度和闭合性，满分100分代表完美的圆形。
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 } 
