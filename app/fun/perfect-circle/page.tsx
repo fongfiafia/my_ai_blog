@@ -218,13 +218,60 @@ export default function CircleDrawerPage() {
             )}
 
             {gameState !== 'initial' && (
-                <div className="relative w-full h-[600px] border rounded-lg overflow-hidden bg-white dark:bg-black">
+                <div className="relative w-full max-w-[600px] aspect-square border rounded-lg overflow-hidden bg-white dark:bg-black touch-none">
                     <canvas
                         ref={canvasRef}
                         onMouseDown={handleMouseDown}
                         onMouseMove={handleMouseMove}
                         onMouseUp={handleMouseUp}
                         onMouseLeave={handleMouseUp}
+                        onTouchStart={(e) => {
+                            e.preventDefault(); // 防止触摸事件触发滚动
+                            const touch = e.touches[0];
+                            const canvas = canvasRef.current;
+                            if (!canvas) return;
+                            const rect = canvas.getBoundingClientRect();
+                            const x = touch.clientX - rect.left;
+                            const y = touch.clientY - rect.top;
+                            isDrawing.current = true;
+                            startPoint.current = { x, y };
+                            setPoints([{ x, y }]);
+                        }}
+                        onTouchMove={(e) => {
+                            e.preventDefault(); // 防止触摸事件触发滚动
+                            if (!isDrawing.current || gameState !== 'drawing') return;
+                            const touch = e.touches[0];
+                            const canvas = canvasRef.current;
+                            if (!canvas) return;
+                            const rect = canvas.getBoundingClientRect();
+                            const x = touch.clientX - rect.left;
+                            const y = touch.clientY - rect.top;
+                            // ... 其余的触摸移动逻辑与 handleMouseMove 相同 ...
+                            setPoints(prev => {
+                                const newPoints = [...prev, { x, y }];
+                                requestAnimationFrame(() => {
+                                    drawPath();
+                                });
+                                return newPoints;
+                            });
+
+                            if (startPoint.current && points.length > 10) {
+                                const distance = Math.sqrt(
+                                    Math.pow(x - startPoint.current.x, 2) +
+                                    Math.pow(y - startPoint.current.y, 2)
+                                );
+                                if (distance < 20) {
+                                    isDrawing.current = false;
+                                    setGameState('complete');
+                                    const score = calculateCircleAccuracy(points);
+                                    setAccuracy(score);
+                                }
+                            }
+                        }}
+                        onTouchEnd={(e) => {
+                            e.preventDefault(); // 防止触摸事件触发滚动
+                            isDrawing.current = false;
+                        }}
                         className="w-full h-full"
                     />
                 </div>
@@ -235,7 +282,7 @@ export default function CircleDrawerPage() {
                     <p className="text-2xl font-bold">
                         圆度得分: {accuracy.toFixed(1)}%
                     </p>
-                    <div className="mt-4 flex flex-row items-center gap-3">
+                    <div className="mt-4 flex flex-col sm:flex-row items-center gap-3">
                         <button
                             onClick={handleStart}
                             className="w-32 px-6 py-2 bg-gradient-to-r from-green-500 via-yellow-500 to-red-500 
@@ -247,8 +294,9 @@ export default function CircleDrawerPage() {
                             href={`http://service.weibo.com/share/share.php?url=https://www.lookai.top/fun/perfect-circle/&title=${encodeURIComponent(`我画的圆接近 ${accuracy.toFixed(1)}% 完美！！你能打败我吗？#画出完美的圆#perfect-circle`)}&pic=https://www.lookai.top/draw_circle.png`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center justify-center w-32 px-4 py-2 bg-[#E6162D] 
-                                     text-white rounded-lg hover:bg-[#ff1a1a] transition-colors duration-300"
+                            className="w-32 px-4 py-2 bg-[#E6162D] text-white rounded-lg 
+                                     hover:bg-[#ff1a1a] transition-colors duration-300
+                                     flex items-center justify-center"
                         >
                             分享微博
                         </a>

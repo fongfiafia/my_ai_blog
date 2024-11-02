@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react'; // 确保已安装lucide-react
+import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react';
 
 const faqData = [
     {
@@ -35,20 +35,21 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="border-b border-gray-200 py-4">
+        <div className="border-b border-gray-200 dark:border-gray-700 py-4">
             <button
-                className="flex justify-between items-center w-full text-left"
+                className="flex justify-between items-center w-full text-left
+                           text-gray-900 dark:text-gray-100"
                 onClick={() => setIsOpen(!isOpen)}
             >
                 <span className="text-lg font-semibold">{question}</span>
                 {isOpen ? (
-                    <ChevronUpIcon className="w-5 h-5" />
+                    <ChevronUpIcon className="w-5 h-5 text-gray-500 dark:text-gray-400" />
                 ) : (
-                    <ChevronDownIcon className="w-5 h-5" />
+                    <ChevronDownIcon className="w-5 h-5 text-gray-500 dark:text-gray-400" />
                 )}
             </button>
             {isOpen && (
-                <p className="mt-2 text-gray-600 text-left">{answer}</p>
+                <p className="mt-2 text-gray-600 dark:text-gray-300">{answer}</p>
             )}
         </div>
     );
@@ -56,9 +57,13 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
 
 const FAQSection = () => {
     return (
-        <section className="w-full max-w-4xl mx-auto mt-16">
-            <h2 className="text-3xl font-bold mb-8">Frequent Asked Question About Cursor</h2>
-            <h4 className="text-2xl font-bold mb-2">关于Cursor最常见问题</h4>
+        <section className="w-full max-w-4xl mx-auto mt-10 pt-7">
+            <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-gray-100">
+                Frequent Asked Question About Cursor
+            </h2>
+            <h4 className="text-2xl font-bold mb-2 text-gray-900 dark:text-gray-100">
+                关于Cursor最常见问题
+            </h4>
             <div className="space-y-2">
                 {faqData.map((item, index) => (
                     <FAQItem key={index} question={item.question} answer={item.answer} />
