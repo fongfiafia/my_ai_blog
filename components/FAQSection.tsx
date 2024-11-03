@@ -49,7 +49,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
                 )}
             </button>
             {isOpen && (
-                <p className="mt-2 text-gray-600 dark:text-gray-300">{answer}</p>
+                <p className="mt-2 text-left text-gray-600 dark:text-gray-300">{answer}</p>
             )}
         </div>
     );

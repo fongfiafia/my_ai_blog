@@ -6,6 +6,7 @@ import { Metadata } from 'next';
 import FAQSection from '@/components/FAQSection'; // 导入新的FAQ组件
 import AIResourcesSection from '@/components/AIResourcesSection';
 import AIVideosSection from '@/components/AIVideosSection';
+import FunProjectsSection from '@/components/FunProjectsSection';
 
 export const metadata: Metadata = {
   title: 'LookAI - 最适合零编程基础普通人的Cursor AI编程教程 | 小白免费学习资源',
@@ -43,15 +44,13 @@ export default function Home() {
         </Link>
       </div>
 
-
-
       <FAQSection />
-
 
       <AIVideosSection />
 
-      <AIResourcesSection />
+      <FunProjectsSection />
 
+      <AIResourcesSection />
 
 
     </div>
