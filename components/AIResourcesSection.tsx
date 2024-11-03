@@ -21,6 +21,13 @@ const AI_RESOURCES = [
         icon: "/ai-resources/apple-touch-icon.png",
         url: "https://freeaitool.ai/",
         tags: ["AI工具箱", "免费"]
+    },
+    {
+        name: "Flux Image AI",
+        description: "免费AI工具集合",
+        icon: "/ai-resources/flux.png",
+        url: "https://tap4.ai/ai/flux-ai-io",
+        tags: ["AI工具箱", "视频生成"]
     }
 ];
 
