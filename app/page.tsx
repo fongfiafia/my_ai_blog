@@ -5,10 +5,11 @@ import Link from "next/link";
 import { Metadata } from 'next';
 import FAQSection from '@/components/FAQSection'; // 导入新的FAQ组件
 import AIResourcesSection from '@/components/AIResourcesSection';
+import AIVideosSection from '@/components/AIVideosSection';
 
 export const metadata: Metadata = {
-  title: 'LookAI - 最专业的Cursor AI编程教程 | 小白免费学习资源',
-  description: '提供最全面、最专业的Cursor AI编程教程。适合小白的免费学习资源，助您掌握AI编程技能。',
+  title: 'LookAI - 最适合零编程基础普通人的Cursor AI编程教程 | 小白免费学习资源',
+  description: '提供最全面、最专业的Cursor AI编程教程。适合小白、零编程基础的免费学习资源，助您掌握AI编程技能。',
   keywords: 'Cursor, Cursor小白教程, AI编程, Cursor免费教程, Cursor最全面教程, Cursor专业指导',
   openGraph: {
     title: 'LookAI - 零基础小白Cursor学习网站',
@@ -47,7 +48,11 @@ export default function Home() {
       <FAQSection />
 
 
+      <AIVideosSection />
+
       <AIResourcesSection />
+
+
 
     </div>
   );

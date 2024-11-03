@@ -7,6 +7,7 @@ const nextConfig = {
         hostname: "**",
       },
     ],
+    domains: ['img.youtube.com'],
   },
   // output: 'export',
   reactStrictMode: true,
