@@ -4,6 +4,7 @@ import { MoveUpRightIcon, TerminalSquareIcon } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from 'next';
 import FAQSection from '@/components/FAQSection'; // 导入新的FAQ组件
+import AIResourcesSection from '@/components/AIResourcesSection';
 
 export const metadata: Metadata = {
   title: 'LookAI - 最专业的Cursor AI编程教程 | 小白免费学习资源',
@@ -39,31 +40,14 @@ export default function Home() {
         >
           开启旅程
         </Link>
-        {/* <Link
-          href="/blog"
-          className={buttonVariants({
-            variant: "secondary",
-            className: "px-6",
-            size: "lg",
-          })}
-        >
-          Read Blog
-        </Link> */}
       </div>
 
-      {/* 添加FAQ部分 */}
-      {/* <span className="flex flex-row items-start sm:gap-2 gap-0.5 text-muted-foreground text-md mt-7 -mb-12 max-[800px]:mb-12 font-code text-base font-medium">
-        <Link
-          href="https://github.com/fongfiafia/my_ai_blog"
-          target="_blank"
-          className="mb-5 sm:text-lg flex items-center gap-2 underline underline-offset-4"
-        >
-          网页工程代码都在Github开源{" "}
-          <MoveUpRightIcon className="w-4 h-4 font-extrabold" />
-        </Link>
-      </span> */}
+
+
       <FAQSection />
 
+
+      <AIResourcesSection />
 
     </div>
   );
