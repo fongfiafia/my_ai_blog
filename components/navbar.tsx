@@ -7,6 +7,7 @@ import Anchor from "./anchor";
 import { SheetLeftbar } from "./leftbar";
 import { page_routes } from "@/lib/routes-config";
 import { SheetClose } from "@/components/ui/sheet";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export const NAVLINKS = [
   {
