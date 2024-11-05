@@ -10,7 +10,7 @@ import { SheetClose } from "@/components/ui/sheet";
 
 export const NAVLINKS = [
   {
-    title: "Cursor 教程篇",
+    title: "Cursor 教程",
     href: `/cursor${page_routes[0].href}`,
   }, {
     title: "做点好玩的",
