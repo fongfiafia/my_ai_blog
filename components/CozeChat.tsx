@@ -8,14 +8,17 @@ declare global {
             WebChatClient: new (config: {
                 config: {
                     bot_id: string;
-                    isShow?: boolean;
                 };
                 componentProps: {
                     title: string;
                 };
-                userInfo: {
+                ui: {
                     asstBtn: {
-                        isNeed: boolean;
+                        isNeed?: boolean;
+                    }
+                    base: {
+                        layout: string;
+                        zIndex: number;
                     }
                 }
             }) => void;
@@ -32,20 +35,25 @@ export default function CozeChat() {
 
         script.onload = () => {
             // SDK 加载完成后初始化
-            new window.CozeWebSDK.WebChatClient({
+            var sdk = new window.CozeWebSDK.WebChatClient({
                 config: {
                     bot_id: '7434442467988193306',
-                    isShow: true,
                 },
                 componentProps: {
                     title: 'AI Cursor 老师',
                 },
-                userInfo: {
+                ui: {
                     asstBtn: {
                         isNeed: false,
+                    },
+                    base: {
+                        layout: "pc",
+                        zIndex: 1000,
                     }
                 }
             });
+
+            sdk.showChatBot();
         };
 
         document.body.appendChild(script);
