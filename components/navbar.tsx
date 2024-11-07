@@ -12,18 +12,24 @@ export const NAVLINKS = [
   {
     title: "Cursor 教程",
     href: `/cursor${page_routes[0].href}`,
-  }, {
+  },
+  {
+    title: "AI Cursor老师",
+    href: "/ai-teacher",
+  },
+  {
     title: "做点好玩的",
     href: "/fun",
+  },
+  {
+    title: "ChatGPT 合租",
+    href: "https://nf.video/HwL0y",
   },
   // {
   //   title: "Blog",
   //   href: "/blog",
   // },
-  {
-    title: "ChatGPT 合租",
-    href: "https://nf.video/HwL0y",
-  },
+
 ];
 
 export function Navbar() {

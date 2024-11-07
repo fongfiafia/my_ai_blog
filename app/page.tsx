@@ -4,6 +4,7 @@ import { MoveUpRightIcon, TerminalSquareIcon } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from 'next';
 import FAQSection from '@/components/FAQSection'; // 导入新的FAQ组件
+import FAQAISection from '@/components/FAQAISection'; // 导入新的FAQ组件
 import AIResourcesSection from '@/components/AIResourcesSection';
 import AIVideosSection from '@/components/AIVideosSection';
 import AITeachVideosSection from '@/components/AITeachVideosSection';
@@ -49,11 +50,12 @@ export default function Home() {
           className={buttonVariants({ className: "px-6 py-3 bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500 text-white font-bold rounded-lg shadow-lg transform transition-transform hover:scale-105", size: "lg" })}
           title="如果你不想看教程，试试AI cursor老师"
         >
-          AI Cursor老师
+          AI Cursor老师(Beta)
         </Link>
       </div>
 
       <FAQSection />
+      <FAQAISection />
 
       <AITeachVideosSection />
 
