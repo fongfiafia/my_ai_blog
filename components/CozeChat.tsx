@@ -122,3 +122,5 @@ const CozeChat = () => {
 };
 
 export default CozeChat;
+
+// https://www.coze.cn/docs/developer_guides/install_web_sdk#6e3ae74c
