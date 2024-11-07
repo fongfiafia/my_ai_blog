@@ -16,18 +16,18 @@ declare global {
                     asstBtn: {
                         isNeed?: boolean;
                     }
-                    // base: {
-                    //     layout: string;
-                    //     zIndex: number;
-                    // }
+                    base: {
+                        layout: string;
+                        zIndex: number;
+                    }
                 }
-            }) => void;
+            }) => any;
         };
     }
 }
 
 const CozeChat = () => {
-    const [chatElement, setChatElement] = useState<HTMLDivElement | null>(null);
+    const [sdk, setSdk] = useState<any>(null);
 
     useEffect(() => {
         // 加载 SDK 脚本
@@ -37,7 +37,7 @@ const CozeChat = () => {
 
         script.onload = () => {
             // SDK 加载完成后初始化
-            var sdk = new window.CozeWebSDK.WebChatClient({
+            const sdkInstance = new window.CozeWebSDK.WebChatClient({
                 config: {
                     bot_id: '7434442467988193306',
                 },
@@ -48,20 +48,26 @@ const CozeChat = () => {
                     asstBtn: {
                         isNeed: false,
                     },
-                    // base: {
-                    // layout: "pc",
-                    // zIndex: 1000,
-                    // }
+                    base: {
+                        layout: "pc",
+                        zIndex: 1000,
+                    }
                 }
             });
 
-            sdk.showChatBot();
+            setSdk(sdkInstance);
 
             // 等待聊天窗口 DOM 元素渲染完成
             const interval = setInterval(() => {
                 const chatWindowElement = document.querySelector('.fa8097ff55eabaa5782b');
                 if (chatWindowElement) {
-                    setChatElement(chatWindowElement as HTMLDivElement);
+                    // 设置聊天窗口居中
+                    chatWindowElement.style.position = 'fixed';
+                    chatWindowElement.style.top = '50%';
+                    chatWindowElement.style.left = '50%';
+                    chatWindowElement.style.transform = 'translate(-50%, -50%)';
+                    chatWindowElement.style.width = '75%';
+                    chatWindowElement.style.height = '80%';
                     clearInterval(interval);
                 }
             }, 100);
@@ -75,19 +81,22 @@ const CozeChat = () => {
         };
     }, []);
 
-    useEffect(() => {
-        if (chatElement) {
-            // 设置聊天窗口居中
-            chatElement.style.position = 'fixed';
-            chatElement.style.top = '50%';
-            chatElement.style.left = '50%';
-            chatElement.style.transform = 'translate(-50%, -50%)';
-            chatElement.style.width = '80%';
-            chatElement.style.height = '80%';
+    const handleButtonClick = () => {
+        if (sdk) {
+            sdk.showChatBot();
         }
-    }, [chatElement]);
+    };
 
-    return null;
+    return (
+        <div className="flex justify-center mt-4">
+            <button
+                onClick={handleButtonClick}
+                className="px-6 py-3 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-bold rounded-lg shadow-lg transform transition-transform hover:scale-105"
+            >
+                开始旅程
+            </button>
+        </div>
+    );
 };
 
 export default CozeChat;
