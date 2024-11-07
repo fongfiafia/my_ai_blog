@@ -17,8 +17,19 @@ declare global {
                         isNeed?: boolean;
                     }
                     base: {
+                        icon: string;
                         layout: string;
                         zIndex: number;
+                    },
+                    footer: {
+                        isShow?: boolean;
+                        expressionText: string,
+                        linkvars: {
+                            name: {
+                                text: string;
+                                link: string;
+                            }
+                        }
                     }
                 }
             }) => any;
@@ -49,8 +60,19 @@ const CozeChat = () => {
                         isNeed: false,
                     },
                     base: {
+                        icon: "https://www.lookai.top/logo.png",
                         layout: "pc",
                         zIndex: 1000,
+                    },
+                    footer: {
+                        isShow: true,
+                        expressionText: 'Powered by {{name}}',
+                        linkvars: {
+                            name: {
+                                text: '未生AI',
+                                link: 'https://www.youtube.com/@fiafiafong',
+                            }
+                        }
                     }
                 }
             });
