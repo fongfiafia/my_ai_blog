@@ -70,7 +70,7 @@ export const ROUTES: EachRoute[] = [
   // https://docs.cursor.com/cmdk/overview
 
   // {
-  //   title: "入土���程",
+  //   title: "入土程",
   //   href: "/high",
   //   noLink: true,
   //   items: [
