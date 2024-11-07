@@ -34,7 +34,7 @@ export default function Home() {
         在当下的AI时代，Cursor能够极大地赋能每一个普通人<br />
         本网站致力于帮助零基础的普通人<br />
         认识、学会使用Cursor<br />
-        落地创意和想法<br />
+        做出自己的产品<br />
         {/* 我们会持续更新，跟进Cursor的最新发展，帮助大家更好地运用这款工具，用Cursor将你的创意变为现实。 */}
       </p>
       <div className="flex flex-row items-center gap-5">
@@ -42,7 +42,7 @@ export default function Home() {
           href={`/cursor${page_routes[0].href}`}
           className={buttonVariants({ className: "px-6 py-3 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-bold rounded-lg shadow-lg transform transition-transform hover:scale-105", size: "lg" })}
         >
-          开启旅程
+          开始阅读教程
         </Link>
 
         <Link
@@ -50,6 +50,8 @@ export default function Home() {
           className={buttonVariants({ className: "px-6 py-3 bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500 text-white font-bold rounded-lg shadow-lg transform transition-transform hover:scale-105", size: "lg" })}
           title="如果你不想看教程，试试AI cursor老师"
         >
+          懒得看文字试试
+          <br />
           AI Cursor老师(Beta)
         </Link>
       </div>
