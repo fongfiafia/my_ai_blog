@@ -6,6 +6,7 @@ import { Metadata } from 'next';
 import FAQSection from '@/components/FAQSection'; // 导入新的FAQ组件
 import AIResourcesSection from '@/components/AIResourcesSection';
 import AIVideosSection from '@/components/AIVideosSection';
+import AITeachVideosSection from '@/components/AITeachVideosSection';
 import FunProjectsSection from '@/components/FunProjectsSection';
 
 export const metadata: Metadata = {
@@ -45,6 +46,8 @@ export default function Home() {
       </div>
 
       <FAQSection />
+
+      <AITeachVideosSection />
 
       <AIVideosSection />
 

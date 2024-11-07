@@ -59,11 +59,11 @@ export const ROUTES: EachRoute[] = [
     ],
   },
   {
-    title: "教学视频",
+    title: "实战视频",
     href: "/video",
     noLink: true,
     items: [
-      { title: "Cursor 教学视频🔥", href: "/cursor_teach_video" },
+      { title: "Cursor 实战视频🔥", href: "/cursor_teach_video" },
     ],
   },
 
