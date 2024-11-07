@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 declare global {
     interface Window {
@@ -16,17 +16,19 @@ declare global {
                     asstBtn: {
                         isNeed?: boolean;
                     }
-                    base: {
-                        layout: string;
-                        zIndex: number;
-                    }
+                    // base: {
+                    //     layout: string;
+                    //     zIndex: number;
+                    // }
                 }
             }) => void;
         };
     }
 }
 
-export default function CozeChat() {
+const CozeChat = () => {
+    const [chatElement, setChatElement] = useState<HTMLDivElement | null>(null);
+
     useEffect(() => {
         // 加载 SDK 脚本
         const script = document.createElement('script');
@@ -46,14 +48,23 @@ export default function CozeChat() {
                     asstBtn: {
                         isNeed: false,
                     },
-                    base: {
-                        layout: "pc",
-                        zIndex: 1000,
-                    }
+                    // base: {
+                    // layout: "pc",
+                    // zIndex: 1000,
+                    // }
                 }
             });
 
             sdk.showChatBot();
+
+            // 等待聊天窗口 DOM 元素渲染完成
+            const interval = setInterval(() => {
+                const chatWindowElement = document.querySelector('.fa8097ff55eabaa5782b');
+                if (chatWindowElement) {
+                    setChatElement(chatWindowElement as HTMLDivElement);
+                    clearInterval(interval);
+                }
+            }, 100);
         };
 
         document.body.appendChild(script);
@@ -64,5 +75,19 @@ export default function CozeChat() {
         };
     }, []);
 
+    useEffect(() => {
+        if (chatElement) {
+            // 设置聊天窗口居中
+            chatElement.style.position = 'fixed';
+            chatElement.style.top = '50%';
+            chatElement.style.left = '50%';
+            chatElement.style.transform = 'translate(-50%, -50%)';
+            chatElement.style.width = '80%';
+            chatElement.style.height = '80%';
+        }
+    }, [chatElement]);
+
     return null;
-} 
+};
+
+export default CozeChat;
