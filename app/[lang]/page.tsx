@@ -1,6 +1,6 @@
 import React from 'react';
 import { buttonVariants } from "@/components/ui/button";
-import { getPageRoutes } from "@/lib/routes-config";
+import { page_routes } from "@/lib/routes-config";
 import Link from "next/link";
 import { Metadata } from 'next';
 import FAQSection from '@/components/FAQSection';
@@ -10,11 +10,10 @@ import AIVideosSection from '@/components/AIVideosSection';
 import AITeachVideosSection from '@/components/AITeachVideosSection';
 import FunProjectsSection from '@/components/FunProjectsSection';
 import { getDictionary } from '@/lib/dictionary'
-import { i18n } from '@/lib/i18n-config'
-import type { Locale } from '@/lib/i18n-config'
+import { i18n, Locale } from '@/lib/i18n-config'
 
 export async function generateMetadata({ params: { lang } }: { params: { lang: Locale } }): Promise<Metadata> {
-    const dict = await getDictionary(lang as Locale)
+    const dict = await getDictionary(lang)
 
     return {
         title: dict.metadata.title,
@@ -32,24 +31,23 @@ export async function generateMetadata({ params: { lang } }: { params: { lang: L
 }
 
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
-    const dict = await getDictionary(lang as Locale)
-    const pageRoutes = getPageRoutes(lang)
+    const dict = await getDictionary(lang)
 
     return (
-      <div className="flex flex-col items-center justify-center text-center px-2 py-8">
-          <h1 className="text-3xl font-bold mb-4 sm:text-6xl">
-              {dict.home.title}
-          </h1>
-          <p className="mb-8 sm:text-xl max-w-[800px] text-muted-foreground leading-relaxed">
-              {dict.home.subtitle.split('\n').map((line, i) => (
-                  <React.Fragment key={i}>
-                      {line}<br />
-                  </React.Fragment>
-              ))}
-          </p>
-          <div className="flex flex-row items-center gap-5">
-              <Link
-                  href={`/${lang}/cursor${pageRoutes[0].href}`}
+        <div className="flex flex-col items-center justify-center text-center px-2 py-8">
+            <h1 className="text-3xl font-bold mb-4 sm:text-6xl">
+                {dict.home.title}
+            </h1>
+            <p className="mb-8 sm:text-xl max-w-[800px] text-muted-foreground leading-relaxed">
+                {dict.home.subtitle.split('\n').map((line, i) => (
+                    <React.Fragment key={i}>
+                        {line}<br />
+                    </React.Fragment>
+                ))}
+            </p>
+            <div className="flex flex-row items-center gap-5">
+                <Link
+                    href={`/${lang}/cursor${page_routes[0].href}`}
                   className={buttonVariants({ className: "px-6 py-3 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-bold rounded-lg shadow-lg transform transition-transform hover:scale-105", size: "lg" })}
               >
                   {dict.home.startReading}
@@ -69,6 +67,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
           </div>
 
           <FAQSection />
+
           <FAQAISection />
 
           <AITeachVideosSection />
@@ -80,4 +79,4 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
           <AIResourcesSection />
       </div>
   )
-} 
+}

@@ -13,7 +13,9 @@ import Image from "next/image";
 import { useParams } from 'next/navigation';
 
 export function Logo() {
-  const { locale } = useParams();
+  const pathname = usePathname();
+  const locale = pathname.split('/')[1] || i18n.defaultLocale;
+
   return (
     <Link href={`/${locale}`} className="flex items-center gap-2">
       <Image

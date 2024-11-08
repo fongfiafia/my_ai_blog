@@ -1,3 +1,5 @@
+'use client'
+
 import {
   Sheet,
   SheetClose,
@@ -5,12 +7,15 @@ import {
   SheetHeader,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Logo } from "./navbar";
+import { Logo, NAVLINKS } from "./navbar";
 import { Button } from "./ui/button";
 import { AlignLeftIcon } from "lucide-react";
 import { FooterButtons } from "./footer";
 import { DialogTitle } from "./ui/dialog";
 import DocsMenu from "./docs-menu";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { i18n } from "@/lib/i18n-config";
 
 export function Leftbar() {
   return (
@@ -23,6 +28,9 @@ export function Leftbar() {
 }
 
 export default function SheetLeftbar() {
+  const pathname = usePathname();
+  const locale = pathname.split('/')[1] || i18n.defaultLocale;
+
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -39,7 +47,27 @@ export default function SheetLeftbar() {
         </SheetHeader>
         <div className="flex flex-col gap-4 overflow-y-auto">
           <div className="flex flex-col gap-2.5 mt-3 mx-2 px-5">
-            {/* <NavMenu isSheet /> */}
+            {NAVLINKS.map((link) => (
+              link.href.startsWith('http') ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="hover:text-foreground transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {link.title}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={`/${locale}/${link.href}`}
+                  className="hover:text-foreground transition-colors"
+                >
+                  {link.title}
+                </Link>
+              )
+            ))}
           </div>
           <div className="mx-2 px-5">
             <DocsMenu isSheet />
