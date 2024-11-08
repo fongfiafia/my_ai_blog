@@ -1,6 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Author, BlogMdxFrontmatter, getAllBlogs } from "@/lib/markdown";
-import { formatDate2, stringToDate } from "@/lib/utils";
+import { formatDate, stringToDate } from "@/lib/utils";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -61,7 +61,7 @@ function BlogCard({
       <p className="text-sm text-muted-foreground">{description}</p>
       <div className="flex items-center justify-between w-full mt-auto">
         <p className="text-[13px] text-muted-foreground">
-          Published on {formatDate2(date)}
+          Published on {formatDate(date)}
         </p>
         <AvatarGroup users={authors} />
       </div>

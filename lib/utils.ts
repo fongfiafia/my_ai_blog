@@ -10,7 +10,7 @@ export function formatDate(date: string | Date): string {
     month: 'long',
     day: 'numeric'
   });
-} 
+}
 
 import { ROUTES } from './routes-config';
 
@@ -48,4 +48,8 @@ export function advanceSearch(searchTerm: string): SearchResult[] {
 
   searchRoutes(ROUTES);
   return results;
+}
+
+export function stringToDate(dateString: string): Date {
+  return new Date(dateString);
 }
