@@ -1,0 +1,15 @@
+{
+    "common": {
+        "nav": {
+            "home": "Home",
+            "tutorials": "Tutorials",
+            "blog": "Blog",
+            "about": "About"
+        },
+        "buttons": {
+            "readMore": "Read More",
+            "back": "Back",
+            "switchLanguage": "Switch Language"
+        }
+    }
+}

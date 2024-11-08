@@ -1,0 +1,23 @@
+{
+    "common": {
+        "nav": {
+            "home": "首页",
+            "tutorials": "教程",
+            "blog": "博客",
+            "about": "关于"
+        },
+        "buttons": {
+            "readMore": "开始阅读教程",
+            "back": "返回",
+            "switchLanguage": "切换语言",
+            "tryAITeacher": "试试AI Cursor老师"
+        },
+        "home": {
+            "title": "零基础小白Cursor学习网站",
+            "description": "在当下的AI时代，Cursor能够极大地赋能每一个普通人",
+            "subDescription1": "本网站致力于帮助零基础的普通人",
+            "subDescription2": "认识、学会使用Cursor",
+            "subDescription3": "做出自己的产品"
+        }
+    }
+}
