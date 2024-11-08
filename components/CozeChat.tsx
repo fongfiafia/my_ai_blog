@@ -81,7 +81,7 @@ const CozeChat = () => {
 
             // 等待聊天窗口 DOM 元素渲染完成
             const interval = setInterval(() => {
-                const chatWindowElement = document.querySelector('.fa8097ff55eabaa5782b');
+                const chatWindowElement = document.querySelector('.fa8097ff55eabaa5782b') as HTMLElement;
                 if (chatWindowElement) {
                     // 设置聊天窗口居中
                     chatWindowElement.style.position = 'fixed';
