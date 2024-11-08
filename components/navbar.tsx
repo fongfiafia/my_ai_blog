@@ -5,17 +5,23 @@ import { GithubIcon, TwitterIcon } from "lucide-react";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import Search from "./search";
-import { SheetLeftbar } from "./leftbar";
+import SheetLeftbar from "./leftbar";
 import LanguageSwitcher from "./language-switcher";
 import { usePathname } from 'next/navigation';
 import { i18n } from '@/lib/i18n-config';
+import Image from "next/image";
+import { useParams } from 'next/navigation';
 
-function Logo() {
-  const pathname = usePathname();
-  const locale = pathname.split('/')[1] || i18n.defaultLocale;
-
+export function Logo() {
+  const { locale } = useParams();
   return (
     <Link href={`/${locale}`} className="flex items-center gap-2">
+      <Image
+        src="/logo_round.png"
+        alt="LookAI Logo"
+        width={32}
+        height={32}
+      />
       <span className="font-bold text-xl">LookAI.top</span>
     </Link>
   );
