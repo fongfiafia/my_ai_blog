@@ -1,39 +1,49 @@
+'use client'
+
 import { ModeToggle } from "@/components/theme-toggle";
-import { GithubIcon, TwitterIcon, CommandIcon, Crosshair } from "lucide-react";
+import { GithubIcon, TwitterIcon } from "lucide-react";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import Search from "./search";
-import Anchor from "./anchor";
 import { SheetLeftbar } from "./leftbar";
-import { page_routes } from "@/lib/routes-config";
-import { SheetClose } from "@/components/ui/sheet";
-import LanguageSwitcher from './language-switcher'
+import LanguageSwitcher from "./language-switcher";
+import { usePathname } from 'next/navigation';
+import { i18n } from '@/lib/i18n-config';
+
+function Logo() {
+  const pathname = usePathname();
+  const locale = pathname.split('/')[1] || i18n.defaultLocale;
+
+  return (
+    <Link href={`/${locale}`} className="flex items-center gap-2">
+      <span className="font-bold text-xl">LookAI.top</span>
+    </Link>
+  );
+}
 
 export const NAVLINKS = [
   {
     title: "Cursor 教程",
-    href: `/cursor${page_routes[0].href}`,
+    href: "cursor/instruction/instruction",
   },
   {
     title: "AI Cursor老师",
-    href: "/ai-teacher",
+    href: "ai-teacher",
   },
   {
     title: "做点好玩的",
-    href: "/fun",
+    href: "fun",
   },
   {
     title: "ChatGPT 合租",
     href: "https://nf.video/HwL0y",
   },
-  // {
-  //   title: "Blog",
-  //   href: "/blog",
-  // },
-
 ];
 
 export function Navbar() {
+  const pathname = usePathname();
+  const locale = pathname.split('/')[1] || i18n.defaultLocale;
+
   return (
     <nav className="w-full border-b h-16 sticky top-0 z-50 bg-background">
       <div className="sm:container mx-auto w-[95vw] h-full flex items-center justify-between md:gap-2">
@@ -44,7 +54,27 @@ export function Navbar() {
               <Logo />
             </div>
             <div className="lg:flex hidden items-center gap-4 text-sm font-medium text-muted-foreground">
-              <NavMenu />
+              {NAVLINKS.map((link) => (
+                link.href.startsWith('http') ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="hover:text-foreground transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.title}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={`/${locale}/${link.href}`}
+                    className="hover:text-foreground transition-colors"
+                  >
+                    {link.title}
+                  </Link>
+                )
+              ))}
             </div>
           </div>
         </div>
@@ -75,41 +105,5 @@ export function Navbar() {
         </div>
       </div>
     </nav>
-  );
-}
-
-export function Logo() {
-  return (
-    <Link href="/" className="flex items-center gap-2.5">
-      <Crosshair className="w-6 h-6 text-muted-foreground" strokeWidth={2} />
-      <h2 className="text-md font-bold font-code">LookAI.top</h2>
-    </Link>
-  );
-}
-
-export function NavMenu({ isSheet = false }) {
-  return (
-    <>
-      {NAVLINKS.map((item) => {
-        const Comp = (
-          <Anchor
-            key={item.title + item.href}
-            activeClassName="!text-primary md:font-semibold font-medium"
-            absolute
-            className="flex items-center gap-1 dark:text-stone-300/85 text-stone-800"
-            href={item.href}
-          >
-            {item.title}
-          </Anchor>
-        );
-        return isSheet ? (
-          <SheetClose key={item.title + item.href} asChild>
-            {Comp}
-          </SheetClose>
-        ) : (
-          Comp
-        );
-      })}
-    </>
   );
 }
