@@ -96,7 +96,7 @@ export default function Search() {
                       <div
                         className={cn(
                           "flex items-center w-fit h-full py-3 gap-1.5 px-2",
-                          level > 1 && "border-l pl-4"
+                          level > 1 ? "border-l pl-4" : ""
                         )}
                       >
                         <FileIcon className="h-[1.1rem] w-[1.1rem] mr-1" />{" "}
