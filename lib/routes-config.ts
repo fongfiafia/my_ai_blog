@@ -1,4 +1,4 @@
-import type { Locale } from './i18n-config'
+import { Locale, i18n } from './i18n-config'
 
 export type EachRoute = {
   title: string;
@@ -131,9 +131,15 @@ const EN_ROUTES: EachRoute[] = [
   },
 ];
 
+// 将路由配置改为 Record 类型
+const ROUTES_CONFIG: Record<Locale, EachRoute[]> = {
+  cn: CN_ROUTES,
+  en: EN_ROUTES,
+};
+
 // 根据语言获取路由配置
-export const getRoutes = (locale: Locale = 'cn'): EachRoute[] => {
-  return locale === 'cn' ? CN_ROUTES : EN_ROUTES;
+export const getRoutes = (locale: Locale): EachRoute[] => {
+  return ROUTES_CONFIG[locale] || ROUTES_CONFIG[i18n.defaultLocale];
 };
 
 type Page = { title: string; href: string };
@@ -150,7 +156,7 @@ function getRecursiveAllLinks(node: EachRoute) {
   return ans;
 }
 
-export const getPageRoutes = (locale: Locale = 'cn'): Page[] => {
+export const getPageRoutes = (locale: Locale): Page[] => {
   return getRoutes(locale).map((it) => getRecursiveAllLinks(it)).flat();
 };
 

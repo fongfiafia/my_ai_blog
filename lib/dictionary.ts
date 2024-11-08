@@ -1,10 +1,11 @@
 import type { Locale } from './i18n-config'
+import { i18n } from './i18n-config'
 
 const dictionaries = {
-    en: () => import('@/dictionaries/en').then(module => module.dictionary),
     cn: () => import('@/dictionaries/zh').then(module => module.dictionary),
-}
+    en: () => import('@/dictionaries/en').then(module => module.dictionary),
+} as const
 
 export const getDictionary = async (locale: Locale) => {
-    return dictionaries[locale]()
+    return dictionaries[locale]?.() || dictionaries[i18n.defaultLocale]();
 } 

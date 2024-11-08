@@ -1,7 +1,7 @@
 'use client'
 
 import { usePathname, useRouter } from 'next/navigation'
-import { i18n } from '@/lib/i18n-config'
+import { i18n, languageNames, type Locale } from '@/lib/i18n-config'
 import { GlobeIcon } from 'lucide-react'
 import {
     DropdownMenu,
@@ -13,11 +13,6 @@ import { Button } from './ui/button'
 import { useEffect } from 'react'
 import Cookies from 'js-cookie'
 
-const languageNames = {
-    cn: '简体中文',
-    en: 'English'
-} as const
-
 export default function LanguageSwitcher() {
     const pathName = usePathname()
     const router = useRouter()
@@ -26,7 +21,7 @@ export default function LanguageSwitcher() {
         if (!pathName) return '/'
 
         const segments = pathName.split('/')
-        if (segments[1] && i18n.locales.includes(segments[1] as any)) {
+        if (segments[1] && i18n.locales.includes(segments[1] as Locale)) {
             segments[1] = locale
         } else {
             segments.splice(1, 0, locale)
@@ -55,13 +50,13 @@ export default function LanguageSwitcher() {
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-                {i18n.locales.map((locale) => (
+                {Object.entries(languageNames).map(([locale, name]) => (
                     <DropdownMenuItem
                         key={locale}
                         className={`cursor-pointer ${currentLocale === locale ? 'font-bold' : ''}`}
                         onClick={() => switchLanguage(locale)}
                     >
-                        {languageNames[locale]}
+                        {name}
                     </DropdownMenuItem>
                 ))}
             </DropdownMenuContent>

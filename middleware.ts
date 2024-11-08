@@ -3,6 +3,7 @@ import type { NextRequest } from 'next/server'
 import { i18n } from '@/lib/i18n-config'
 import { match as matchLocale } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
+import type { Locale } from '@/lib/i18n-config'
 
 function getLocale(request: NextRequest): string {
     // 1. 检查URL中是否已有语言参数
@@ -18,7 +19,7 @@ function getLocale(request: NextRequest): string {
 
     // 2. 检查cookie中是否有语言设置
     const cookieLocale = request.cookies.get('NEXT_LOCALE')?.value
-    if (cookieLocale && i18n.locales.includes(cookieLocale as any)) {
+    if (cookieLocale && i18n.locales.includes(cookieLocale as Locale)) {
         return cookieLocale
     }
 
@@ -34,6 +35,7 @@ function getLocale(request: NextRequest): string {
             return locale
         } catch (e) {
             console.error('Error matching locale:', e)
+            return i18n.defaultLocale
         }
     }
 
