@@ -1,3 +1,17 @@
+/**
+ * 格式化日期为易读格式
+ * @param date - 日期字符串或Date对象
+ * @returns 格式化后的日期字符串，格式如：2024年3月21日
+ */
+export function formatDate(date: string | Date): string {
+  const d = new Date(date);
+  return d.toLocaleDateString('zh-CN', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+} 
+
 import { ROUTES } from './routes-config';
 
 export function cn(...classes: string[]) {
