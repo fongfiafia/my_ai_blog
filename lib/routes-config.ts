@@ -1,4 +1,4 @@
-// for page navigation & to sort on leftbar
+import type { Locale } from './i18n-config'
 
 export type EachRoute = {
   title: string;
@@ -7,7 +7,8 @@ export type EachRoute = {
   items?: EachRoute[];
 };
 
-export const ROUTES: EachRoute[] = [
+// 中文路由配置
+const CN_ROUTES: EachRoute[] = [
   {
     title: "开卷有益",
     href: "/instruction",
@@ -66,111 +67,93 @@ export const ROUTES: EachRoute[] = [
       { title: "Cursor 实战视频🔥", href: "/cursor_teach_video" },
     ],
   },
-
-  // https://docs.cursor.com/cmdk/overview
-
-  // {
-  //   title: "入土程",
-  //   href: "/high",
-  //   noLink: true,
-  //   items: [
-  //     { title: "Cursor中的大模型选择和使用", href: "/what_is_cursor" },
-  //     { title: "深入理解Cursor的AI功能", href: "/cursor_download" },
-  //     { title: "Cursor的版本控制集成", href: "/Cursor_interface" },
-  //     { title: "Cursor的扩展和自定义", href: "/first_project_cursor" },
-  //     // { title: "Cursor的AI辅助功能初体验", href: "/try_chat_cursor" },
-  //     // { title: "科学上网", href: "/vpn" },
-  //   ],
-  // },
-  // {
-  //   title: "Getting Started",
-  //   href: "/getting-started",
-  //   noLink: true,
-  //   items: [
-  //     { title: "Introduction", href: "/introduction" },
-  //     {
-  //       title: "Installation",
-  //       href: "/installation",
-  //       items: [
-  //         { title: "Laravel", href: "/laravel" },
-  //         { title: "React", href: "/react" },
-  //         { title: "Gatsby", href: "/gatsby" },
-  //       ],
-  //     },
-  //     { title: "Quick Start Guide", href: "/quick-start-guide" },
-  //     {
-  //       title: "Project Structure",
-  //       href: "/project-structure",
-  //       items: [
-  //         { title: "Layouts", href: "/layouts" },
-  //         { title: "Integrations", href: "/integrations" },
-  //         {
-  //           title: "Manual",
-  //           href: "/manual",
-  //           items: [
-  //             { title: "JavaScript", href: "/javascript" },
-  //             { title: "Typescript", href: "/typescript" },
-  //             { title: "Golang", href: "/golang" },
-  //           ],
-  //         },
-  //       ],
-  //     },
-  //     { title: "Changelog", href: "/changelog" },
-  //     {
-  //       title: "FAQ",
-  //       href: "/faq",
-  //     },
-  //   ],
-  // },
-  // {
-  //   title: "Server Actions",
-  //   href: "/server-actions",
-  //   noLink: true,
-  //   items: [
-  //     { title: "getSession", href: "/getSession" },
-  //     { title: "getToken", href: "/getToken" },
-  //     { title: "getRole", href: "/getRole" },
-  //   ],
-  // },
-  // {
-  //   title: "React Hooks",
-  //   href: "/react-hooks",
-  //   noLink: true,
-  //   items: [
-  //     { title: "useSession", href: "/use-session" },
-  //     { title: "useFetch", href: "/use-fetch" },
-  //     { title: "useAuth", href: "/use-auth" },
-  //     { title: "useProduct", href: "/use-product" },
-  //     { title: "useOrder", href: "/use-order" },
-  //     { title: "useCart", href: "/use-cart" },
-  //     { title: "usePayment", href: "/use-payment" },
-  //     { title: "useShipping", href: "/use-shipping" },
-  //     { title: "useNotification", href: "/use-notification" },
-  //     { title: "useReview", href: "/use-review" },
-  //     { title: "useInventory", href: "/use-inventory" },
-  //     { title: "useUser", href: "/use-user" },
-  //     { title: "useSettings", href: "/use-settings" },
-  //     { title: "useAnalytics", href: "/use-analytics" },
-  //     { title: "useTheme", href: "/use-theme" },
-  //     { title: "useRouter", href: "/use-router" },
-  //     { title: "useData", href: "/use-data" },
-  //   ],
-  // },
 ];
+
+// 英文路由配置
+const EN_ROUTES: EachRoute[] = [
+  {
+    title: "Introduction",
+    href: "/instruction",
+    noLink: true,
+    items: [
+      { title: "Preface", href: "/instruction" },
+    ],
+  },
+  {
+    title: "Basic Tutorial",
+    href: "/basic",
+    noLink: true,
+    items: [
+      { title: "What is Cursor", href: "/what_is_cursor" },
+      { title: "Download & Installation", href: "/cursor_download" },
+      { title: "Interface Layout 🎬", href: "/cursor_interface" },
+      { title: "Create First Project 🎬", href: "/first_project_cursor" },
+      { title: "Try AI Features 🎬", href: "/try_chat_cursor" },
+    ],
+  },
+  {
+    title: "Advanced Tutorial",
+    href: "/advance",
+    noLink: true,
+    items: [
+      { title: "Smart Code Completion (Tab)", href: "/cursor_tab" },
+      { title: "AI Code Generation (Cmd+K)", href: "/cursor_cmdk" },
+      { title: "AI Chat Features (Chat)", href: "/cursor_chat" },
+      { title: "Cursor Composer (Cmd+I)", href: "/cursor_composer" },
+    ],
+  },
+  {
+    title: "Pro Tutorial",
+    href: "/promote",
+    noLink: true,
+    items: [
+      { title: "Choose AI Model", href: "/cursor_change_model" },
+      { title: "Build Context 🔥", href: "/cursor_context" },
+    ],
+  },
+  {
+    title: "Tips & Tricks",
+    href: "/tips",
+    noLink: true,
+    items: [
+      { title: "Free Plan Tips", href: "/cursor_free" },
+      { title: "Cursor + Git Version Control 🔥", href: "/cursor_git" },
+      { title: "Cursor + Deepseek Budget Combo 🔥", href: "/cursor_deepseek" },
+    ],
+  },
+  {
+    title: "Practice Videos",
+    href: "/video",
+    noLink: true,
+    items: [
+      { title: "Cursor Practice Videos 🔥", href: "/cursor_teach_video" },
+    ],
+  },
+];
+
+// 根据语言获取路由配置
+export const getRoutes = (locale: Locale = 'cn'): EachRoute[] => {
+  return locale === 'cn' ? CN_ROUTES : EN_ROUTES;
+};
 
 type Page = { title: string; href: string };
 
-function getRecurrsiveAllLinks(node: EachRoute) {
+function getRecursiveAllLinks(node: EachRoute) {
   const ans: Page[] = [];
   if (!node.noLink) {
     ans.push({ title: node.title, href: node.href });
   }
   node.items?.forEach((subNode) => {
     const temp = { ...subNode, href: `${node.href}${subNode.href}` };
-
-    ans.push(...getRecurrsiveAllLinks(temp));
+    ans.push(...getRecursiveAllLinks(temp));
   });
   return ans;
 }
 
-export const page_routes = ROUTES.map((it) => getRecurrsiveAllLinks(it)).flat();
+export const getPageRoutes = (locale: Locale = 'cn'): Page[] => {
+  return getRoutes(locale).map((it) => getRecursiveAllLinks(it)).flat();
+};
+
+// 为了向后兼容，保留原来的导出
+export const ROUTES = CN_ROUTES;
+export const page_routes = getPageRoutes('cn');
