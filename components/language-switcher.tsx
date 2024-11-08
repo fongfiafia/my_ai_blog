@@ -10,7 +10,6 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Button } from './ui/button'
-import { useEffect } from 'react'
 import Cookies from 'js-cookie'
 
 export default function LanguageSwitcher() {
@@ -30,13 +29,13 @@ export default function LanguageSwitcher() {
     }
 
     const switchLanguage = (locale: string) => {
-        // 设置cookie
         Cookies.set('NEXT_LOCALE', locale, { path: '/' })
-        // 重定向到新的URL
         router.push(redirectedPathName(locale))
     }
 
     const currentLocale = pathName.split('/')[1] || i18n.defaultLocale
+
+    const buttonText = currentLocale === 'cn' ? '中' : 'EN'
 
     return (
         <DropdownMenu>
@@ -44,9 +43,10 @@ export default function LanguageSwitcher() {
                 <Button
                     variant="ghost"
                     size="icon"
-                    className="flex gap-2 items-center"
+                    className="flex gap-1.5 items-center px-3"
                 >
                     <GlobeIcon className="h-[1.1rem] w-[1.1rem]" />
+                    <span className="text-sm font-medium">{buttonText}</span>
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">

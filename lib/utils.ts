@@ -14,8 +14,8 @@ export function formatDate(date: string | Date): string {
 
 import { ROUTES } from './routes-config';
 
-export function cn(...classes: string[]) {
-  return classes.filter(Boolean).join(' ');
+export function cn(...inputs: (string | boolean | undefined)[]) {
+  return inputs.filter(Boolean).join(' ')
 }
 
 interface SearchResult {

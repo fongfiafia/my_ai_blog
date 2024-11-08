@@ -1,11 +1,9 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import { i18n } from '@/lib/i18n-config'
-import { match as matchLocale } from '@formatjs/intl-localematcher'
-import Negotiator from 'negotiator'
 import type { Locale } from '@/lib/i18n-config'
 
-function getLocale(request: NextRequest): string {
+function getLocale(request: NextRequest): Locale {
     // 1. 检查URL中是否已有语言参数
     const pathname = request.nextUrl.pathname
     const pathnameIsMissingLocale = i18n.locales.every(
@@ -13,34 +11,18 @@ function getLocale(request: NextRequest): string {
     )
 
     if (!pathnameIsMissingLocale) {
-        const locale = pathname.split('/')[1]
-        return locale
-    }
+      const locale = pathname.split('/')[1] as Locale
+      return locale
+  }
 
     // 2. 检查cookie中是否有语言设置
     const cookieLocale = request.cookies.get('NEXT_LOCALE')?.value
     if (cookieLocale && i18n.locales.includes(cookieLocale as Locale)) {
-        return cookieLocale
-    }
+      return cookieLocale as Locale
+  }
 
-    // 3. 根据Accept-Language头部获取首选语言
-    const headers = new Headers(request.headers)
-    const acceptLanguage = headers.get('accept-language')
-    if (acceptLanguage) {
-        try {
-            const negotiator = new Negotiator({ headers: { 'accept-language': acceptLanguage } })
-            const availableLocales = i18n.locales
-            const languages = negotiator.languages()
-            const locale = matchLocale(languages, availableLocales, i18n.defaultLocale)
-            return locale
-        } catch (e) {
-            console.error('Error matching locale:', e)
-            return i18n.defaultLocale
-        }
-    }
-
-    // 4. 默认返回默认语言
-    return i18n.defaultLocale
+    // 3. 默认返回英文
+    return 'en'
 }
 
 export function middleware(request: NextRequest) {
@@ -51,13 +33,12 @@ export function middleware(request: NextRequest) {
         [
             '/manifest.json',
             '/favicon.ico',
-            // Your other public files
-        ].includes(pathname) ||
-        pathname.includes('.') ||
-        pathname.startsWith('/api/')
-    ) {
-        return
-    }
+      ].includes(pathname) ||
+      pathname.includes('.') ||
+      pathname.startsWith('/api/')
+  ) {
+      return
+  }
 
     // 获取当前语言
     const locale = getLocale(request)
@@ -81,7 +62,6 @@ export function middleware(request: NextRequest) {
 
 export const config = {
     matcher: [
-        // Skip all internal paths (_next)
         '/((?!api|_next/static|_next/image|favicon.ico).*)',
     ],
 } 
