@@ -7,6 +7,7 @@ import Anchor from "./anchor";
 import { SheetLeftbar } from "./leftbar";
 import { page_routes } from "@/lib/routes-config";
 import { SheetClose } from "@/components/ui/sheet";
+import LanguageSwitcher from './language-switcher'
 
 export const NAVLINKS = [
   {
@@ -67,6 +68,7 @@ export function Navbar() {
               >
                 <TwitterIcon className="h-[1.1rem] w-[1.1rem]" />
               </Link>
+              <LanguageSwitcher />
               <ModeToggle />
             </div>
           </div>
