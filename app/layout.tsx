@@ -3,7 +3,6 @@ import { ThemeProvider } from "@/components/contexts/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { Footer } from "@/components/footer";
 import Script from 'next/script';
 import "./globals.css";
 
@@ -173,7 +172,6 @@ export default function RootLayout({
           <main className="sm:container mx-auto w-[90vw] h-auto">
             {children}
           </main>
-          {/* <Footer /> */}
         </ThemeProvider>
         <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1362518378038131" crossOrigin="anonymous" />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-R61S9VMKCP" />
