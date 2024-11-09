@@ -108,7 +108,7 @@ const EN_ROUTES: EachRoute[] = [
     noLink: true,
     items: [
       { title: "Choose AI Model", href: "/cursor_change_model" },
-      { title: "Build Context 🔥", href: "/cursor_context" },
+      // { title: "Build Context 🔥", href: "/cursor_context" },
     ],
   },
   {
@@ -118,7 +118,7 @@ const EN_ROUTES: EachRoute[] = [
     items: [
       { title: "Free Plan Tips", href: "/cursor_free" },
       { title: "Cursor + Git Version Control 🔥", href: "/cursor_git" },
-      { title: "Cursor + Deepseek Budget Combo 🔥", href: "/cursor_deepseek" },
+      // { title: "Cursor + Deepseek Budget Combo 🔥", href: "/cursor_deepseek" },
     ],
   },
   {

@@ -1,0 +1,108 @@
+# Cursor AI Chat Explained
+
+## Overview
+
+Cursor Chat is a powerful AI-assisted coding tool that allows you to converse directly with AI in the editor to solve programming problems. This guide will cover the main features and usage methods of Cursor Chat, helping you make the most of this tool to improve your coding efficiency.
+
+## Opening Cursor Chat
+
+![chat](/chat.png)
+
+1. **Keyboard Shortcut**:
+   - Use `Ctrl/⌘ + L` to open the AI panel and focus on the chat input box.
+
+2. **Manually Opening**:
+   - Click the AI panel icon on the right side of the editor.
+
+## Basic Features of Chat
+
+### Multi-turn Conversations
+
+Cursor Chat supports multi-turn conversations, allowing you to:
+
+1. Enter a question or command in the input box.
+2. Press `Enter` to send the message.
+3. The AI will generate a reply, and you can continue to ask follow-up questions or request clarifications.
+
+### Context Understanding
+
+Chat will automatically include the current file as context. You can:
+
+- Enable the "Default to no context" option in Cursor settings to disable context by default.
+- Use `Alt/Option + Enter` to send a message without context (this is rarely needed).
+- You can also type `@` in the input box to select specific content you want to reference, or manually add files you want to link to.
+- You can directly copy a URL or even an image, as Cursor supports image recognition.
+
+![cursor_context](/context.png)
+
+### Viewing Chat History
+
+1. Click the "Previous Chats" button at the top right corner of the AI panel (the clock icon).
+2. Or use the keyboard shortcut `Ctrl/⌘ + Alt/Option + L`.
+
+In chat history, you can:
+- Click on any conversation thread to view details.
+- Edit conversation titles.
+- Delete unnecessary conversations.
+
+### Switching Models
+
+You can switch between different AI models by choosing the one you prefer. Cursor Chat will use the selected model for generating responses. The model you choose will be saved for future use, so you won’t need to change it every time you open Cursor Chat.
+
+![cursor_model](/cursor_model.png)
+
+## Advanced Features
+
+### Apply Code Blocks
+
+1. When the AI generates a code suggestion, you will see an "Apply" button in the top-right corner of the code block.
+2. Clicking "Apply" will directly apply the code to your file.
+3. After applying, you can:
+   - Use `Ctrl/⌘ + Enter` to accept the change.
+   - Use `Ctrl/⌘ + Backspace` to reject the change.
+
+![cursor_apply](/cursor_apply.png)
+
+The file will show the modified content, with green indicating the new changes and red indicating the original content. Clicking "Accept" confirms the modification.
+
+![cursor_accept](/cursor_accept.png)
+
+### Contextual References
+
+![cursor_@](/cursor_@.png)
+
+Use the `@` symbol to quickly reference content in your project:
+
+1. `@Code`: Reference a specific code snippet in the current file.
+2. `@Files`: Reference the entire content of a file.
+3. `@Folders`: Reference all files within a folder.
+4. `@Git`: Reference Git-related information, such as PRs or pending changes.
+5. `@Codebase`: Search the entire codebase to provide more comprehensive context.
+
+### External Information References
+
+1. `@Doc`: Bring in specific documentation for a tech stack.
+2. `@Web`: Allow Chat to search for and reference web-based information.
+
+### Notepad Feature
+
+Notepad is a powerful contextual template feature.
+
+1. Save important information in Notepad, such as project background, coding standards, etc.
+2. Use `@Notepad` in the chat to easily reference this saved information.
+
+## Usage Tips
+
+1. **Use Context Wisely**: Provide enough but not too much related information to help the AI better understand and solve the problem.
+
+2. **Leverage Multi-turn Conversations**: For complex issues, use multiple interactions to guide the AI towards the best solution.
+
+3. **Combine with Apply Feature**: Use the Apply feature to quickly apply code suggestions and test them.
+
+4. **Make Use of External References**: Use `@Doc` and `@Web` to get the latest and most relevant external knowledge.
+
+5. **Create Personalized Notepad Templates**: Create Notepad templates for common tasks or project-specific information to improve efficiency.
+
+## Conclusion
+
+Cursor Chat is a powerful and flexible AI-assisted coding tool. By effectively using context references, the Apply feature, and external information, you can significantly enhance your coding efficiency and quality. As you gain more experience with the tool, you will find that Cursor Chat becomes an indispensable assistant in your programming workflow.

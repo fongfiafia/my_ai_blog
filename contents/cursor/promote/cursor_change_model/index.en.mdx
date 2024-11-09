@@ -1,0 +1,72 @@
+# Cursor Model Selection and API Key Configuration
+
+## Overview
+
+Cursor provides multiple AI models to choose from, and it allows users to configure their own API keys for greater flexibility. This guide explains how to select different AI models and configure custom API keys, enabling you to make the most of Cursor’s AI capabilities.
+
+![change_model](/change_model.png)
+
+## Selecting an AI Model
+
+Cursor supports several AI models, and you can easily switch between them based on your needs.
+
+### Standard Model Selection
+
+In Cursor Chat, `Ctrl/⌘ + K`, and `Terminal Ctrl/⌘ + K` functions, you will find a dropdown menu under the AI input box where you can select the model you want to use. The default available models include:
+
+- **GPT-4o**  
+- **GPT-4**  
+- **Claude 3.5 Sonnet**  
+- **`cursor-small`** (Cursor's custom model, faster and with no usage limits)
+
+### Adding Custom Models
+
+If you wish to use other models not listed by default, you can add them yourself:
+
+1. Go to `Cursor Settings` > `Models` > `OpenAI API Key`.
+2. Add the model name that you want to use.
+
+## Configuring API Keys
+
+Cursor allows you to use your own API keys to access AI services based on your specific needs and cost preferences.
+
+### OpenAI API Key
+
+1. **Get the API Key**: Obtain your API key from [OpenAI’s website](https://platform.openai.com/account/api-keys).
+2. **Configure the API Key**:
+   - Go to `Cursor Settings` > `Models` > `OpenAI API Key`.
+   - Enter your API key.
+   - Click the "Verify" button to ensure the key is configured correctly.
+
+### Anthropic API Key
+
+Similar to OpenAI, you can set up your own Anthropic API key to use Claude series models (e.g., Claude 1, Claude 2, Claude 3, etc.).
+
+### Google API Key
+
+You can also configure a Google API key to use models like `gemini-1.5-flash-500k` or other Google models supported by Cursor.
+
+### Azure Integration
+
+Cursor also supports Azure API keys for those who want to use Azure OpenAI models (such as GPT-4, GPT-3.5, and others).
+
+### Important Notes
+
+- **API keys are not stored** but are sent with each request to the Cursor server.
+- **All requests are routed through the Cursor backend**, where the final prompt construction takes place, ensuring your keys remain secure.
+
+## Usage Tips
+
+1. **Choose the Right Model**: Select a model based on the complexity of the task and your response time requirements. For example, the Claude-sonet model currently performs best for many tasks.
+   
+2. **Leverage Long-Context Models**: For tasks that require processing a large amount of code or documentation, consider using models with longer context windows (e.g., GPT-4 or Claude 3).
+   
+3. **Optimize API Key Usage**: Using your own API keys gives you more control over costs and usage limits. Be sure to manage these keys according to your needs.
+
+4. **Regularly Update Your API Key**: For security purposes, it’s recommended to update your API key periodically.
+
+5. **Stay Updated on Model Changes**: Cursor may add new model options from time to time. Keep an eye out for updates to take advantage of the latest AI capabilities.
+
+## Conclusion
+
+By selecting the appropriate AI model and configuring custom API keys, you can fully unlock the power of Cursor’s AI-assisted coding features. Flexibly adjusting these settings based on your project needs and personal preferences will help you achieve the best experience with Cursor. Over time, as you become more familiar with these options, you’ll find them to be crucial tools in enhancing your coding efficiency.

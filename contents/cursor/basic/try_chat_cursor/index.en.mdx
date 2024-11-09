@@ -1,0 +1,116 @@
+# First Experience with Cursor's AI Assistant Features
+
+## Video Tutorial
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/TgXDEnF43M0?si=8563456345634563" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## Overview
+
+What makes Cursor unique is its powerful AI assistance features that can significantly improve your coding efficiency and quality. This guide will introduce Cursor's three core AI features: intelligent code completion, AI code generation, and AI chat functionality. Through these features, you'll experience how AI revolutionizes your programming process.
+
+## 1. Intelligent Code Completion
+
+Cursor's intelligent code completion goes far beyond traditional auto-completion, understanding context and providing smarter suggestions.
+
+### How to Use:
+
+1. Cursor automatically displays completion suggestions as you start typing code.
+2. Use Tab or Enter key to accept suggestions.
+3. Use up and down arrow keys to switch between different suggestions.
+
+### Example:
+
+Suppose you're writing Python code:
+
+```python
+def calculate_average(numbers):
+    total = sum(numbers)
+    
+```
+
+When you type to this point, Cursor might provide completion suggestions like:
+
+![auto](/auto.png)
+
+Cursor not only completes the current line but also intelligently infers possible function implementations.
+
+## 2. AI Code Generation
+
+Cursor's AI code generation feature can generate code based on natural language descriptions or comments.
+
+### How to Use:
+
+1. Press the shortcut key:
+- Windows/Linux: `Ctrl+K`
+- macOS: `Cmd+K`
+2. AI will generate corresponding code.
+
+### Example:
+
+After bringing up the window, enter commands, and AI will automatically generate code and place it in the appropriate location without manual copying
+![k](/k.png)
+
+## 3. AI Chat Functionality
+
+Cursor's AI chat functionality allows you to interact directly with an AI assistant to ask programming-related questions or seek help.
+
+### How to Use:
+
+1. Open the AI chat panel using shortcut keys:
+   - Windows/Linux: `Ctrl+L`
+   - macOS: `Cmd+L`
+2. Type your questions or requests in the chat box.
+3. The AI assistant will provide answers or suggestions.
+
+### Example Conversation:
+
+User: How do I read a CSV file in Python?
+
+AI Assistant: In Python, you can use the built-in `csv` module to read CSV files. Here's a basic example:
+
+```python
+import csv
+
+with open('file.csv', 'r') as file:
+    csv_reader = csv.reader(file)
+    for row in csv_reader:
+        print(row)
+```
+
+This code opens a file named 'file.csv' and prints its contents line by line. You can also use `csv.DictReader` to read each line as a dictionary, where the CSV header is used as keys.
+
+User: Can you give me an example using DictReader?
+
+AI Assistant: Of course, here's an example using `csv.DictReader`:
+
+```python
+import csv
+
+with open('file.csv', 'r') as file:
+    csv_reader = csv.DictReader(file)
+    for row in csv_reader:
+        print(row)  # each row is now a dictionary
+        # assuming CSV has 'name' and 'age' columns
+        print(f"Name: {row['name']}, Age: {row['age']}")
+```
+
+The advantage of this method is that you can access data in each column directly by column name, making the code more readable and maintainable.
+
+## Advanced Tips
+
+1. **Continuous Dialogue**: In AI chat, you can have continuous conversations, and AI will remember the context.
+
+2. **Code Refactoring**: Select a piece of code, then request refactoring or optimization in AI chat.
+
+3. **Error Diagnosis**: When encountering errors, copy the error message to AI chat to seek solutions.
+
+4. **Multi-language Support**: Cursor's AI features support multiple programming languages, switch seamlessly anytime.
+
+## Precautions
+
+- AI-generated code still needs your review and testing.
+- Be cautious when using AI features with sensitive or private information.
+- Regularly update Cursor to get the latest AI feature improvements.
+
+## Conclusion
+
+Cursor's AI assistance features bring revolutionary changes to modern programming. Through intelligent code completion, AI code generation, and AI chat functionality, you can significantly improve coding efficiency, reduce repetitive work, and quickly solve programming challenges. As you delve deeper into these features, you'll find the programming process becoming more smooth and efficient.

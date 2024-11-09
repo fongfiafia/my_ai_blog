@@ -1,0 +1,61 @@
+# Detailed Explanation of Cursor AI Code Generation (Cmd+K)
+
+## Overview
+
+Cursor's AI code generation feature, activated by the `Cmd+K` shortcut (or `Ctrl+K` on Windows/Linux), is a powerful tool that allows you to invoke the AI assistant anytime within the editor. You can use it to make on-the-spot modifications or generate new code at specific locations in your codebase.
+![overview](/overview.png)
+
+## Basic Cmd+K Functionality
+
+### Prompt Bar
+
+When you press `Cmd+K`, a "Prompt Bar" input field appears. Here, you can enter natural language instructions, just like you would in a chat box. Additionally, you can use the `@` symbol to reference other contexts.
+
+### Code Generation
+
+If no code is selected when you press `Cmd+K`, Cursor will generate new code based on the instructions you provide in the prompt bar.
+
+![inline](/inline.png)
+
+### Inline Editing
+
+To modify a specific piece of code directly, simply select the code you want to change, then type the modification instructions in the prompt bar.
+
+![inlineedit](/inlineedit.png)
+
+### Continuous Improvement
+
+After generating code, if you're not satisfied with the result, you can add more instructions in the prompt bar and press `Enter` to refine the generated code. The AI will re-generate the code based on your updated instructions.
+
+## Advanced Cmd+K Features
+
+### Default Context
+
+Cursor automatically identifies useful information to improve code generation, in addition to any manually included `@` references. This might include related files, recently viewed files, and more. Cursor will prioritize the most relevant context items based on their relationship to your current editing/generating task, ensuring the AI can make the best use of the information.
+
+### Quick Questions
+
+If you'd like Cursor to generate content without immediately applying it to your code, press `Option/Alt + Enter` after entering your instructions in the prompt bar. This will trigger the AI to answer any questions regarding the selected content and its additional context without modifying your file.
+
+This conversation content can be used in future generations. So, after Cursor gives a response, you can simply type "do it" to generate the corresponding code.
+
+![quick_ac](/quick_ac.png)
+
+## Usage Tips
+
+### Using Cmd+K in the Terminal
+
+You can also use `Cmd+K` in the terminal. This lets you directly generate and execute commands within the terminal, improving your workflow efficiency.
+
+- Press `Cmd+K` in the terminal.
+- Enter your prompt.
+![run](/run.png)
+- Press `Enter` to generate the code.
+![run_sh](/run_sh.png)
+- **Note**: Cursor only generates the command but does not execute it. You'll need to press `Enter` yourself to run the command.
+
+## Conclusion
+
+Cursor's `Cmd+K` feature not only provides intelligent code generation and editing capabilities but also boasts strong context understanding and interactive Q&A features. By fully utilizing `Cmd+K`, you can significantly improve coding efficiency, reduce repetitive tasks, and focus more on solving complex programming challenges.
+
+As the Cursor team continues to optimize and enhance the tool, we can expect the `Cmd+K` feature to become even more powerful and intelligent, further transforming the way we write code.
