@@ -11,7 +11,7 @@ import AITeachVideosSection from '@/components/AITeachVideosSection';
 import FunProjectsSection from '@/components/FunProjectsSection';
 import { getDictionary } from '@/lib/dictionary'
 import { i18n, Locale } from '@/lib/i18n-config'
-import Footer from '@/components/Footer'
+import Footer from '@/components/footer'
 
 export async function generateMetadata({ params: { lang } }: { params: { lang: Locale } }): Promise<Metadata> {
     const dict = await getDictionary(lang)
