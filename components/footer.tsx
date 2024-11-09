@@ -80,3 +80,4 @@ export default function Footer({ locale, dict }: FooterProps) {
     </footer>
   )
 }
+
