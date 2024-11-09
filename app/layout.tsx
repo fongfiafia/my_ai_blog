@@ -196,6 +196,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-{/* <script src="https://alwingulla.com/88/tag.min.js" data-zone="113027" async data-cfasync="false"></script> */ }
-{/* <script src="https://alwingulla.com/88/tag.min.js" data-zone="113007" async data-cfasync="false"></script> */ }
