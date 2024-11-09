@@ -6,14 +6,18 @@ import { notFound } from "next/navigation";
 import { getDocsForSlug } from "@/lib/markdown";
 import { Typography } from "@/components/typography";
 import Image from 'next/image';
+import { Locale } from "@/lib/i18n-config";
 
 type PageProps = {
-  params: { slug: string[] };
+  params: {
+    slug: string[];
+    lang: Locale;
+  };
 };
 
-export default async function DocsPage({ params: { slug = [] } }: PageProps) {
+export default async function DocsPage({ params: { slug = [], lang } }: PageProps) {
   const pathName = slug.join("/");
-  const res = await getDocsForSlug(pathName);
+  const res = await getDocsForSlug(pathName, lang);
 
   if (!res) notFound();
 
@@ -28,7 +32,6 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
           </p>
           <div>{res.content}</div>
           {!pathName.includes('context') && !pathName.includes('tips') && (
-
             <div className="flex justify-center">
               <div className="card p-3 rounded-lg shadow-md bg-white dark:bg-gray-800 w-[300px] text-center m-0">
                 <h3 className="font-bold text-lg mb-2">如果文章对你有帮助<span className="text-red-500">👍</span></h3>
@@ -72,9 +75,9 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
   );
 }
 
-export async function generateMetadata({ params: { slug = [] } }: PageProps) {
+export async function generateMetadata({ params: { slug = [], lang } }: PageProps) {
   const pathName = slug.join("/");
-  const res = await getDocsForSlug(pathName);
+  const res = await getDocsForSlug(pathName, lang);
   if (!res) return null;
   const { frontmatter } = res;
   return {
@@ -84,7 +87,18 @@ export async function generateMetadata({ params: { slug = [] } }: PageProps) {
 }
 
 export function generateStaticParams() {
-  return page_routes.map((item) => ({
-    slug: item.href.split("/").slice(1),
-  }));
+  const locales = ['en', 'cn'];
+  const paths: { lang: string; slug: string[] }[] = [];
+
+  // 为每个语言生成路径
+  locales.forEach(lang => {
+    page_routes.forEach(item => {
+      paths.push({
+        lang,
+        slug: item.href.split("/").slice(1),
+      });
+    });
+  });
+
+  return paths;
 }

@@ -156,10 +156,20 @@ function getRecursiveAllLinks(node: EachRoute) {
   return ans;
 }
 
-export const getPageRoutes = (locale: Locale): Page[] => {
-  return getRoutes(locale).map((it) => getRecursiveAllLinks(it)).flat();
+// 修改 getPageRoutes 函数来支持多语言
+export const getPageRoutes = (locale: Locale) => {
+  const routes = getRoutes(locale);
+  return routes.map((it) => getRecursiveAllLinks(it)).flat();
+};
+
+// 修改导出
+export const page_routes = getPageRoutes('cn'); // 默认中文路由
+export const en_page_routes = getPageRoutes('en'); // 英文路由
+
+// 获取指定语言的所有路由
+export const getAllRoutes = (locale: Locale) => {
+  return locale === 'en' ? en_page_routes : page_routes;
 };
 
 // 为了向后兼容，保留原来的导出
 export const ROUTES = CN_ROUTES;
-export const page_routes = getPageRoutes('cn');
