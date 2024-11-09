@@ -93,5 +93,80 @@ export const dictionary = {
                 duration: "18:45"
             }
         ]
+    },
+    aiVideos: {
+        title: "Cursor Project Practice",
+        subtitle: "Project tutorials where I use Cursor AI to enhance development",
+        videos: [
+            {
+                title: "Develop and Deploy WeChat Mini Program in 8 Minutes with Cursor",
+                description: "Start from scratch, develop an AI WeChat Mini Program with Cursor, complete deployment",
+                youtubeUrl: "87jXLqMIeDE",
+                duration: "15:24"
+            },
+            {
+                title: "bolt.new VS Cursor",
+                description: "Deploy an accounting webpage in 7 minutes with bolt.new! Complete comparison of cursor VS bolt.new",
+                youtubeUrl: "t_fkKhW4PDI",
+                duration: "12:38"
+            },
+            {
+                title: "Monetize WeChat Mini Program in 2 Weeks Using Cursor",
+                description: "Use Cursor to help place ads in appropriate positions",
+                youtubeUrl: "dNS9jJzygtw",
+                duration: "18:45"
+            }
+        ]
+    },
+    funProjects: {
+        title: "Fun Projects",
+        subtitle: "Interesting projects developed using Cursor AI",
+        projects: [
+            {
+                title: "AI WeChat Mini Program",
+                description: "WeChat Mini Program developed using Cursor AI, empowering life with AI",
+                url: "https://lookai.top/fun/wx-miniprogram",
+                tags: ["WeChat Mini Program", "AI Application"]
+            },
+            {
+                title: "Draw Perfect Circle",
+                description: "A fun game testing your ability to draw circles freehand",
+                url: "https://lookai.top/fun/perfect-circle",
+                tags: ["Web Game", "Interactive Experience"]
+            }
+        ]
+    },
+    aiResources: {
+        title: "AI Resources",
+        resources: [
+            {
+                name: "AI With Me",
+                description: "A collection of AI tools",
+                icon: "/ai-resources/ai-with-me.png",
+                url: "https://aiwith.me/",
+                tags: ["AI Chat", "Free Version"]
+            },
+            {
+                name: "Claude",
+                description: "AI assistant by Anthropic, default AI model used by Cursor",
+                icon: "/ai-resources/claude.png",
+                url: "https://claude.ai",
+                tags: ["AI Assistant", "Free"]
+            },
+            {
+                name: "Free AI Tool",
+                description: "Collection of free AI tools",
+                icon: "/ai-resources/apple-touch-icon.png",
+                url: "https://freeaitool.ai/",
+                tags: ["AI Toolbox", "Free"]
+            },
+            {
+                name: "Flux Image AI",
+                description: "Collection of free AI tools",
+                icon: "/ai-resources/flux.png",
+                url: "https://tap4.ai/ai/flux-ai-io",
+                tags: ["AI Toolbox", "Video Generation"]
+            }
+        ]
     }
 } 

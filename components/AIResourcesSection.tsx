@@ -1,42 +1,21 @@
+'use client';
+
 import { AIResourceCard } from './AIResourceCard';
+import { usePathname } from 'next/navigation';
+import { getDictionary } from '@/lib/dictionary';
+import { i18n } from '@/lib/i18n-config';
+import type { Locale } from '@/lib/i18n-config';
 
-const AI_RESOURCES = [
-    {
-        name: "AI With Me",
-        description: "一个AI工具集合",
-        icon: "/ai-resources/ai-with-me.png",
-        url: "https://aiwith.me/",
-        tags: ["AI对话", "免费版"]
-    },
-    {
-        name: "Claude",
-        description: "Anthropic出品的AI助手，Cursor的默认使用的AI模型",
-        icon: "/ai-resources/claude.png",
-        url: "https://claude.ai",
-        tags: ["AI助手", "免费"]
-    },
-    {
-        name: "Free AI Tool",
-        description: "免费AI工具集合",
-        icon: "/ai-resources/apple-touch-icon.png",
-        url: "https://freeaitool.ai/",
-        tags: ["AI工具箱", "免费"]
-    },
-    {
-        name: "Flux Image AI",
-        description: "免费AI工具集合",
-        icon: "/ai-resources/flux.png",
-        url: "https://tap4.ai/ai/flux-ai-io",
-        tags: ["AI工具箱", "视频生成"]
-    }
-];
+export default async function AIResourcesSection() {
+    const pathname = usePathname();
+    const locale = (pathname.split('/')[1] || i18n.defaultLocale) as Locale;
+    const dict = await getDictionary(locale);
 
-export default function AIResourcesSection() {
     return (
         <section className="w-full max-w-[1200px] mx-auto mt-16 px-4">
-            <h2 className="text-3xl font-bold mb-8 text-center">AI资源集</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">{dict.aiResources.title}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {AI_RESOURCES.map((resource) => (
+                {dict.aiResources.resources.map((resource) => (
                     <AIResourceCard key={resource.name} resource={resource} />
                 ))}
             </div>

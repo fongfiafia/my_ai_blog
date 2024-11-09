@@ -78,5 +78,80 @@ export const dictionary = {
                 duration: "18:45"
             }
         ]
+    },
+    aiVideos: {
+        title: "Cursor项目实战",
+        subtitle: "我使用Cursor AI提升开发的项目教程",
+        videos: [
+            {
+                title: "使用Cursor 8分钟开发上线微信小程序",
+                description: "从零开始，使用Cursor 开发完成一个AI微信小程序，完成上线和部署",
+                youtubeUrl: "87jXLqMIeDE",
+                duration: "15:24"
+            },
+            {
+                title: "bolt.new VS Cursor",
+                description: "bolt.new 7分钟上线部署一个记账网页！cursor VS bolt.new 全面对比",
+                youtubeUrl: "t_fkKhW4PDI",
+                duration: "12:38"
+            },
+            {
+                title: "使用Cursor开发小程序2周开通流量主",
+                description: "使用Cursor 帮助放置广告位到合适为止",
+                youtubeUrl: "dNS9jJzygtw",
+                duration: "18:45"
+            }
+        ]
+    },
+    funProjects: {
+        title: "我做的好玩的",
+        subtitle: "使用 Cursor AI 开发的一些有趣项目",
+        projects: [
+            {
+                title: "AI微信小程序",
+                description: "使用 Cursor AI 开发的微信小程序，让AI赋能生活的方方面面",
+                url: "https://lookai.top/fun/wx-miniprogram",
+                tags: ["微信小程序", "AI应用"]
+            },
+            {
+                title: "徒手画圆",
+                description: "一个有趣的小游戏，测试你徒手画圆的能力",
+                url: "https://lookai.top/fun/perfect-circle",
+                tags: ["Web游戏", "互动体验"]
+            }
+        ]
+    },
+    aiResources: {
+        title: "AI资源集",
+        resources: [
+            {
+                name: "AI With Me",
+                description: "一个AI工具集合",
+                icon: "/ai-resources/ai-with-me.png",
+                url: "https://aiwith.me/",
+                tags: ["AI对话", "免费版"]
+            },
+            {
+                name: "Claude",
+                description: "Anthropic出品的AI助手，Cursor的默认使用的AI模型",
+                icon: "/ai-resources/claude.png",
+                url: "https://claude.ai",
+                tags: ["AI助手", "免费"]
+            },
+            {
+                name: "Free AI Tool",
+                description: "免费AI工具集合",
+                icon: "/ai-resources/apple-touch-icon.png",
+                url: "https://freeaitool.ai/",
+                tags: ["AI工具箱", "免费"]
+            },
+            {
+                name: "Flux Image AI",
+                description: "免费AI工具集合",
+                icon: "/ai-resources/flux.png",
+                url: "https://tap4.ai/ai/flux-ai-io",
+                tags: ["AI工具箱", "视频生成"]
+            }
+        ]
     }
 } 
