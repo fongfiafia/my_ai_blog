@@ -55,5 +55,28 @@ export const dictionary = {
                 answer: "免费的，而且目前没有计划收费，请尽情体验。当然如果你觉得对你有帮助，支持作者就更好了。"
             }
         ]
+    },
+    aiTeachVideos: {
+        title: "Cursor教学视频",
+        videos: [
+            {
+                title: "Cursor 界面介绍",
+                description: "Cursor 界面介绍，各个面板的介绍",
+                youtubeUrl: "Dtxq314fuG4",
+                duration: "15:24"
+            },
+            {
+                title: "创建你的第一个Cursor 项目",
+                description: "Cursor 的项目管理",
+                youtubeUrl: "BgoaPO41o9g",
+                duration: "12:38"
+            },
+            {
+                title: "Cursor的AI辅助功能演示",
+                description: "Cursor的AI辅助功能演示",
+                youtubeUrl: "TgXDEnF43M0",
+                duration: "18:45"
+            }
+        ]
     }
 } 

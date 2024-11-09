@@ -20,11 +20,11 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
                 className="flex justify-between items-center w-full text-left"
                 onClick={() => setIsOpen(!isOpen)}
             >
-                <span className="text-lg font-semibold">{question}</span>
+                <span className="text-lg font-semibold text-left">{question}</span>
                 {isOpen ? (
                     <ChevronUpIcon className="w-5 h-5" />
                 ) : (
-                        <ChevronDownIcon className="w-5 h-5" />
+                    <ChevronDownIcon className="w-5 h-5" />
                 )}
             </button>
             {isOpen && (

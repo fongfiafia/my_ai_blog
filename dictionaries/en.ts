@@ -70,5 +70,28 @@ export const dictionary = {
                 answer: "Yes, it's free and there are currently no plans to charge. Please feel free to try it out. Of course, if you find it helpful, supporting the author would be even better."
             }
         ]
+    },
+    aiTeachVideos: {
+        title: "Cursor Tutorial Videos",
+        videos: [
+            {
+                title: "Cursor Interface Introduction",
+                description: "Introduction to Cursor interface and panels",
+                youtubeUrl: "Dtxq314fuG4",
+                duration: "15:24"
+            },
+            {
+                title: "Create Your First Cursor Project",
+                description: "Project management in Cursor",
+                youtubeUrl: "BgoaPO41o9g",
+                duration: "12:38"
+            },
+            {
+                title: "Cursor AI Features Demo",
+                description: "Demonstration of Cursor's AI assistance features",
+                youtubeUrl: "TgXDEnF43M0",
+                duration: "18:45"
+            }
+        ]
     }
 } 

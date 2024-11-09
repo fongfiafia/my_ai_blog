@@ -17,8 +17,8 @@ const FAQAISection = async () => {
             <div className="space-y-4">
                 {dict.faqAI.items.map((faq, index) => (
                     <div key={index} className="p-4 border rounded-lg shadow-sm">
-                        <h3 className="text-xl font-semibold">{faq.question}</h3>
-                        <p className="text-muted-foreground mt-2 text-left text-left">{faq.answer}</p>
+                        <h3 className="text-xl font-semibold text-left">{faq.question}</h3>
+                        <p className="text-muted-foreground mt-2 text-left">{faq.answer}</p>
                     </div>
                 ))}
             </div>

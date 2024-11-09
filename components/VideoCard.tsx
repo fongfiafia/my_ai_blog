@@ -9,6 +9,10 @@ interface Video {
     duration: string;
 }
 
+interface VideoCardProps {
+    video: Video;
+}
+
 function getYouTubeVideoId(url: string): string {
     // 处理多种可能的YouTube URL格式
     const patterns = [
@@ -28,7 +32,7 @@ function getYouTubeThumbnail(videoId: string): string {
     return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
 }
 
-export function VideoCard({ video }: { video: Video }) {
+export const VideoCard: React.FC<VideoCardProps> = ({ video }) => {
     const videoId = getYouTubeVideoId(video.youtubeUrl);
     const thumbnailUrl = getYouTubeThumbnail(videoId);
     const youtubeWatchUrl = `https://www.youtube.com/watch?v=${videoId}`;
@@ -64,4 +68,4 @@ export function VideoCard({ video }: { video: Video }) {
             </div>
         </Link>
     );
-} 
+}; 
