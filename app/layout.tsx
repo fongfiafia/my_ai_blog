@@ -158,13 +158,13 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
       </head>
-      <Script
+      {/* <Script
         src="https://alwingulla.com/88/tag.min.js"
         data-zone="113027"
         async
         data-cfasync="false"
         strategy="afterInteractive"
-      />
+      /> */}
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} font-regular antialiased`}
         suppressHydrationWarning
