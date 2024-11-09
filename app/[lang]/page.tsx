@@ -66,17 +66,18 @@ export default async function HomePage({ params: { lang } }: { params: { lang: L
                 </Link>
             </div>
 
-            <FAQSection />
-
-            <FAQAISection />
-
+            <FAQSection
+                title={dict.faq.title}
+                items={dict.faq.items}
+            />
+            <FAQAISection
+                title={dict.faqAI.title}
+                items={dict.faqAI.items}
+            />
             <AITeachVideosSection locale={lang} />
-
             <AIVideosSection locale={lang} />
-
-            <FunProjectsSection />
-
-            <AIResourcesSection />
+            <FunProjectsSection locale={lang} />
+            <AIResourcesSection locale={lang} />
         </div>
     )
 }

@@ -47,7 +47,7 @@ export const dictionary = {
         subtitle: 'Interesting projects developed using Cursor AI'
     },
     faqAI: {
-        title: 'Common Questions About AI Teacher',
+        title: 'Frequent Asked Question About AI Cursor Teacher',
         items: [
             {
                 question: "How to use Cursor AI Teacher?",

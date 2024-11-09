@@ -98,7 +98,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2">
-            <Search />
+            {/* <Search /> */}
             <div className="flex ml-2.5 sm:ml-0">
               <Link
                 href="https://github.com/fongfiafia/my_ai_blog"

@@ -1,14 +1,10 @@
-'use client';
+// 'use client';
 
-import { AIResourceCard } from './AIResourceCard';
-import { usePathname } from 'next/navigation';
 import { getDictionary } from '@/lib/dictionary';
-import { i18n } from '@/lib/i18n-config';
-import type { Locale } from '@/lib/i18n-config';
+import { Locale } from '@/lib/i18n-config';
+import { AIResourceCard } from './AIResourceCard';
 
-export default async function AIResourcesSection() {
-    const pathname = usePathname();
-    const locale = (pathname.split('/')[1] || i18n.defaultLocale) as Locale;
+export default async function AIResourcesSection({ locale }: { locale: Locale }) {
     const dict = await getDictionary(locale);
 
     return (
