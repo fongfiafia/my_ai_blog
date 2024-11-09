@@ -1,57 +1,82 @@
-import Link from "next/link";
-import { buttonVariants } from "./ui/button";
-import { CommandIcon, HeartIcon, TriangleIcon } from "lucide-react";
+import Image from 'next/image'
+import Link from 'next/link'
+import { Locale } from '@/lib/i18n-config'
 
-export function Footer() {
+interface FooterProps {
+  locale: Locale
+  dict: {
+    footer: {
+      quickLinks: string
+      legal: string
+      home: string
+      tutorials: string
+      aiTeacher: string
+      funProjects: string
+      terms: string
+      privacy: string
+    }
+  }
+}
+
+export default function Footer({ locale, dict }: FooterProps) {
   return (
-    <footer className="border-t w-full h-16">
-      <div className="container flex items-center sm:justify-between justify-center sm:gap-0 gap-4 h-full text-muted-foreground text-sm flex-wrap sm:py-0 py-3 max-sm:px-4">
-        <div className="flex items-center gap-3">
-          <CommandIcon className="sm:block hidden w-5 h-5 text-muted-foreground" />
-          <p className="text-center">
-            Build by{" "}
-            <Link
-              className="px-1 underline underline-offset-2"
-              href="https://github.com/nisabmohd"
-            >
-              nisabmohd
-            </Link>
-            . The source code is available on{" "}
-            <Link
-              className="px-1 underline underline-offset-2"
-              href="https://github.com/nisabmohd/Aria-Docs"
-            >
-              GitHub
-            </Link>
-            .
-          </p>
+    <footer className="w-full bg-background border-t mt-20">
+      <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Logo Column */}
+        <div className="flex items-center justify-center md:justify-start">
+          <Image
+            src="/logo_round.png"
+            alt="LookAI Logo"
+            width={100}
+            height={100}
+            className="rounded-full"
+          />
         </div>
 
-        <div className="gap-4 items-center hidden md:flex">
-          <FooterButtons />
+        {/* Quick Links Column */}
+        <div className="text-center md:text-left">
+          <h3 className="font-bold text-lg mb-4">{dict.footer.quickLinks}</h3>
+          <ul className="space-y-2">
+            <li>
+              <Link href={`/${locale}`} className="hover:text-primary">
+                {dict.footer.home}
+              </Link>
+            </li>
+            <li>
+              <Link href={`/${locale}/cursor/instruction/instruction`} className="hover:text-primary">
+                {dict.footer.tutorials}
+              </Link>
+            </li>
+            <li>
+              <Link href={`/${locale}/ai-teacher`} className="hover:text-primary">
+                {dict.footer.aiTeacher}
+              </Link>
+            </li>
+            <li>
+              <Link href={`/${locale}/fun`} className="hover:text-primary">
+                {dict.footer.funProjects}
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Legal Column */}
+        <div className="text-center md:text-left">
+          <h3 className="font-bold text-lg mb-4">{dict.footer.legal}</h3>
+          <ul className="space-y-2">
+            <li>
+              <Link href={`/${locale}/terms`} className="hover:text-primary">
+                {dict.footer.terms}
+              </Link>
+            </li>
+            <li>
+              <Link href={`/${locale}/privacy`} className="hover:text-primary">
+                {dict.footer.privacy}
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
     </footer>
-  );
-}
-
-export function FooterButtons() {
-  return (
-    <>
-      <Link
-        href="https://vercel.com/templates/next.js/documentation-template"
-        className={buttonVariants({ variant: "outline", size: "sm" })}
-      >
-        <TriangleIcon className="h-[0.8rem] w-4 mr-2 text-primary fill-current" />
-        Deploy
-      </Link>
-      <Link
-        href="https://github.com/sponsors/nisabmohd"
-        className={buttonVariants({ variant: "outline", size: "sm" })}
-      >
-        <HeartIcon className="h-4 w-4 mr-2 text-red-600 fill-current" />
-        Sponsor
-      </Link>
-    </>
-  );
+  )
 }

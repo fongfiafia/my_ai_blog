@@ -188,5 +188,75 @@ export const dictionary = {
                 href: "https://nf.video/HwL0y",
             }
         ]
+    },
+    footer: {
+        quickLinks: "Quick Links",
+        legal: "Legal",
+        home: "Home",
+        tutorials: "Tutorials",
+        aiTeacher: "AI Teacher",
+        funProjects: "Fun Projects",
+        terms: "Terms of Service",
+        privacy: "Privacy Policy"
+    },
+    privacy: {
+        title: "Privacy Policy",
+        lastUpdated: "Last Updated: October 26, 2024",
+        sections: [
+            {
+                title: "Data Collection",
+                content: "At our Website, we do not collect any personal information from visitors. We do not use cookies or any other tracking technologies to gather information about you."
+            },
+            {
+                title: "Usage Tracking",
+                content: "We use standard internet technologies, such as web server logs and traffic analysis software, to track website usage. This information helps us understand which parts of our site are the most popular, where our visitors come from, and how long they stay. We may also use third-party services, such as Google Analytics, to help us understand website traffic and usage patterns. These services collect aggregate data and do not identify individual users."
+            },
+            {
+                title: "Your Rights",
+                content: "Since we do not collect personal information, there are no specific rights regarding access, correction, or deletion of personal data. However, if you have any questions or concerns about our privacy practices, please feel free to contact us."
+            },
+            {
+                title: "Changes to This Policy",
+                content: "We may update this Privacy Policy from time to time. Any changes will be posted on this Website, and we will update the \"Last Updated\" date at the top of the policy."
+            }
+        ],
+        contact: {
+            title: "Contact Us",
+            content: "If you have any questions or concerns about this Privacy Policy, please contact us at "
+        }
+    },
+    terms: {
+        title: "Terms of Service",
+        lastUpdated: "Last Updated: October 26, 2024",
+        sections: [
+            {
+                title: "Acceptance of Terms",
+                content: "By accessing and using this website (https://lookai.top), you accept and agree to be bound by the terms and provision of this agreement."
+            },
+            {
+                title: "Use License",
+                content: "Permission is granted to temporarily download one copy of the materials (information or software) on LookAI's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not: modify or copy the materials; use the materials for any commercial purpose; attempt to decompile or reverse engineer any software contained on LookAI's website; remove any copyright or other proprietary notations from the materials; or transfer the materials to another person or 'mirror' the materials on any other server."
+            },
+            {
+                title: "Disclaimer",
+                content: "The materials on LookAI's website are provided on an 'as is' basis. LookAI makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights."
+            },
+            {
+                title: "Limitations",
+                content: "In no event shall LookAI or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on LookAI's website, even if LookAI or a LookAI authorized representative has been notified orally or in writing of the possibility of such damage."
+            },
+            {
+                title: "Accuracy of Materials",
+                content: "The materials appearing on LookAI's website could include technical, typographical, or photographic errors. LookAI does not warrant that any of the materials on its website are accurate, complete or current. LookAI may make changes to the materials contained on its website at any time without notice."
+            },
+            {
+                title: "Links",
+                content: "LookAI has not reviewed all of the sites linked to its website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by LookAI of the site. Use of any such linked website is at the user's own risk."
+            }
+        ],
+        contact: {
+            title: "Contact Us",
+            content: "If you have any questions about these Terms of Service, please contact us at "
+        }
     }
 } 
