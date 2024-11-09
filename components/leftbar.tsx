@@ -17,6 +17,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { i18n } from "@/lib/i18n-config";
 
+interface NavLink {
+  title: string;
+  href: string;
+}
+
 export function Leftbar() {
   return (
     <aside className="md:flex hidden flex-[1.5] min-w-[238px] sticky top-16 flex-col h-[93.75vh] overflow-y-auto">
@@ -47,7 +52,7 @@ export default function SheetLeftbar() {
         </SheetHeader>
         <div className="flex flex-col gap-4 overflow-y-auto">
           <div className="flex flex-col gap-2.5 mt-3 mx-2 px-5">
-            {NAVLINKS.map((link) => (
+            {NAVLINKS.map((link: NavLink) => (
               link.href.startsWith('http') ? (
                 <a
                   key={link.href}

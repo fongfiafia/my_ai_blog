@@ -11,6 +11,9 @@ import { usePathname } from 'next/navigation';
 import { i18n } from '@/lib/i18n-config';
 import Image from "next/image";
 import { useParams } from 'next/navigation';
+import { getDictionary } from '@/lib/dictionary';
+import type { Locale } from '@/lib/i18n-config';
+import { useEffect, useState } from 'react';
 
 export function Logo() {
   const pathname = usePathname();
@@ -29,6 +32,7 @@ export function Logo() {
   );
 }
 
+// 修改为 export const NAVLINKS
 export const NAVLINKS = [
   {
     title: "Cursor 教程",
@@ -50,7 +54,23 @@ export const NAVLINKS = [
 
 export function Navbar() {
   const pathname = usePathname();
-  const locale = pathname.split('/')[1] || i18n.defaultLocale;
+  const locale = (pathname.split('/')[1] || i18n.defaultLocale) as Locale;
+  const [navLinks, setNavLinks] = useState(NAVLINKS); // 使用 NAVLINKS
+
+  useEffect(() => {
+    const loadDictionary = async () => {
+      try {
+        const dict = await getDictionary(locale);
+        if (dict.navigation?.links) {
+          setNavLinks(dict.navigation.links);
+        }
+      } catch (error) {
+        console.error('Failed to load navigation links:', error);
+        // 保持使用默认导航链接
+      }
+    };
+    loadDictionary();
+  }, [locale]);
 
   return (
     <nav className="w-full border-b h-16 sticky top-0 z-50 bg-background">
@@ -62,26 +82,15 @@ export function Navbar() {
               <Logo />
             </div>
             <div className="lg:flex hidden items-center gap-4 text-sm font-medium text-muted-foreground">
-              {NAVLINKS.map((link) => (
-                link.href.startsWith('http') ? (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    className="hover:text-foreground transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {link.title}
-                  </a>
-                ) : (
-                  <Link
-                    key={link.href}
-                    href={`/${locale}/${link.href}`}
-                    className="hover:text-foreground transition-colors"
-                  >
-                    {link.title}
-                  </Link>
-                )
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href.startsWith('http') ? link.href : `/${locale}/${link.href}`}
+                  className="hover:text-foreground transition-colors"
+                  {...(link.href.startsWith('http') ? { target: "_blank" } : {})}
+                >
+                  {link.title}
+                </Link>
               ))}
             </div>
           </div>

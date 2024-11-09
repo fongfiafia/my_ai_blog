@@ -168,5 +168,25 @@ export const dictionary = {
                 tags: ["AI Toolbox", "Video Generation"]
             }
         ]
+    },
+    navigation: {
+        links: [
+            {
+                title: "Cursor Tutorial",
+                href: "cursor/instruction/instruction",
+            },
+            {
+                title: "AI Cursor Teacher",
+                href: "ai-teacher",
+            },
+            {
+                title: "Fun Projects",
+                href: "fun",
+            },
+            {
+                title: "ChatGPT Sharing",
+                href: "https://nf.video/HwL0y",
+            }
+        ]
     }
 } 

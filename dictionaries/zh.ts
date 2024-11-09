@@ -81,7 +81,7 @@ export const dictionary = {
     },
     aiVideos: {
         title: "Cursor项目实战",
-        subtitle: "我使用Cursor AI提升开发的项目教程",
+        subtitle: "��使用Cursor AI提升开发的项目教程",
         videos: [
             {
                 title: "使用Cursor 8分钟开发上线微信小程序",
@@ -151,6 +151,26 @@ export const dictionary = {
                 icon: "/ai-resources/flux.png",
                 url: "https://tap4.ai/ai/flux-ai-io",
                 tags: ["AI工具箱", "视频生成"]
+            }
+        ]
+    },
+    navigation: {
+        links: [
+            {
+                title: "Cursor 教程",
+                href: "cursor/instruction/instruction",
+            },
+            {
+                title: "AI Cursor老师",
+                href: "ai-teacher",
+            },
+            {
+                title: "做点好玩的",
+                href: "fun",
+            },
+            {
+                title: "ChatGPT 合租",
+                href: "https://nf.video/HwL0y",
             }
         ]
     }

@@ -30,7 +30,7 @@ export async function generateMetadata({ params: { lang } }: { params: { lang: L
     }
 }
 
-export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
+export default async function HomePage({ params: { lang } }: { params: { lang: Locale } }) {
     const dict = await getDictionary(lang)
 
     return (
@@ -48,35 +48,35 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
             <div className="flex flex-row items-center gap-5">
                 <Link
                     href={`/${lang}/cursor${page_routes[0].href}`}
-                  className={buttonVariants({ className: "px-6 py-3 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-bold rounded-lg shadow-lg transform transition-transform hover:scale-105", size: "lg" })}
-              >
-                  {dict.home.startReading}
-        </Link>
+                    className={buttonVariants({ className: "px-6 py-3 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-bold rounded-lg shadow-lg transform transition-transform hover:scale-105", size: "lg" })}
+                >
+                    {dict.home.startReading}
+                </Link>
 
-              <Link
-                  href={`/${lang}/ai-teacher`}
-                  className={buttonVariants({ className: "px-6 py-3 bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500 text-white font-bold rounded-lg shadow-lg transform transition-transform hover:scale-105", size: "lg" })}
-                  title={dict.home.tryAITeacherTitle}
-              >
-                  {dict.home.tryAITeacher.split('\n').map((line, i) => (
-                      <React.Fragment key={i}>
-                          {line}<br />
-                      </React.Fragment>
-                  ))}
-              </Link>
-          </div>
+                <Link
+                    href={`/${lang}/ai-teacher`}
+                    className={buttonVariants({ className: "px-6 py-3 bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500 text-white font-bold rounded-lg shadow-lg transform transition-transform hover:scale-105", size: "lg" })}
+                    title={dict.home.tryAITeacherTitle}
+                >
+                    {dict.home.tryAITeacher.split('\n').map((line, i) => (
+                        <React.Fragment key={i}>
+                            {line}<br />
+                        </React.Fragment>
+                    ))}
+                </Link>
+            </div>
 
-          <FAQSection />
+            <FAQSection />
 
-          <FAQAISection />
+            <FAQAISection />
 
-          <AITeachVideosSection />
+            <AITeachVideosSection locale={lang} />
 
-          <AIVideosSection />
+            <AIVideosSection locale={lang} />
 
-          <FunProjectsSection />
+            <FunProjectsSection />
 
-          <AIResourcesSection />
-      </div>
-  )
+            <AIResourcesSection />
+        </div>
+    )
 }
