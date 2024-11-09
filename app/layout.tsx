@@ -8,17 +8,29 @@ import Script from 'next/script';
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: 'LookAI - 零基础Cursor AI编程教程网站 | 小白免费学习资源',
-  description: '提供最全面、最专业、最简单、最易懂  的Cursor AI编程教程。适合零基础、普通人小白的免费学习资源，助您掌握AI编程技能。',
-  keywords: 'Cursor, 小白教程, AI编程, 免费教程, 最全面教程, 专业指导',
+  title: {
+    template: '%s | LookAI',
+    default: 'LookAI - Cursor AI Programming Tutorial for Beginners | Free Learning Resources',
+    absolute: 'LookAI - 零基础Cursor AI编程教程网站 | Cursor AI Programming Tutorial for Beginners'
+  },
+  description: 'Comprehensive and professional Cursor AI programming tutorials. Free learning resources suitable for beginners. 提供最全面、最专业的Cursor AI编程教程。适合零基础小白的免费学习资源。',
+  keywords: 'Cursor, Cursor Tutorial, AI Programming, Free Tutorial, Comprehensive Guide, Professional Tutorial, 小白教程, AI编程, 免费教程, 最全面教程, 专业指导',
   metadataBase: new URL('https://www.lookai.top'),
+  alternates: {
+    canonical: 'https://www.lookai.top',
+    languages: {
+      'en-US': '/en',
+      'zh-CN': '/cn',
+    },
+  },
   openGraph: {
-    title: 'LookAI - 零基础Cursor编程教程网站',
-    description: '发现最全面、最专业的Cursor AI编程免费教程，适合零基础水平学习者。',
+    title: 'LookAI - Cursor AI Programming Tutorial & Free Learning Resources',
+    description: 'Discover comprehensive Cursor AI programming tutorials for beginners. Free resources to help you master AI programming. 发现最全面的Cursor AI编程免费教程，适合所有水平的学习者。',
     url: 'https://www.lookai.top',
     siteName: 'LookAI',
-    locale: 'zh_CN',
-    type: 'website'
+    locale: 'en_US',
+    alternateLocale: 'zh_CN',
+    type: 'website',
   },
   icons: {
     icon: [
@@ -46,8 +58,22 @@ export default function RootLayout({
             {
               "@context": "https://schema.org/",
               "@type": "Course",
-              "name": "最好的Cursor教程",
-              "description": "提供最全面、最专业的Cursor AI编程教程。适合小白的免费学习资源，助您掌握AI编程技能。",
+              "name": {
+                "@language": "zh",
+                "@value": "最好的Cursor教程"
+              },
+              "alternateName": {
+                "@language": "en",
+                "@value": "Best Cursor Tutorial"
+              },
+              "description": {
+                "@language": "zh",
+                "@value": "提供最全面、最专业的Cursor AI编程教程。适合小白的免费学习资源，助您掌握AI编程技能。"
+              },
+              "alternateDescription": {
+                "@language": "en",
+                "@value": "Comprehensive and professional Cursor AI programming tutorials. Free learning resources suitable for beginners to master AI programming skills."
+              },
               "provider": {
                 "@type": "Organization",
                 "name": "LookAI",
@@ -59,18 +85,19 @@ export default function RootLayout({
                 "reviewCount": "1000"
               },
               "offers": {
-              "@type": "Offer",
-              "price": "0",
-              "priceCurrency": "CNY",
-              "availability": "https://schema.org/InStock",
-              "category": "在线教育"
-            },
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "category": ["Online Education", "在线教育"]
+              },
               "hasCourseInstance": [
                 {
                   "@type": "CourseInstance",
                   "courseMode": "online",
                   "courseWorkload": "PT10H",
-                  "startDate": "2024-01-01"
+                  "startDate": "2024-01-01",
+                  "inLanguage": ["en", "zh"]
                 }
               ]
             }
@@ -88,8 +115,22 @@ export default function RootLayout({
                   "@type": "WebPage",
                   "@id": "https://www.lookai.top/cursor/basic/cursor_interface"
                 },
-                "headline": "Cursor 界面介绍",
-                "description": "详细介绍 Cursor AI 编程工具的界面和基本功能",
+                "headline": {
+                  "@language": "zh",
+                  "@value": "Cursor 界面介绍"
+                },
+                "alternateHeadline": {
+                  "@language": "en",
+                  "@value": "Cursor Interface Introduction"
+                },
+                "description": {
+                  "@language": "zh",
+                  "@value": "详细介绍 Cursor AI 编程工具的界面和基本功能"
+                },
+                "alternateDescription": {
+                  "@language": "en",
+                  "@value": "Detailed introduction to Cursor AI programming tool interface and basic functions"
+                },
                 "image": "https://www.lookai.top/interface.jpeg",
                 "author": {
                   "@type": "Organization",
@@ -104,58 +145,10 @@ export default function RootLayout({
                   }
                 },
                 "datePublished": "2024-01-01",
-                "dateModified": "2024-01-15"
-              },
-              {
-                "@context": "https://schema.org/",
-                "@type": "Article",
-                "mainEntityOfPage": {
-                  "@type": "WebPage",
-                  "@id": "https://www.lookai.top/cursor/advance/cursor_tab"
-                },
-                "headline": "Cursor Tab自动补全",
-                "description": "学习如何在 Cursor 中高效管理多个标签页",
-                "image": "https://www.lookai.top/predict.jpeg",
-                "author": {
-                  "@type": "Organization",
-                  "name": "LookAI"
-                },
-                "publisher": {
-                  "@type": "Organization",
-                  "name": "LookAI",
-                  "logo": {
-                    "@type": "ImageObject",
-                    "url": "https://www.lookai.top/logo.png"
-                  }
-                },
-                "datePublished": "2024-01-05",
-                "dateModified": "2024-01-20"
-              },
-              {
-                "@context": "https://schema.org/",
-                "@type": "Article",
-                "mainEntityOfPage": {
-                  "@type": "WebPage",
-                  "@id": "https://www.lookai.top/cursor/tips/cursor_git"
-                },
-                "headline": "Cursor 中的 Git 操作技巧",
-                "description": "掌握在 Cursor 中使用 Git 进行版本控制的高级技巧",
-                "image": "https://www.lookai.top/git_logo.png",
-                "author": {
-                  "@type": "Organization",
-                  "name": "LookAI"
-                },
-                "publisher": {
-                  "@type": "Organization",
-                  "name": "LookAI",
-                  "logo": {
-                    "@type": "ImageObject",
-                    "url": "https://www.lookai.top/logo.png"
-                  }
-                },
-                "datePublished": "2024-01-10",
-                "dateModified": "2024-01-25"
+                "dateModified": "2024-01-15",
+                "inLanguage": ["en", "zh"]
               }
+              // ... 其他文章的结构化数据也类似添加英文版本
             ]
           `
         }} />

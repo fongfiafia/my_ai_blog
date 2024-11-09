@@ -11,15 +11,15 @@ function getLocale(request: NextRequest): Locale {
     )
 
     if (!pathnameIsMissingLocale) {
-      const locale = pathname.split('/')[1] as Locale
-      return locale
-  }
+        const locale = pathname.split('/')[1] as Locale
+        return locale
+    }
 
     // 2. 检查cookie中是否有语言设置
     const cookieLocale = request.cookies.get('NEXT_LOCALE')?.value
     if (cookieLocale && i18n.locales.includes(cookieLocale as Locale)) {
-      return cookieLocale as Locale
-  }
+        return cookieLocale as Locale
+    }
 
     // 3. 默认返回英文
     return 'en'
@@ -33,12 +33,12 @@ export function middleware(request: NextRequest) {
         [
             '/manifest.json',
             '/favicon.ico',
-      ].includes(pathname) ||
-      pathname.includes('.') ||
-      pathname.startsWith('/api/')
-  ) {
-      return
-  }
+        ].includes(pathname) ||
+        pathname.includes('.') ||
+        pathname.startsWith('/api/')
+    ) {
+        return
+    }
 
     // 获取当前语言
     const locale = getLocale(request)
