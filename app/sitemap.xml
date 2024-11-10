@@ -1,120 +1,176 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- 首页 -->
   <url>
-    <loc>https://www.lookai.top</loc>
+    <loc>https://www.lookai.top/cn</loc>
     <lastmod>2024-03-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn"/>
   </url>
+
+  <!-- Cursor基础教程 -->
   <url>
-    <loc>https://www.lookai.top/cursor/basic/what_is_cursor</loc>
+    <loc>https://www.lookai.top/cn/cursor/basic/what_is_cursor</loc>
     <lastmod>2024-03-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/cursor/basic/what_is_cursor"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/cursor/basic/what_is_cursor"/>
   </url>
+
   <url>
-    <loc>https://www.lookai.top/cursor/instruction/instruction</loc>
+    <loc>https://www.lookai.top/cn/cursor/instruction/instruction</loc>
     <lastmod>2024-03-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/cursor/instruction/instruction"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/cursor/instruction/instruction"/>
   </url>
+
   <url>
-    <loc>https://www.lookai.top/cursor/basic/cursor_download</loc>
+    <loc>https://www.lookai.top/cn/cursor/basic/cursor_download</loc>
     <lastmod>2024-03-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/cursor/basic/cursor_download"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/cursor/basic/cursor_download"/>
   </url>
+
   <url>
-    <loc>https://www.lookai.top/cursor/basic/cursor_interface</loc>
+    <loc>https://www.lookai.top/cn/cursor/basic/cursor_interface</loc>
     <lastmod>2024-03-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/cursor/basic/cursor_interface"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/cursor/basic/cursor_interface"/>
   </url>
+
   <url>
-    <loc>https://www.lookai.top/cursor/basic/first_project_cursor</loc>
+    <loc>https://www.lookai.top/cn/cursor/basic/first_project_cursor</loc>
     <lastmod>2024-03-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/cursor/basic/first_project_cursor"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/cursor/basic/first_project_cursor"/>
   </url>
+
   <url>
-    <loc>https://www.lookai.top/cursor/basic/try_chat_cursor</loc>
+    <loc>https://www.lookai.top/cn/cursor/basic/try_chat_cursor</loc>
     <lastmod>2024-03-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/cursor/basic/try_chat_cursor"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/cursor/basic/try_chat_cursor"/>
   </url>
+
   <url>
-    <loc>https://www.lookai.top/cursor/advance/cursor_tab</loc>
+    <loc>https://www.lookai.top/cn/cursor/advance/cursor_tab</loc>
     <lastmod>2024-03-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/cursor/advance/cursor_tab"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/cursor/advance/cursor_tab"/>
   </url>
+
   <url>
-    <loc>https://www.lookai.top/cursor/advance/cursor_cmdk</loc>
+    <loc>https://www.lookai.top/cn/cursor/advance/cursor_cmdk</loc>
     <lastmod>2024-03-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/cursor/advance/cursor_cmdk"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/cursor/advance/cursor_cmdk"/>
   </url>
+
   <url>
-    <loc>https://www.lookai.top/cursor/advance/cursor_chat</loc>
+    <loc>https://www.lookai.top/cn/cursor/advance/cursor_chat</loc>
     <lastmod>2024-03-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/cursor/advance/cursor_chat"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/cursor/advance/cursor_chat"/>
   </url>
+
   <url>
-    <loc>https://www.lookai.top/cursor/promote/cursor_context</loc>
+    <loc>https://www.lookai.top/cn/cursor/promote/cursor_context</loc>
     <lastmod>2024-03-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/cursor/promote/cursor_context"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/cursor/promote/cursor_context"/>
   </url>
+
   <url>
-    <loc>https://www.lookai.top/cursor/promote/cursor_change_model</loc>
+    <loc>https://www.lookai.top/cn/cursor/promote/cursor_change_model</loc>
     <lastmod>2024-03-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lookai.top/cursor/tips/cursor_git</loc>
-    <lastmod>2024-03-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lookai.top/cursor/tips/cursor_free</loc>
-    <lastmod>2024-03-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lookai.top/cursor/tips/cursor_deepseek</loc>
-    <lastmod>2024-03-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lookai.top/cursor/video/cursor_teach_video</loc>
-    <lastmod>2024-03-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.lookai.top/fun/perfect-circle</loc>
-    <lastmod>2024-03-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-   <url>
-    <loc>https://www.lookai.top/fun/wx-miniprogram</loc>
-    <lastmod>2024-03-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-   <url>
-    <loc>https://www.lookai.top/ai-teacher</loc>
-    <lastmod>2024-03-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/cursor/promote/cursor_change_model"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/cursor/promote/cursor_change_model"/>
   </url>
 
+  <url>
+    <loc>https://www.lookai.top/cn/cursor/tips/cursor_git</loc>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/cursor/tips/cursor_git"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/cursor/tips/cursor_git"/>
+  </url>
 
- 
+  <url>
+    <loc>https://www.lookai.top/cn/cursor/tips/cursor_free</loc>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/cursor/tips/cursor_free"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/cursor/tips/cursor_free"/>
+  </url>
+
+  <url>
+    <loc>https://www.lookai.top/cn/cursor/tips/cursor_deepseek</loc>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/cursor/tips/cursor_deepseek"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/cursor/tips/cursor_deepseek"/>
+  </url>
+
+  <url>
+    <loc>https://www.lookai.top/cn/cursor/video/cursor_teach_video</loc>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/cursor/video/cursor_teach_video"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/cursor/video/cursor_teach_video"/>
+  </url>
+
+  <url>
+    <loc>https://www.lookai.top/cn/fun/perfect-circle</loc>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/fun/perfect-circle"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/fun/perfect-circle"/>
+  </url>
+
+  <url>
+    <loc>https://www.lookai.top/cn/fun/wx-miniprogram</loc>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/fun/wx-miniprogram"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/fun/wx-miniprogram"/>
+  </url>
+
+  <url>
+    <loc>https://www.lookai.top/cn/ai-teacher</loc>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/ai-teacher"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/ai-teacher"/>
+  </url>
 </urlset>
