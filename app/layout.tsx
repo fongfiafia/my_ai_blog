@@ -51,7 +51,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <meta name="google-adsense-account" content="ca-pub-1362518378038131" />
+
+        < meta name="google-adsense-account" content="ca-pub-1362518378038131" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{
           __html: `
             {
@@ -157,6 +158,11 @@ export default function RootLayout({
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
+        <Script
+          async
+          src="http://offers.propellerads.com/api/v1/ads_open_rtb/8517233/?auth=8e61cb00a97214c223211d0e80463e1f7e17eb1a"
+          strategy="afterInteractive"
+        />
       </head>
       {/* <Script
         src="https://alwingulla.com/88/tag.min.js"
@@ -165,10 +171,14 @@ export default function RootLayout({
         data-cfasync="false"
         strategy="afterInteractive"
       /> */}
+
+
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} font-regular antialiased`}
         suppressHydrationWarning
       >
+
+
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

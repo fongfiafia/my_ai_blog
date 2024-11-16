@@ -12,6 +12,7 @@ import FunProjectsSection from '@/components/FunProjectsSection';
 import { getDictionary } from '@/lib/dictionary'
 import { i18n, Locale } from '@/lib/i18n-config'
 import Footer from '@/components/footer'
+import MonetagAd from '@/components/MonetagAd';
 
 export async function generateMetadata({ params: { lang } }: { params: { lang: Locale } }): Promise<Metadata> {
     const dict = await getDictionary(lang)
@@ -67,6 +68,8 @@ export default async function HomePage({ params: { lang } }: { params: { lang: L
                         ))}
                     </Link>
                 </div>
+
+                <MonetagAd className="my-8" />
 
                 <FAQSection
                     title={dict.faq.title}
