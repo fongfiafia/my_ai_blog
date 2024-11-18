@@ -12,7 +12,7 @@ export const dictionary = {
             cursorFree: '学习如何免费使用Cursor的高级功能，让你的开发更加顺畅',
             cursorGit: '使用Git进行版本控制，让你的开发更加安全，轻松管理代码版本',
             cursorInterface: '深入了解Cursor的界面布局和功能区域，熟悉开发环境',
-            cursorChat: '掌握Cursor的AI聊天功能，让AI成为你的编程助手，���高开发效率'
+            cursorChat: '掌握Cursor的AI聊天功能，让AI成为你的编程助手，高开发效率'
         },
         viewMore: "查看更多",
         viewMoreVideos: "查看更多视频"
@@ -33,7 +33,7 @@ export const dictionary = {
             },
             {
                 question: "Cursor适合没有编程基础的普通人使用吗?",
-                answer: "非常适合。Cursor非常适合无编程基础的普通人。它提供智能代码补全和解释功能,可以帮助0编程基础的小白更快地学习编程。本教程面向的就是0基础的小白,���字搭配视频教会您Cursor使用方法,让您快速上手,使用Cursor完成您的想法。"
+                answer: "非常适合。Cursor非常适合无编程基础的普通人。它提供智能代码补全和解释功能,可以帮助0编程基础的小白更快地学习编程。本教程面向的就是0基础的小白,字搭配视频教会您Cursor使用方法,让您快速上手,使用Cursor完成您的想法。"
             },
             {
                 question: "如何安装Cursor?",
@@ -61,7 +61,7 @@ export const dictionary = {
         title: '关于AI Cursor老师最常见问题',
         items: [
             {
-                question: "如何使用Cursor AI老师��",
+                question: "如何使用Cursor AI老师",
                 answer: "Cursor AI老师基于知识库提供精准的回答。您可以通过点击页面上的按钮来与AI老师互动。"
             },
             {
@@ -226,7 +226,7 @@ export const dictionary = {
             },
             {
                 title: "使用跟踪",
-                content: "我们使用标准的互联网技术，如网络服务器日志和流量分析软件，来跟踪网站使用情况。这些信息帮助我们了解网站的哪些部分最受欢迎，访问者来自哪里，以及他们停留���长时间。我们可能会使用第三方服务，如Google Analytics，来帮助我们了解网站流量和使用模式。这些服务收集汇总数据，不会识别个人用户。"
+                content: "我们使用标准的互联网技术，如网络服务器日志和流量分析软件，来跟踪网站使用情况。这些信息帮助我们了解网站的哪些部分最受欢迎，访问者来自哪里，以及他们停留长时间。我们可能会使用第三方服务，如Google Analytics，来帮助我们了解网站流量和使用模式。这些服务收集汇总数据，不会识别个人用户。"
             },
             {
                 title: "您的权利",
@@ -264,7 +264,7 @@ export const dictionary = {
             },
             {
                 title: "材料准确性",
-                content: "LookAI网站上出��的材料可能包含技术、排版或摄影错误。LookAI不保证其网站上的任何材料准确、完整或最新。LookAI可能随时更改其网站上包含的材料，恕不另行通知。"
+                content: "LookAI网站上出的材料可能包含技术、排版或摄影错误。LookAI不保证其网站上的任何材料准确、完整或最新。LookAI可能随时更改其网站上包含的材料，恕不另行通知。"
             },
             {
                 title: "链接",
@@ -287,7 +287,7 @@ export const dictionary = {
             },
             {
                 content: "教程非常实用，特别是关于如何免费使用Cursor的部分。视频演示也很清晰，让我快速掌握了使用方法。",
-                author: "李佳",
+                author: "Sarah Li",
                 role: "自由职业者",
                 avatar: "/avatars/user2.jpg"
             },
@@ -304,5 +304,11 @@ export const dictionary = {
                 avatar: "/avatars/user4.jpg"
             }
         ]
+    },
+    githubActivity: {
+        title: "网站更新记录",
+        viewRepository: "查看仓库",
+        repository: "仓库",
+        description: "本教程的源码仓库"
     }
 } 

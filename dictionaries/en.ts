@@ -304,5 +304,11 @@ export const dictionary = {
                 avatar: "/avatars/user4.jpg"
             }
         ]
+    },
+    githubActivity: {
+        title: "Website Update History",
+        viewRepository: "View Repository",
+        repository: "Repository",
+        description: "Source code repository for this tutorial"
     }
 } 

@@ -15,6 +15,7 @@ import Footer from '@/components/footer'
 import Search from '@/components/search';
 import RecommendedReadingSection from '@/components/RecommendedReadingSection';
 import UserReviewsSection from '@/components/UserReviewsSection';
+import GitHubActivityGraph from '@/components/GitHubActivityGraph';
 
 export async function generateMetadata({ params: { lang } }: { params: { lang: Locale } }): Promise<Metadata> {
     const dict = await getDictionary(lang)
@@ -102,6 +103,8 @@ export default async function HomePage({ params: { lang } }: { params: { lang: L
                     title={dict.userReviews.title}
                     reviews={dict.userReviews.reviews}
                 />
+
+                <GitHubActivityGraph username="fongfiafia" dict={dict} />
 
             </div>
 
