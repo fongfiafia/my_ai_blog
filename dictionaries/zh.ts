@@ -4,7 +4,18 @@ export const dictionary = {
         subtitle: '在当下的AI时代，Cursor能够极大地赋能每一个普通人\n本网站致力于帮助零基础的普通人\n认识、学会使用Cursor\n做出自己的产品',
         startReading: '开始阅读教程',
         tryAITeacher: '懒得看文字试试\nAI Cursor老师(Beta)',
-        tryAITeacherTitle: '如果你不想看教程，试试AI cursor老师'
+        tryAITeacherTitle: '如果你不想看教程，试试AI cursor老师',
+        recommendedReading: "推荐阅读",
+        recommendedArticles: {
+            whatIsCursor: '了解Cursor是什么，它能为你做什么，以及为什么它如此特别',
+            cursorDownload: '详细的安装指南，帮助你快速开始使用Cursor',
+            cursorFree: '学习如何免费使用Cursor的高级功能，让你的开发更加顺畅',
+            cursorGit: '使用Git进行版本控制，让你的开发更加安全，轻松管理代码版本',
+            cursorInterface: '深入了解Cursor的界面布局和功能区域，熟悉开发环境',
+            cursorChat: '掌握Cursor的AI聊天功能，让AI成为你的编程助手，提高开发效率'
+        },
+        viewMore: "查看更多",
+        viewMoreVideos: "查看更多视频"
     },
     metadata: {
         title: 'LookAI - 最适合零编程基础普通人的Cursor AI编程教程 | 小白免费学习资源',
@@ -91,6 +102,12 @@ export const dictionary = {
                 description: "Cursor的AI辅助功能演示",
                 youtubeUrl: "TgXDEnF43M0",
                 duration: "18:45"
+            },
+            {
+                title: "Cursor+Git的绝佳搭配",
+                description: "从此不再担心cursor改坏代码，随时找回旧代码",
+                youtubeUrl: "https://www.youtube.com/embed/_-79qXW7RDY?si=t5fYp5gpFMlceCIh",
+                duration: "11:45"
             }
         ]
     },

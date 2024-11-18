@@ -1,6 +1,6 @@
 import React from 'react';
 import { buttonVariants } from "@/components/ui/button";
-import { page_routes } from "@/lib/routes-config";
+import { page_routes, getAllRoutes } from "@/lib/routes-config";
 import Link from "next/link";
 import { Metadata } from 'next';
 import FAQSection from '@/components/FAQSection';
@@ -13,6 +13,7 @@ import { getDictionary } from '@/lib/dictionary'
 import { i18n, Locale } from '@/lib/i18n-config'
 import Footer from '@/components/footer'
 import Search from '@/components/search';
+import RecommendedReadingSection from '@/components/RecommendedReadingSection';
 
 export async function generateMetadata({ params: { lang } }: { params: { lang: Locale } }): Promise<Metadata> {
     const dict = await getDictionary(lang)
@@ -34,7 +35,6 @@ export async function generateMetadata({ params: { lang } }: { params: { lang: L
 
 export default async function HomePage({ params: { lang } }: { params: { lang: Locale } }) {
     const dict = await getDictionary(lang)
-
     return (
         <>
             <div className="flex flex-col items-center justify-center text-center px-2 py-8">
@@ -69,19 +69,29 @@ export default async function HomePage({ params: { lang } }: { params: { lang: L
                     </Link>
                 </div>
 
-                <div className="w-3/5 max-w-2xl mb-8 pt-9 pb-0">
+                {/* <div className="w-3/5 max-w-2xl mb-8 pt-9 pb-0">
                     <Search />
-                </div>
+                </div> */}
+
+
+
 
                 <FAQSection
                     title={dict.faq.title}
                     items={dict.faq.items}
                 />
-                <FAQAISection
+
+                <RecommendedReadingSection
+                    title={dict.home.recommendedReading}
+                    locale={lang}
+                    dict={dict}
+                />
+
+                <AITeachVideosSection locale={lang} />
+                {/* <FAQAISection
                     title={dict.faqAI.title}
                     items={dict.faqAI.items}
-                />
-                <AITeachVideosSection locale={lang} />
+                /> */}
                 <AIVideosSection locale={lang} />
                 <FunProjectsSection locale={lang} />
                 <AIResourcesSection locale={lang} />

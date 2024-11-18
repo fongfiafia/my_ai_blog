@@ -4,7 +4,18 @@ export const dictionary = {
         subtitle: 'In the current AI era, Cursor can greatly empower everyone.\nThis website is dedicated to helping beginners\nunderstand and learn to use Cursor\nto create their own products',
         startReading: 'Start Reading',
         tryAITeacher: 'Try Text-Free Option\nAI Cursor Teacher(Beta)',
-        tryAITeacherTitle: 'If you don\'t want to read tutorials, try AI Cursor teacher'
+        tryAITeacherTitle: 'If you don\'t want to read tutorials, try AI Cursor teacher',
+        recommendedReading: "Recommended Reading",
+        recommendedArticles: {
+            whatIsCursor: 'Learn what Cursor is, what it can do for you, and why it\'s special',
+            cursorDownload: 'Detailed installation guide to help you get started with Cursor quickly',
+            cursorFree: 'Learn how to use Cursor\'s advanced features for free, making your development smoother',
+            cursorGit: 'Use Git for version control, making your development safer with easy code version management',
+            cursorInterface: 'Deep dive into Cursor\'s interface layout and functional areas, get familiar with the development environment',
+            cursorChat: 'Master Cursor\'s AI chat features, let AI be your programming assistant to improve development efficiency'
+        },
+        viewMore: "View More",
+        viewMoreVideos: "View More Videos"
     },
     metadata: {
         title: 'LookAI - Cursor AI Programming Tutorial for Beginners | Free Learning Resources',
@@ -90,6 +101,12 @@ export const dictionary = {
                 title: "Cursor AI Features Demo",
                 description: "Demonstration of Cursor's AI assistance features",
                 youtubeUrl: "TgXDEnF43M0",
+                duration: "18:45"
+            },
+            {
+                title: "Perfect Combination of Cursor and Git",
+                description: "Never worry about Cursor breaking your code, recover old code anytime",
+                youtubeUrl: "https://www.youtube.com/embed/_-79qXW7RDY?si=t5fYp5gpFMlceCIh",
                 duration: "18:45"
             }
         ]

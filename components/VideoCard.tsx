@@ -16,8 +16,8 @@ interface VideoCardProps {
 function getYouTubeVideoId(url: string): string {
     // 处理多种可能的YouTube URL格式
     const patterns = [
-        /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube.com\/embed\/)([^&\n?#]+)/,
-        /^([^&\n?#]+)$/  // 直接是视频ID的情况
+        /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube.com\/embed\/)([a-zA-Z0-9_-]+)(?:\?|$)/,
+        /^([a-zA-Z0-9_-]+)$/  // 直接是视频ID的情况
     ];
 
     for (const pattern of patterns) {
