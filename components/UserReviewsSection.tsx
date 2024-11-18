@@ -27,7 +27,7 @@ export default function UserReviewsSection({ title, reviews }: UserReviewsSectio
                             key={index}
                             className="w-[400px] shrink-0 p-6 rounded-lg border border-gray-200 bg-white"
                         >
-                            <p className="text-gray-700 mb-4 italic line-clamp-3 whitespace-normal">"{review.content}"</p>
+                            <p className="text-gray-700 mb-4 italic line-clamp-3 whitespace-normal">&ldquo;{review.content}&rdquo;</p>
                             <div className="flex items-center">
                                 <div className="h-10 w-10 rounded-full overflow-hidden mr-3">
                                     <Image
