@@ -14,6 +14,7 @@ import { i18n, Locale } from '@/lib/i18n-config'
 import Footer from '@/components/footer'
 import Search from '@/components/search';
 import RecommendedReadingSection from '@/components/RecommendedReadingSection';
+import UserReviewsSection from '@/components/UserReviewsSection';
 
 export async function generateMetadata({ params: { lang } }: { params: { lang: Locale } }): Promise<Metadata> {
     const dict = await getDictionary(lang)
@@ -87,6 +88,7 @@ export default async function HomePage({ params: { lang } }: { params: { lang: L
                     dict={dict}
                 />
 
+
                 <AITeachVideosSection locale={lang} />
                 {/* <FAQAISection
                     title={dict.faqAI.title}
@@ -95,8 +97,17 @@ export default async function HomePage({ params: { lang } }: { params: { lang: L
                 <AIVideosSection locale={lang} />
                 <FunProjectsSection locale={lang} />
                 <AIResourcesSection locale={lang} />
+
+                <UserReviewsSection
+                    title={dict.userReviews.title}
+                    reviews={dict.userReviews.reviews}
+                />
+
             </div>
+
+
             <Footer locale={lang} dict={dict} />
+
         </>
     )
 }

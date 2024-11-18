@@ -275,5 +275,34 @@ export const dictionary = {
             title: "Contact Us",
             content: "If you have any questions about these Terms of Service, please contact us at "
         }
+    },
+    userReviews: {
+        title: "User Reviews",
+        reviews: [
+            {
+                content: "As a designer with zero programming background, Cursor has made it possible for me to develop my creative projects. This tutorial explains complex concepts so clearly!",
+                author: "Mike Chen",
+                role: "UI Designer",
+                avatar: "/avatars/user1.jpg"
+            },
+            {
+                content: "The tutorial is super practical, especially the part about using Cursor for free. The video demonstrations are clear and helped me quickly master the tool.",
+                author: "Sarah Li",
+                role: "Freelancer",
+                avatar: "/avatars/user2.jpg"
+            },
+            {
+                content: "From zero to developing a mini program in just two weeks with this tutorial. The combination of Cursor + GPT is truly powerful!",
+                author: "David Wang",
+                role: "Entrepreneur",
+                avatar: "/avatars/user3.jpg"
+            },
+            {
+                content: "Thank you for this tutorial! It enabled me, a marketing person, to do some simple development work, greatly improving my work efficiency.",
+                author: "Emily Chen",
+                role: "Product Operations",
+                avatar: "/avatars/user4.jpg"
+            }
+        ]
     }
 } 

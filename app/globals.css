@@ -168,3 +168,21 @@ blockquote>p::before {
   font-size: 1.2rem;
   font-weight: bold;
 }
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-scroll {
+    animation: scroll 30s linear infinite;
+}
+
+/* 当鼠标悬停时暂停动画 */
+.animate-scroll:hover {
+    animation-play-state: paused;
+}
