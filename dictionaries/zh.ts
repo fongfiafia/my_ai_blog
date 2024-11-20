@@ -33,7 +33,7 @@ export const dictionary = {
             },
             {
                 question: "Cursor适合没有编程基础的普通人使用吗?",
-                answer: "非常适合。Cursor非常适合无编程基础的普通人。它提供智能代码补全和解释功能,可以帮助0编程基础的小白更快地学习编程。本教程面向的就是0基础的小白,字搭配视频教会您Cursor使用方法,让您快速上手,使用Cursor完成您的想法。"
+                answer: "非常适合。Cursor非常适合无编程基础的普通人。它提供智能代码补全和解释功能,可以帮助0编程基础的小白更快地学习编程。本教��面向的就是0基础的小白,字搭配视频教会您Cursor使用方法,让您快速上手,使用Cursor完成您的想法。"
             },
             {
                 question: "如何安装Cursor?",
@@ -172,7 +172,7 @@ export const dictionary = {
             },
             {
                 name: "Free AI Tool",
-                description: "免费AI工具集合",
+                description: "免费AI工具集���",
                 icon: "/ai-resources/apple-touch-icon.png",
                 url: "https://freeaitool.ai/",
                 tags: ["AI工具箱", "免费"]
@@ -199,6 +199,10 @@ export const dictionary = {
             {
                 title: "做点好玩的",
                 href: "fun",
+            },
+            {
+                title: "零基础小白开发产品SOP",
+                href: "sop",
             },
             {
                 title: "ChatGPT 合租",
@@ -252,7 +256,7 @@ export const dictionary = {
             },
             {
                 title: "使用许可",
-                content: "允许临时下载LookAI网站上的材料（信息或软件）的一份副本，仅供个人、非商业性的临时查看。这是许可授予，而非所有权转让，根据此许可，您不得：修改或复制材料；将材料用于任何商业目的；试图反编译或反向工程网站上包含的任何软件；删除材料中的任何版权或其他专有标记；或将材料转让给他人或在任何其他服务器上'镜像'材料。"
+                content: "允许临时下载LookAI网站上的材料（信息或软件）的一份副本，仅供个人、非商业性的临时查看。这是许可授予，而非所有权转让，根据此许可，您不得：修改或复制材料；将材料用于任何商业目的；试图反编译或反向工程网站上包含的任���软件；删除材料中的任何版权或其他专有标记；或将材料转让给他人或在任何其他服务器上'镜像'材料。"
             },
             {
                 title: "免责声明",
@@ -268,7 +272,7 @@ export const dictionary = {
             },
             {
                 title: "链接",
-                content: "LookAI尚未审查其网站链接的所有网站，对任何此类链接网站的内容不承担责任。包含任何链接并不意味着LookAI对该网站的认可。使用任何此类链接网站的风险由用户自行承担。"
+                content: "LookAI尚未审查其网站链接的所有��站，对任何此类链接网站的内容不承担责任。包含任何链接并不意味着LookAI对该网站的认可。使用任何此类链接网站的风险由用户自行承担。"
             }
         ],
         contact: {

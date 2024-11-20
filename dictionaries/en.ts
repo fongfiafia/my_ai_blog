@@ -201,6 +201,10 @@ export const dictionary = {
                 href: "fun",
             },
             {
+                title: "Product Development SOP",
+                href: "sop",
+            },
+            {
                 title: "ChatGPT Sharing",
                 href: "https://nf.video/HwL0y",
             }

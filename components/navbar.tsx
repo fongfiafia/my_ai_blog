@@ -47,6 +47,10 @@ export const NAVLINKS = [
     href: "fun",
   },
   {
+    title: "零基础小白开发产品SOP",
+    href: "sop",
+  },
+  {
     title: "ChatGPT 合租",
     href: "https://nf.video/HwL0y",
   },
