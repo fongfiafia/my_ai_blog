@@ -8,6 +8,9 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote/rsc'
+import { formatDate } from '@/lib/utils'
+import Link from 'next/link'
+import { ChevronLeft } from 'lucide-react'
 
 type PageProps = {
     params: {
@@ -23,7 +26,10 @@ async function getArticleContent(slug: string[]) {
         const fileContent = fs.readFileSync(articlePath, 'utf-8')
         const { data, content } = matter(fileContent)
         return {
-            frontmatter: data,
+            frontmatter: {
+                ...data,
+                date: formatDate(data.date)
+            },
             content
         }
     } catch (error) {
@@ -38,19 +44,30 @@ export default async function ArticlePage({ params: { slug, lang } }: PageProps)
         notFound()
     }
 
+    const { frontmatter, content } = article
+
     return (
         <div className="container max-w-4xl py-6">
+            <Link
+                href="/sop"
+                className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors mb-6 w-fit"
+            >
+                <ChevronLeft className="h-4 w-4" />
+                <span>Back to SOP</span>
+            </Link>
             <article className="prose dark:prose-invert max-w-none">
                 <Typography>
-                    <h1 className="text-3xl font-bold mb-4">{article.frontmatter.title}</h1>
+                    <h1 className="text-3xl font-bold mb-4">{frontmatter.title}</h1>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
-                        <span>{article.frontmatter.author}</span>
+                        <span>{frontmatter.author}</span>
                         <span>·</span>
-                        <span>{article.frontmatter.date}</span>
+                        <span>{frontmatter.date}</span>
                         <span>·</span>
-                        <span>{article.frontmatter.readTime}</span>
+                        <span>{frontmatter.readTime}</span>
                     </div>
-                    <MDXRemote source={article.content} />
+                    <div className="mt-4">
+                        <MDXRemote source={content} />
+                    </div>
                 </Typography>
             </article>
         </div>

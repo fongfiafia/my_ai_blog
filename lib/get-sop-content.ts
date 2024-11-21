@@ -77,7 +77,7 @@ function getCategoryName(slug: string): string {
 // 获取文章列表
 export async function getSOPArticles(category?: string): Promise<SOPArticle[]> {
     const contentDir = path.join(process.cwd(), 'contents')
-    const excludeDirs = ['cursor', 'blog']
+    const excludeDirs = ['cursor', 'blogs']
 
     const articles: SOPArticle[] = []
 

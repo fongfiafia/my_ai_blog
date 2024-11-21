@@ -4,6 +4,7 @@ import { Locale } from '@/lib/i18n-config'
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { getCategories, getSOPArticles } from '@/lib/get-sop-content'
+import { redirect } from 'next/navigation'
 
 export const metadata: Metadata = {
     title: '零基础小白开发产品SOP - LookAI',
@@ -32,6 +33,14 @@ function formatDate(date: string | Date) {
 export default async function SOPPage({ params: { lang } }: { params: { lang: Locale } }) {
     const dict = await getDictionary(lang)
     const categories = getCategories()
+
+    // 如果是直接访问 /sop，重定向到小程序分类
+    if (categories.length > 0) {
+        const defaultCategory = categories.find(cat => cat.slug === 'miniprogram') || categories[0]
+        redirect(`/sop/category/${defaultCategory.slug}`)
+    }
+
+    // 以下代码通常不会执行，因为会被重定向
     const articles = await getSOPArticles()
     const latestArticles = articles.slice(0, 3)
 
