@@ -1,7 +1,12 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { Locale } from './i18n-config'
+
+export type Category = {
+    name: string
+    slug: string
+    count: number
+}
 
 export type SOPArticle = {
     slug: string
@@ -14,22 +19,26 @@ export type SOPArticle = {
     category: string
 }
 
-export type Category = {
-    name: string
-    slug: string
-    count: number
+// 获取分类名称映射
+function getCategoryName(slug: string): string {
+    const categoryMap: Record<string, string> = {
+        'miniprogram': '小程序',
+        'ui-design': 'UI设计',
+        'frontend': '前端',
+        'backend': '后端',
+        'ai': '人工智能'
+    }
+    return categoryMap[slug] || slug
 }
 
 // 获取所有分类
 export function getCategories(): Category[] {
     const contentDir = path.join(process.cwd(), 'contents')
-    const excludeDirs = ['cursor', 'blogs'] // 需要排除的目录
+    const excludeDirs = ['cursor', 'blog']
 
     return fs.readdirSync(contentDir)
         .filter(item => {
-            // 排除 cursor 和 blogss 目录
             if (excludeDirs.includes(item)) return false
-
             const stat = fs.statSync(path.join(contentDir, item))
             return stat.isDirectory()
         })
@@ -58,26 +67,19 @@ function countArticlesInCategory(category: string): number {
         })
     }
 
-    countFiles(categoryPath)
-    return count
-}
-
-// 获取分类名称映射
-function getCategoryName(slug: string): string {
-    const categoryMap: Record<string, string> = {
-        'miniprogram': '小程序',
-        'ui-design': 'UI设计',
-        'frontend': '前端',
-        'backend': '后端',
-        'ai': '人工智能'
+    try {
+        countFiles(categoryPath)
+    } catch (error) {
+        console.error(`Error counting articles in category ${category}:`, error)
     }
-    return categoryMap[slug] || slug
+
+    return count
 }
 
 // 获取文章列表
 export async function getSOPArticles(category?: string): Promise<SOPArticle[]> {
     const contentDir = path.join(process.cwd(), 'contents')
-    const excludeDirs = ['cursor', 'blogs']
+    const excludeDirs = ['cursor', 'blog']
 
     const articles: SOPArticle[] = []
 
@@ -99,7 +101,6 @@ export async function getSOPArticles(category?: string): Promise<SOPArticle[]> {
                 const relativePath = path.relative(contentDir, fullPath)
                 const articleCategory = relativePath.split(path.sep)[0]
 
-                // 只有当没有指定分类或文章属于指定分类时才添加
                 if (!excludeDirs.includes(articleCategory) &&
                     (!category || articleCategory === category)) {
                     articles.push({
@@ -117,11 +118,6 @@ export async function getSOPArticles(category?: string): Promise<SOPArticle[]> {
         })
     }
 
-    // 如果指定了分类，只读取该分类目录
-    const targetDir = category
-        ? path.join(contentDir, category)
-        : contentDir
-
-    readDirectory(targetDir)
+    readDirectory(contentDir)
     return articles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 } 

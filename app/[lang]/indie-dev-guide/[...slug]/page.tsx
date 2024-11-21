@@ -8,9 +8,9 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote/rsc'
-import { formatDate } from '@/lib/utils'
 import Link from 'next/link'
 import { ChevronLeft } from 'lucide-react'
+import React from 'react'
 
 type PageProps = {
     params: {
@@ -25,7 +25,24 @@ type Frontmatter = {
     author: string;
     date: string;
     readTime: string;
-    views?: string;
+}
+
+// 日期格式化函数
+function formatDate(date: string | Date) {
+    if (!date) return ''
+    try {
+        const d = new Date(date)
+        if (isNaN(d.getTime())) {
+            return '';
+        }
+        const year = d.getFullYear()
+        const month = String(d.getMonth() + 1).padStart(2, '0')
+        const day = String(d.getDate()).padStart(2, '0')
+        return `${year}-${month}-${day}`
+    } catch (error) {
+        console.error('Date formatting error:', error)
+        return ''
+    }
 }
 
 async function getArticleContent(slug: string[]) {
@@ -35,7 +52,10 @@ async function getArticleContent(slug: string[]) {
         const fileContent = fs.readFileSync(articlePath, 'utf-8')
         const { data, content } = matter(fileContent)
         return {
-            frontmatter: data as Frontmatter,
+            frontmatter: {
+                ...data,
+                date: formatDate(data.date) // 在这里格式化日期
+            } as Frontmatter,
             content
         }
     } catch (error) {

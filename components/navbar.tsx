@@ -39,7 +39,7 @@ export const NAVLINKS = [
     href: "cursor/instruction/instruction",
   },
   {
-    title: "零基础开发产品SOP",
+    title: "零代码开发产品SOP",
     href: "indie-dev-guide",
   },
   {
