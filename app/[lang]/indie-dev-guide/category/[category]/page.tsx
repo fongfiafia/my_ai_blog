@@ -40,7 +40,7 @@ export default async function CategoryPage({
 
     return (
         <div className="min-h-screen">
-            <div className="sticky top-16 z-20 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+            <div className="sticky top-16 z-20 bg-background">
                 <div className="border-b">
                     <div className="container py-8">
                         <div className="text-sm text-muted-foreground mb-6">
@@ -61,7 +61,8 @@ export default async function CategoryPage({
                                 </h1>
                             </div>
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                从构思到上线，我们为每一位独立开发者精心打造了这份指南。无论你是设计师、产品经理，还是刚入门的开发者，这里都能找到适合你的开发路径。
+                                AI时代，无任何编程经验的小白也能开发出自己的产品，包括小程序、浏览器插件、ios应用、Android应用、脚本等等，以前只有程序员能做的事，现在你也可以做到。
+                                但是你还缺少一些必备知识和引导，也就是一个操作指南，例如UI该如何设计，该用什么语言？数据库是什么？登录注册该怎么弄？本网站就是做这个的，帮你捅破那层窗户纸！
                             </p>
                         </div>
 
@@ -95,8 +96,8 @@ export default async function CategoryPage({
                                 key={cat.slug}
                                 href={`/indie-dev-guide/category/${cat.slug}`}
                                 className={`px-3 py-1.5 text-sm rounded-md transition-colors ${cat.slug === category
-                                        ? 'bg-primary/10 text-primary font-medium'
-                                        : 'hover:bg-muted text-muted-foreground hover:text-foreground'
+                                    ? 'bg-primary/10 text-primary font-medium'
+                                    : 'hover:bg-muted text-muted-foreground hover:text-foreground'
                                     }`}
                             >
                                 {cat.name} ({cat.count})
@@ -109,7 +110,10 @@ export default async function CategoryPage({
                 <main className="relative">
                     <div className="grid gap-4">
                         {articles.map((article) => (
-                            <div key={article.slug} className="rounded-lg border bg-card text-card-foreground shadow">
+                            <div
+                                key={article.slug}
+                                className="rounded-lg border bg-background/60 backdrop-blur supports-[backdrop-filter]:bg-background/40 text-card-foreground shadow transition-all duration-200 hover:bg-background/80"
+                            >
                                 <div className="p-6">
                                     <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                                         <span>{article.author}</span>
@@ -133,7 +137,7 @@ export default async function CategoryPage({
                     </div>
                 </main>
                 <aside className="hidden md:block">
-                    <div className="rounded-lg border bg-card text-card-foreground shadow">
+                    <div className="sticky top-[calc(16rem+2rem)] max-h-[calc(100vh-18rem)] overflow-y-auto rounded-lg border bg-card text-card-foreground shadow">
                         <div className="flex flex-col space-y-1.5 p-6">
                             <h3 className="font-semibold leading-none tracking-tight">最新文章</h3>
                         </div>

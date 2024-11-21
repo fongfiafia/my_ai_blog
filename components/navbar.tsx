@@ -13,7 +13,7 @@ import Image from "next/image";
 import { useParams } from 'next/navigation';
 import { getDictionary } from '@/lib/dictionary';
 import type { Locale } from '@/lib/i18n-config';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export function Logo() {
   const pathname = usePathname();
@@ -59,7 +59,22 @@ export const NAVLINKS = [
 export function Navbar() {
   const pathname = usePathname();
   const locale = (pathname.split('/')[1] || i18n.defaultLocale) as Locale;
-  const [navLinks] = useState(NAVLINKS); // 移除 setNavLinks，直接使用 NAVLINKS
+  const [navLinks, setNavLinks] = useState(NAVLINKS);
+
+  useEffect(() => {
+    const loadDictionary = async () => {
+      try {
+        const dict = await getDictionary(locale);
+        if (dict.navigation?.links) {
+          setNavLinks(dict.navigation.links);
+        }
+      } catch (error) {
+        console.error('Failed to load navigation links:', error);
+        // 保持使用默认导航链接
+      }
+    };
+    loadDictionary();
+  }, [locale]);
 
   return (
     <nav className="w-full border-b h-16 sticky top-0 z-50 bg-background">

@@ -193,6 +193,10 @@ export const dictionary = {
                 href: "cursor/instruction/instruction",
             },
             {
+                title: "Indie Dev Guide",
+                href: "indie-dev-guide",
+            },
+            {
                 title: "AI Cursor Teacher",
                 href: "ai-teacher",
             },
@@ -201,11 +205,7 @@ export const dictionary = {
                 href: "fun",
             },
             {
-                title: "Product Development SOP",
-                href: "sop",
-            },
-            {
-                title: "ChatGPT Sharing",
+                title: "ChatGPT Share",
                 href: "https://nf.video/HwL0y",
             }
         ]
