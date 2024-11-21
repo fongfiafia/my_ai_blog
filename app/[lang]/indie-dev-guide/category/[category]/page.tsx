@@ -44,7 +44,7 @@ export default async function CategoryPage({
         <div className="min-h-screen">
             <div className="sticky top-16 z-20 bg-background">
                 <div className="border-b">
-                    <div className="container py-8">
+                    <div className="container py-6">
                         <div className="text-sm text-muted-foreground mb-6">
                             <span>独立开发指南</span>
                             <span className="mx-2">/</span>
@@ -137,7 +137,7 @@ export default async function CategoryPage({
                     </div>
                 </div>
 
-                <div className="container py-3">
+                <div className="container py-4">
                     <div className="flex items-center gap-1 overflow-x-auto">
                         {categories.map((cat) => (
                             <Link
@@ -154,13 +154,13 @@ export default async function CategoryPage({
                     </div>
                 </div>
             </div>
-            <div className="container flex-1 items-start md:grid md:grid-cols-[1fr_300px] md:gap-6 lg:grid-cols-[1fr_360px] lg:gap-10 py-6">
+            <div className="container flex-1 items-start md:grid md:grid-cols-[1fr_300px] md:gap-6 lg:grid-cols-[1fr_360px] lg:gap-10">
                 <main className="relative">
-                    <div className="grid gap-4">
+                    <div className="grid gap-6">
                         {articles.map((article) => (
                             <div
                                 key={article.slug}
-                                className="rounded-lg border bg-background/60 backdrop-blur supports-[backdrop-filter]:bg-background/40 text-card-foreground shadow transition-all duration-200 hover:bg-background/80"
+                                className="rounded-3xl border bg-background/60 backdrop-blur supports-[backdrop-filter]:bg-background/40 text-card-foreground shadow transition-all duration-200 hover:bg-background/80"
                             >
                                 <div className="p-6">
                                     <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
@@ -186,7 +186,7 @@ export default async function CategoryPage({
                 </main>
                 <aside className="hidden md:block">
                     <div className="sticky top-[calc(16rem+2rem)] space-y-4">
-                        <div className="rounded-lg border bg-card text-card-foreground shadow">
+                        <div className="rounded-3xl border bg-card text-card-foreground shadow">
                             <div className="flex flex-col space-y-1.5 p-6">
                                 <h3 className="font-semibold leading-none tracking-tight">最新文章</h3>
                             </div>
