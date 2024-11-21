@@ -4,11 +4,7 @@ import { Locale } from '@/lib/i18n-config'
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { getCategories, getSOPArticles } from '@/lib/get-sop-content'
-
-export const metadata: Metadata = {
-    title: '零基础小白开发产品SOP - LookAI',
-    description: '为零基础小白提供的产品开发标准操作流程指南',
-};
+import { notFound } from 'next/navigation'
 
 // 日期格式化函数
 function formatDate(date: string | Date) {
@@ -16,9 +12,8 @@ function formatDate(date: string | Date) {
     try {
         const d = new Date(date)
         if (isNaN(d.getTime())) {
-            return ''; // 如果日期无效，返回空字符串
+            return '';
         }
-        // 手动格式化日期，避免使用 toISOString
         const year = d.getFullYear()
         const month = String(d.getMonth() + 1).padStart(2, '0')
         const day = String(d.getDate()).padStart(2, '0')
@@ -29,11 +24,19 @@ function formatDate(date: string | Date) {
     }
 }
 
-export default async function SOPPage({ params: { lang } }: { params: { lang: Locale } }) {
+export default async function CategoryPage({
+    params: { lang, category }
+}: {
+    params: { lang: Locale; category: string }
+}) {
     const dict = await getDictionary(lang)
     const categories = getCategories()
-    const articles = await getSOPArticles()
+    const articles = await getSOPArticles(category) // 传入分类参数，只获取该分类的文章
     const latestArticles = articles.slice(0, 3)
+
+    if (!categories.find(c => c.slug === category)) {
+        notFound()
+    }
 
     return (
         <div className="min-h-screen">
@@ -41,10 +44,14 @@ export default async function SOPPage({ params: { lang } }: { params: { lang: Lo
                 <main className="relative">
                     <div className="w-full overflow-x-auto pb-2">
                         <div className="flex items-center gap-4 min-w-max">
-                            {categories.map((category) => (
-                                <Button key={category.slug} variant="ghost" asChild>
-                                    <Link href={`/sop/category/${category.slug}`}>
-                                        {category.name} ({category.count})
+                            {categories.map((cat) => (
+                                <Button
+                                    key={cat.slug}
+                                    variant={cat.slug === category ? "default" : "ghost"}
+                                    asChild
+                                >
+                                    <Link href={`/sop/category/${cat.slug}`}>
+                                        {cat.name} ({cat.count})
                                     </Link>
                                 </Button>
                             ))}
