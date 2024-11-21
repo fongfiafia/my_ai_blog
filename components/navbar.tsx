@@ -13,7 +13,7 @@ import Image from "next/image";
 import { useParams } from 'next/navigation';
 import { getDictionary } from '@/lib/dictionary';
 import type { Locale } from '@/lib/i18n-config';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export function Logo() {
   const pathname = usePathname();
@@ -39,16 +39,16 @@ export const NAVLINKS = [
     href: "cursor/instruction/instruction",
   },
   {
+    title: "零基础开发产品SOP",
+    href: "indie-dev-guide",
+  },
+  {
     title: "AI Cursor老师",
     href: "ai-teacher",
   },
   {
     title: "做点好玩的",
     href: "fun",
-  },
-  {
-    title: "零基础小白开发产品SOP",
-    href: "sop",
   },
   {
     title: "ChatGPT 合租",
@@ -59,22 +59,7 @@ export const NAVLINKS = [
 export function Navbar() {
   const pathname = usePathname();
   const locale = (pathname.split('/')[1] || i18n.defaultLocale) as Locale;
-  const [navLinks, setNavLinks] = useState(NAVLINKS); // 使用 NAVLINKS
-
-  useEffect(() => {
-    const loadDictionary = async () => {
-      try {
-        const dict = await getDictionary(locale);
-        if (dict.navigation?.links) {
-          setNavLinks(dict.navigation.links);
-        }
-      } catch (error) {
-        console.error('Failed to load navigation links:', error);
-        // 保持使用默认导航链接
-      }
-    };
-    loadDictionary();
-  }, [locale]);
+  const [navLinks] = useState(NAVLINKS); // 移除 setNavLinks，直接使用 NAVLINKS
 
   return (
     <nav className="w-full border-b h-16 sticky top-0 z-50 bg-background">

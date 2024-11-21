@@ -50,7 +50,7 @@ export default async function CategoryPage({
                                     variant={cat.slug === category ? "default" : "ghost"}
                                     asChild
                                 >
-                                    <Link href={`/sop/category/${cat.slug}`}>
+                                    <Link href={`/indie-dev-guide/category/${cat.slug}`}>
                                         {cat.name} ({cat.count})
                                     </Link>
                                 </Button>
@@ -68,7 +68,7 @@ export default async function CategoryPage({
                                         <span>·</span>
                                         <span>{article.readTime}</span>
                                     </div>
-                                    <Link href={`/sop/${article.slug}`} className="group">
+                                    <Link href={`/indie-dev-guide/${article.slug}`} className="group">
                                         <h2 className="text-2xl font-bold mb-2 group-hover:text-primary">
                                             {article.title}
                                         </h2>
@@ -91,7 +91,7 @@ export default async function CategoryPage({
                             <div className="grid gap-4">
                                 {latestArticles.map((article) => (
                                     <div key={article.slug} className="grid gap-1">
-                                        <Link href={`/sop/${article.slug}`} className="font-medium hover:text-primary">
+                                        <Link href={`/indie-dev-guide/${article.slug}`} className="font-medium hover:text-primary">
                                             {article.title}
                                         </Link>
                                         <div className="flex items-center gap-2 text-sm text-muted-foreground">

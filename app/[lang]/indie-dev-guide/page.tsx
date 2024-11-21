@@ -37,7 +37,7 @@ export default async function SOPPage({ params: { lang } }: { params: { lang: Lo
     // 如果是直接访问 /sop，重定向到小程序分类
     if (categories.length > 0) {
         const defaultCategory = categories.find(cat => cat.slug === 'miniprogram') || categories[0]
-        redirect(`/sop/category/${defaultCategory.slug}`)
+        redirect(`/indie-dev-guide/category/${defaultCategory.slug}`)
     }
 
     // 以下代码通常不会执行，因为会被重定向
@@ -52,7 +52,7 @@ export default async function SOPPage({ params: { lang } }: { params: { lang: Lo
                         <div className="flex items-center gap-4 min-w-max">
                             {categories.map((category) => (
                                 <Button key={category.slug} variant="ghost" asChild>
-                                    <Link href={`/sop/category/${category.slug}`}>
+                                    <Link href={`/indie-dev-guide/category/${category.slug}`}>
                                         {category.name} ({category.count})
                                     </Link>
                                 </Button>
@@ -70,7 +70,7 @@ export default async function SOPPage({ params: { lang } }: { params: { lang: Lo
                                         <span>·</span>
                                         <span>{article.readTime}</span>
                                     </div>
-                                    <Link href={`/sop/${article.slug}`} className="group">
+                                    <Link href={`/indie-dev-guide/${article.slug}`} className="group">
                                         <h2 className="text-2xl font-bold mb-2 group-hover:text-primary">
                                             {article.title}
                                         </h2>
@@ -93,7 +93,7 @@ export default async function SOPPage({ params: { lang } }: { params: { lang: Lo
                             <div className="grid gap-4">
                                 {latestArticles.map((article) => (
                                     <div key={article.slug} className="grid gap-1">
-                                        <Link href={`/sop/${article.slug}`} className="font-medium hover:text-primary">
+                                        <Link href={`/indie-dev-guide/${article.slug}`} className="font-medium hover:text-primary">
                                             {article.title}
                                         </Link>
                                         <div className="flex items-center gap-2 text-sm text-muted-foreground">

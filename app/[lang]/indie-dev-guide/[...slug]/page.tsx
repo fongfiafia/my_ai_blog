@@ -19,6 +19,15 @@ type PageProps = {
     };
 };
 
+type Frontmatter = {
+    title: string;
+    excerpt: string;
+    author: string;
+    date: string;
+    readTime: string;
+    views?: string;
+}
+
 async function getArticleContent(slug: string[]) {
     const articlePath = path.join(process.cwd(), 'contents', ...slug) + '.mdx'
 
@@ -26,10 +35,7 @@ async function getArticleContent(slug: string[]) {
         const fileContent = fs.readFileSync(articlePath, 'utf-8')
         const { data, content } = matter(fileContent)
         return {
-            frontmatter: {
-                ...data,
-                date: formatDate(data.date)
-            },
+            frontmatter: data as Frontmatter,
             content
         }
     } catch (error) {
@@ -49,11 +55,11 @@ export default async function ArticlePage({ params: { slug, lang } }: PageProps)
     return (
         <div className="container max-w-4xl py-6">
             <Link
-                href="/sop"
+                href="/indie-dev-guide"
                 className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors mb-6 w-fit"
             >
                 <ChevronLeft className="h-4 w-4" />
-                <span>Back to SOP</span>
+                <span>Back to Guide</span>
             </Link>
             <article className="prose dark:prose-invert max-w-none">
                 <Typography>
