@@ -49,41 +49,44 @@ export default async function CategoryPage({
                             <span>{categories.find(cat => cat.slug === category)?.name || '所有文章'}</span>
                         </div>
 
-                        <div className="space-y-4 max-w-[720px]">
-                            <div className="flex items-center gap-3 mb-2">
-                                <div className="w-6 h-6">
+                        <div className="space-y-6 max-w-[720px]">
+                            <div className="flex items-center gap-3">
+                                <div className="w-10 h-10 flex-shrink-0">
                                     <svg className="w-full h-full text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                                     </svg>
                                 </div>
-                                <h1 className="text-3xl font-bold tracking-tight">
+                                <h1 className="text-4xl font-bold tracking-tight">
                                     零基础独立开发指南
                                 </h1>
                             </div>
-                            <p className="text-lg text-muted-foreground leading-relaxed">
-                                AI时代，无任何编程经验的小白也能开发出自己的产品，包括小程序、浏览器插件、ios应用、Android应用、脚本等等，以前只有程序员能做的事，现在你也可以做到。
-                                但是你还缺少一些必备知识和引导，也就是一个操作指南，例如UI该如何设计，该用什么语言？数据库是什么？登录注册该怎么弄？本网站就是做这个的，帮你捅破那层窗户纸！
-                            </p>
-                        </div>
-
-                        <div className="flex flex-wrap gap-2 mt-6">
-                            <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm">
-                                <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                                </svg>
-                                手把手教程
+                            <div className="text-lg text-muted-foreground leading-relaxed">
+                                <p>
+                                    现在，任何人都能成为创造者。无需编程经验，你也可以开发属于自己的小程序、浏览器插件、移动应用或自动化工具。AI 正在改变游戏规则，让创意不再受技术限制。
+                                </p>
+                                <p className="mt-2">
+                                    但要将想法变成现实，你需要一份清晰的路线图 —— 从产品定位、UI 设计、技术选型到实际开发，每一步都至关重要。这正是我们为你准备的完整指南。
+                                </p>
                             </div>
-                            <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm">
-                                <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                </svg>
-                                快速上手
-                            </div>
-                            <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm">
-                                <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                                </svg>
-                                最佳实践
+                            <div className="flex flex-wrap gap-3">
+                                <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                    </svg>
+                                    🚀 AI 时代的产品开发革命
+                                </div>
+                                <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                    零基础也能学会
+                                </div>
+                                <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                    </svg>
+                                    持续更新
+                                </div>
                             </div>
                         </div>
                     </div>
