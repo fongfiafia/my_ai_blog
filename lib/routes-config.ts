@@ -38,6 +38,7 @@ const CN_ROUTES: EachRoute[] = [
       { title: "Cursor AI代码生成详解(Cmd+K)", href: "/cursor_cmdk" },
       { title: "Cursor AI聊天详解(Chat)", href: "/cursor_chat" },
       { title: "Cursor Composer详解(Cmd+I)", href: "/cursor_composer" },
+      { title: "Cursor Agent", href: "/cursor_agent" },
     ],
   },
   {
@@ -100,6 +101,7 @@ const EN_ROUTES: EachRoute[] = [
       { title: "AI Code Generation (Cmd+K)", href: "/cursor_cmdk" },
       { title: "AI Chat Features (Chat)", href: "/cursor_chat" },
       { title: "Cursor Composer (Cmd+I)", href: "/cursor_composer" },
+      { title: "Cursor Agent", href: "/cursor_agent" },
     ],
   },
   {
