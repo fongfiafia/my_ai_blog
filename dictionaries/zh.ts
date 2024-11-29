@@ -314,5 +314,10 @@ export const dictionary = {
         viewRepository: "查看仓库",
         repository: "仓库",
         description: "本教程的源码仓库"
+    },
+    auth: {
+        login: "登录",
+        logout: "退出",
+        loginWithGoogle: "使用 Google 登录"
     }
 } 

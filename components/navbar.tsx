@@ -14,6 +14,8 @@ import { useParams } from 'next/navigation';
 import { getDictionary } from '@/lib/dictionary';
 import type { Locale } from '@/lib/i18n-config';
 import { useState, useEffect } from 'react';
+import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
+import { auth } from "@/lib/firebase";
 
 export function Logo() {
   const pathname = usePathname();
@@ -57,8 +59,9 @@ export const NAVLINKS = [
 ];
 
 export function Navbar() {
+  const [user, setUser] = useState(null);
   const pathname = usePathname();
-  const locale = (pathname.split('/')[1] || i18n.defaultLocale) as Locale;
+  const locale = pathname.split('/')[1] || i18n.defaultLocale;
   const [navLinks, setNavLinks] = useState(NAVLINKS);
 
   useEffect(() => {
@@ -75,6 +78,32 @@ export function Navbar() {
     };
     loadDictionary();
   }, [locale]);
+
+  useEffect(() => {
+    // 监听登录状态变化
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setUser(user);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  const handleLogin = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      await signInWithPopup(auth, provider);
+    } catch (error) {
+      console.error("Error signing in with Google", error);
+    }
+  };
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+    } catch (error) {
+      console.error("Error signing out", error);
+    }
+  };
 
   return (
     <nav className="w-full border-b h-16 sticky top-0 z-50 bg-background">
@@ -102,7 +131,27 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2">
-            {/* <Search /> */}
+            {/* 登录/登出按钮 */}
+            {user ? (
+              <div className="flex items-center gap-2">
+                <span className="text-sm hidden sm:inline">{user.email}</span>
+                <button
+                  onClick={handleLogout}
+                  className={buttonVariants({ variant: "outline", size: "sm" })}
+                >
+                  退出
+                </button>
+              </div>
+            ) : (
+              <button
+                onClick={handleLogin}
+                className={buttonVariants({ variant: "outline", size: "sm" })}
+              >
+                登录
+              </button>
+            )}
+
+            {/* 其他按钮 */}
             <div className="flex ml-2.5 sm:ml-0">
               <Link
                 href="https://github.com/fongfiafia/my_ai_blog"
