@@ -12,7 +12,7 @@ export const dictionary = {
             cursorFree: '学习如何免费使用Cursor的高级功能，让你的开发更加顺畅',
             cursorGit: '使用Git进行版本控制，让你的开发更加安全，轻松管理代码版本',
             cursorInterface: '深入了解Cursor的界面布局和功能区域，熟悉开发环境',
-            cursorChat: '掌握Cursor的AI聊天功能，让AI成为你的编程助���，高开发效率'
+            cursorChat: '掌握Cursor的AI聊天功能，让AI成为你的编程助手，高开发效率'
         },
         viewMore: "查看更多",
         viewMoreVideos: "查看更多视频"
@@ -33,7 +33,7 @@ export const dictionary = {
             },
             {
                 question: "Cursor适合没有编程基础的普通人使用吗?",
-                answer: "非常适合。Cursor非常适合无编程基础的普通人。它提供智能代码补全和解释功能,可以帮助0编程基础的小白更快地学习编程。本教程面向的就是0基础的小��,字搭配视频教会您Cursor使用方法,让您快速上手,使用Cursor完成您的想法。"
+                answer: "非常适合。Cursor非常适合无编程基础的普通人。它提供智能代码补全和解释功能,可以帮助0编程基础的小白更快地学习编程。本教程面向的就是0基础的小,字搭配视频教会您Cursor使用方法,让您快速上手,使用Cursor完成您的想法。"
             },
             {
                 question: "如何安装Cursor?",
@@ -230,7 +230,7 @@ export const dictionary = {
             },
             {
                 title: "使用跟踪",
-                content: "我们使用标准的互联网技术，如网络服务器日志和流量分析软件，来跟踪网���使用情况。这些信息帮助我们了解网站的哪些部分最受欢迎，访问者来自哪里，以及他们停留长时间。我们可能会使用第三方服务，如Google Analytics，来帮助我们了解网站流量和使用模式。这些服务收集汇总数据，不会识别个人用户。"
+                content: "我们使用标准的互联网技术，如网络服务器日志和流��分析软件，来跟踪网使用情况。这些信息帮助我们了解网站的哪些部分最受欢迎，访问者来自哪里，以及他们停留长时间。我们可能会使用第三方服务，如Google Analytics，来帮助我们了解网站流量和使用模式。这些服务收集汇总数据，不会识别个人用户。"
             },
             {
                 title: "您的权利",
@@ -252,7 +252,7 @@ export const dictionary = {
         sections: [
             {
                 title: "条款接受",
-                content: "通过访问和使用本网站(https://lookai.top)，您接受并���意受本协议条款和规定的约束。"
+                content: "通过访问和使用本网站(https://lookai.top)，您接受并意受本协议条款和规定的约束。"
             },
             {
                 title: "使用许可",
@@ -316,8 +316,8 @@ export const dictionary = {
         description: "本教程的源码仓库"
     },
     auth: {
-        login: "登录",
+        login: "Google登录",
         logout: "退出",
-        loginWithGoogle: "使用 Google 登录"
+        loggedInAs: "当前用户"
     }
 } 

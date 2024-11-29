@@ -314,5 +314,10 @@ export const dictionary = {
         viewRepository: "View Repository",
         repository: "Repository",
         description: "Source code repository for this tutorial"
+    },
+    auth: {
+        login: "Sign in with Google",
+        logout: "Sign out",
+        loggedInAs: "Signed in as"
     }
 } 

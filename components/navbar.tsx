@@ -62,16 +62,18 @@ export function Navbar() {
   const pathname = usePathname();
   const locale = pathname.split('/')[1] || i18n.defaultLocale;
   const [navLinks, setNavLinks] = useState(NAVLINKS);
+  const [dict, setDict] = useState<any>(null);
 
   useEffect(() => {
     const loadDictionary = async () => {
       try {
-        const dict = await getDictionary(locale);
-        if (dict.navigation?.links) {
-          setNavLinks(dict.navigation.links);
+        const dictionary = await getDictionary(locale);
+        setDict(dictionary);
+        if (dictionary.navigation?.links) {
+          setNavLinks(dictionary.navigation.links);
         }
       } catch (error) {
-        console.error('Failed to load navigation links:', error);
+        console.error('Failed to load dictionary:', error);
       }
     };
     loadDictionary();
@@ -151,13 +153,13 @@ export function Navbar() {
             {user ? (
               <div className="flex items-center gap-2">
                 <span className="text-sm hidden sm:inline text-gray-600 dark:text-gray-400">
-                  {user.email}
+                  {dict?.auth?.loggedInAs} {user.email}
                 </span>
                 <button
                   onClick={handleLogout}
                   className="px-4 py-2 text-sm bg-transparent border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
                 >
-                  退出
+                  {dict?.auth?.logout}
                 </button>
               </div>
             ) : (
@@ -165,7 +167,7 @@ export function Navbar() {
                   onClick={handleLogin}
                   className="px-4 py-2 text-sm bg-black dark:bg-white text-white dark:text-black font-medium rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
                 >
-                  Google登录
+                  {dict?.auth?.login}
                 </button>
             )}
           </div>
