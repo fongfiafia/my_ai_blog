@@ -13,12 +13,12 @@ import { useParams } from 'next/navigation';
 import { getDictionary } from '@/lib/dictionary';
 import type { Locale } from '@/lib/i18n-config';
 import { useState, useEffect } from 'react';
-import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider, signOut, User } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 
 export function Logo() {
   const pathname = usePathname();
-  const locale = pathname.split('/')[1] || i18n.defaultLocale;
+  const locale = (pathname.split('/')[1] || i18n.defaultLocale) as Locale;
 
   return (
     <Link href={`/${locale}`} className="flex items-center gap-2">
@@ -58,9 +58,9 @@ export const NAVLINKS = [
 ];
 
 export function Navbar() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<User | null>(null);
   const pathname = usePathname();
-  const locale = pathname.split('/')[1] || i18n.defaultLocale;
+  const locale = (pathname.split('/')[1] || i18n.defaultLocale) as Locale;
   const [navLinks, setNavLinks] = useState(NAVLINKS);
   const [dict, setDict] = useState<any>(null);
 
