@@ -1,0 +1,131 @@
+---
+title: 💰 10分钟给网页添加登录注册功能（2500字详细教程）
+excerpt: 
+author: 未生AI
+date: 2024-12-01
+readTime: 5 min read
+views: 1.0K
+---
+
+
+## 前言 
+
+相信很多朋友在了解了cursor编程后，很快的做出了自己的页面、小程序等等作品
+
+这些作品往往都是一个静态的页面，所有内容都是固化好，不会变化的，我们一般把这个叫做静态页面
+
+几乎都是没有绑定数据变化的功能，比如用户信息管理，用户登录注册，订单管理、商品维护等等
+
+相信很多朋友也不知道该怎么操作，找不到教程，本期教程就来教大家一些真正有价值的内容
+
+## 实操视频
+本篇文章对应视频如下，文章内容会包含视频没有的更多细节。
+
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/-LPEflinGss?si=U_xXDIb0Hqh8ZQVI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## 我们的目标
+
+这篇教程主要针对的是网页，小程序的登录注册可以看我这篇文章： 
+
+我们的目标是：快速、简单地搞定用户登录注册功能
+
+- 如果你的网站面向全球用户：那么我们要支持谷歌一键登录
+- 如果你的网站只面向国内：那么我们支持邮箱+密码登录
+
+会有朋友看到这里问：为什么不用手机号+验证码呢？
+
+原因很简单，因为验证码短信要花钱，每一条短信接近1毛钱，我们做一个产品还没变现之前应当尽量先控制成本。
+
+邮箱+密码登录是成本为0的方式。
+
+## 思路
+
+我们用firebase来快速实现用户登录注册。 原因出于两点：
+
+- 对零编程基础友好，接入简单快速
+- 成本为零，详细我在后面具体展开
+- 帮我们实现了很多校验逻辑
+
+也有同学不想使用firebase，更愿意自己建一个数据库（例如mysql）来存储。
+
+那么这个就要求对用户登录注册逻辑有一定的了解，而用firebase，你就完全不需要考虑这些。
+
+## firebase介绍
+
+### 小程序云服务对比
+
+Firebase 是 Google 推出的移动和 Web 应用开发平台，旨在帮助开发者快速构建高质量应用，提供从开发到运营的全方位解决方案。
+
+大家可以类比为我之前介绍过的小程序的云服务，几乎是一样的。
+
+但是firebase更加强大， 小程序云服务登录注册不支持例如谷歌登录、邮箱登录等内容，只支持微信一键登录。
+
+同时小程序云服务上的数据，只限于小程序内部访问，你无法通过其他方式查询到数据
+
+而firebase可以做到多处访问。
+
+### 收费情况
+
+身份认证 (Authentication)
+- 每月可免费进行 5 万次身份验证
+- 支持多种登录方式
+- 免费提供基础安全功能
+
+实时数据库 (Realtime Database)
+- 存储空间：1GB
+- 每日免费读写操作：10GB
+- 同时连接数：100 个
+
+云存储 (Cloud Storage)
+- 免费存储空间：5GB
+- 每月免费下载流量：1GB
+
+超出的部分按量计费，因此它由免费额度+按量计费来构成，这个小程序云服务良心多了。
+
+小程序云服务不管你用没用没月固定19.9，有点坑。
+
+同时相信我，这个免费额度绝对够用，如果你能超过这个额度，说明你的应用有一定的用户量了，相信变现不成问题，后续的按量收费对你应该不成压力。
+
+## 注册firebase
+firebase网站地址
+> https://firebase.google.com/?hl=zh-cn
+
+使用google邮箱进行注册一个firebase，不过多展开
+
+## 新建一个项目
+
+新建一个项目，一个项目对应我们一个应用。这里就对应我的博客网站
+
+![](https://raw.githubusercontent.com/fongfiafia/img_bed/master/2024/12/01/1733037380334-12791ae8-2a3c-4501-bc0a-399aedf5772f.png)
+
+设置项目名称：
+
+
+![](https://raw.githubusercontent.com/fongfiafia/img_bed/master/2024/12/01/1733037546477-fc93c016-f952-4796-9a45-9364ef4e6f87.png)
+
+设置google Analytics 大家可以不用选择，一路下一步点击即可
+
+稍微等待2分钟，我们的项目就创建好了。
+
+## 安装
+
+firebase提供了一个依赖包，大家理解成一个软件包即可。
+
+我们需要在我们的项目根目录中执行：
+```
+npm install firebase
+```
+
+根目录的意思是，我们终端前面的名字，和cursor打开的项目名字一致，那么就代表我们在根目录
+
+![](https://raw.githubusercontent.com/fongfiafia/img_bed/master/2024/12/01/1733037734642-92e7133c-d3ab-464c-8eef-6ae4437afd11.png)
+
+## 开通用户认证
+
+点击如下图片，进入用户认证功能
+
+![](https://raw.githubusercontent.com/fongfiafia/img_bed/master/2024/12/01/1733037819027-13684ad6-19ad-4e38-85e8-ee7bc0cc8908.png)
+
+
+剩余内容请在公众号查看[10分钟给网页添加登录注册功能（2500字）](https://mp.weixin.qq.com/s/wylOEVZvgBgkT-fPOhv5FA?payreadticket=HNPr5jQyf5w4c62QEKjxvFZ931h04hk_ceNir195Yzio8Xo02w18QcNtaZwdYTgF3eHUsDk)
+
