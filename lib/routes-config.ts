@@ -24,8 +24,8 @@ const CN_ROUTES: EachRoute[] = [
     items: [
       { title: "Cursor 是什么", href: "/what_is_cursor" },
       { title: "Cursor 下载安装与注册", href: "/cursor_download" },
-      { title: "Cursor 界面布局  🎬", href: "/cursor_interface" },
       { title: "Cursor 设置中文", href: "/cursor_language" },
+      { title: "Cursor 界面布局  🎬", href: "/cursor_interface" },
       { title: "创建第一个Cursor 项目  🎬", href: "/first_project_cursor" },
       { title: "Cursor AI辅助功能初体验  🎬", href: "/try_chat_cursor" },
     ],
@@ -57,6 +57,7 @@ const CN_ROUTES: EachRoute[] = [
     noLink: true,
     items: [
       { title: "Cursor 白嫖方案(低调行事)", href: "/cursor_free" },
+      { title: "Cursor 插件推荐", href: "/cursor_plugins" },
       { title: "Cursor+Git版本管理🔥", href: "/cursor_git" },
       { title: "Cursor+Deepseek平民套餐组合🔥", href: "/cursor_deepseek" },
     ],
@@ -88,8 +89,8 @@ const EN_ROUTES: EachRoute[] = [
     items: [
       { title: "What is Cursor", href: "/what_is_cursor" },
       { title: "Download & Installation", href: "/cursor_download" },
-      { title: "Interface Layout 🎬", href: "/cursor_interface" },
       { title: "Set Cursor to Chinese/Other Languages", href: "/cursor_language" },
+      { title: "Interface Layout 🎬", href: "/cursor_interface" },
       { title: "Create First Project 🎬", href: "/first_project_cursor" },
       { title: "Try AI Features 🎬", href: "/try_chat_cursor" },
     ],
@@ -121,6 +122,7 @@ const EN_ROUTES: EachRoute[] = [
     noLink: true,
     items: [
       { title: "Free Plan Tips", href: "/cursor_free" },
+      { title: "Cursor Plugins Recommendation", href: "/cursor_plugins" },
       { title: "Cursor + Git Version Control 🔥", href: "/cursor_git" },
       // { title: "Cursor + Deepseek Budget Combo 🔥", href: "/cursor_deepseek" },
     ],
