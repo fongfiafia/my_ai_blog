@@ -186,3 +186,13 @@ blockquote>p::before {
 .animate-scroll:hover {
     animation-play-state: paused;
 }
+
+/* 添加以下样式 */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}

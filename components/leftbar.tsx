@@ -24,7 +24,7 @@ interface NavLink {
 
 export function Leftbar() {
   return (
-    <aside className="md:flex hidden flex-[1.5] min-w-[238px] sticky top-16 flex-col h-[93.75vh] overflow-y-auto">
+    <aside className="md:flex hidden flex-[1.5] min-w-[238px] sticky top-16 flex-col h-[93.75vh] overflow-y-auto scrollbar-hide">
       <div className="py-4">
         <DocsMenu />
       </div>
@@ -50,7 +50,7 @@ export default function SheetLeftbar() {
             <Logo />
           </SheetClose>
         </SheetHeader>
-        <div className="flex flex-col gap-4 overflow-y-auto">
+        <div className="flex flex-col gap-4 overflow-y-auto scrollbar-hide">
           <div className="flex flex-col gap-2.5 mt-3 mx-2 px-5">
             {NAVLINKS.map((link: NavLink) => (
               link.href.startsWith('http') ? (
@@ -69,7 +69,7 @@ export default function SheetLeftbar() {
                   href={`/${locale}/${link.href}`}
                   className="hover:text-foreground transition-colors"
                 >
-                  {link.title}
+                  {link.title} 11
                 </Link>
               )
             ))}
