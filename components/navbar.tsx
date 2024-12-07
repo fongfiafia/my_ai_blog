@@ -37,19 +37,23 @@ export function Logo() {
 export const NAVLINKS = [
   {
     title: "Cursor 教程",
-    href: "cursor/instruction/instruction",
+    href: "/cursor/instruction/instruction",
+  },
+  {
+    title: "Windsurf 教程",
+    href: "/windsurf/instruction",
   },
   {
     title: "零基础独立开发指南",
-    href: "indie-dev-guide",
+    href: "/indie-dev-guide",
   },
   {
     title: "AI Cursor老师",
-    href: "ai-teacher",
+    href: "/ai-teacher",
   },
   {
     title: "做点好玩的",
-    href: "fun",
+    href: "/fun",
   },
   {
     title: "ChatGPT 合租",
@@ -61,7 +65,6 @@ export function Navbar() {
   const [user, setUser] = useState<User | null>(null);
   const pathname = usePathname();
   const locale = (pathname.split('/')[1] || i18n.defaultLocale) as Locale;
-  const [navLinks, setNavLinks] = useState(NAVLINKS);
   const [dict, setDict] = useState<any>(null);
 
   useEffect(() => {
@@ -69,9 +72,6 @@ export function Navbar() {
       try {
         const dictionary = await getDictionary(locale);
         setDict(dictionary);
-        if (dictionary.navigation?.links) {
-          setNavLinks(dictionary.navigation.links);
-        }
       } catch (error) {
         console.error('Failed to load dictionary:', error);
       }
@@ -115,7 +115,7 @@ export function Navbar() {
               <Logo />
             </div>
             <div className="lg:flex hidden items-center gap-4 text-sm font-medium text-muted-foreground">
-              {navLinks.map((link) => (
+              {NAVLINKS.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href.startsWith('http') ? link.href : `/${locale}/${link.href}`}
