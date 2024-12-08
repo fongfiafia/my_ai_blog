@@ -173,4 +173,50 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/ai-teacher"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/ai-teacher"/>
   </url>
+
+  <!-- 需要添加的 URL -->
+  <url>
+    <loc>https://www.lookai.top/cn/cursor/basic/cursor_language</loc>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/cursor/basic/cursor_language"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/cursor/basic/cursor_language"/>
+  </url>
+
+  <url>
+    <loc>https://www.lookai.top/cn/cursor/advance/cursor_composer</loc>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/cursor/advance/cursor_composer"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/cursor/advance/cursor_composer"/>
+  </url>
+
+  <url>
+    <loc>https://www.lookai.top/cn/cursor/advance/cursor_agent</loc>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/cursor/advance/cursor_agent"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/cursor/advance/cursor_agent"/>
+  </url>
+
+  <url>
+    <loc>https://www.lookai.top/cn/cursor/tips/cursor_plugins</loc>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/cursor/tips/cursor_plugins"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/cursor/tips/cursor_plugins"/>
+  </url>
+
+  <url>
+    <loc>https://www.lookai.top/cn/cursor/tips/fake_cursor_machine</loc>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/cursor/tips/fake_cursor_machine"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/cursor/tips/fake_cursor_machine"/>
+  </url>
 </urlset>
