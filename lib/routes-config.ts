@@ -57,7 +57,7 @@ const CN_ROUTES: EachRoute[] = [
     noLink: true,
     items: [
       { title: "(已失效) Cursor 白嫖方案(低调行事)", href: "/cursor_free" },
-      { title: "最新Cursor 白嫖方案(请勿转发) 🔥", href: "/fake_cursor_machine" },
+      { title: "最新Cursor白嫖教程(请勿转发) 🔥", href: "/fake_cursor_machine" },
       { title: "Cursor 插件推荐", href: "/cursor_plugins" },
       { title: "Cursor+Git版本管理🔥", href: "/cursor_git" },
       { title: "Cursor+Deepseek平民套餐组合🔥", href: "/cursor_deepseek" },
