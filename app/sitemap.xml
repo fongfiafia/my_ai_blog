@@ -219,4 +219,33 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/cursor/tips/fake_cursor_machine"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/cursor/tips/fake_cursor_machine"/>
   </url>
+
+  <!-- 小程序教程文章 -->
+  <url>
+    <loc>https://www.lookai.top/cn/indie-dev-guide/miniprogram/cursor-wechat-miniprogram</loc>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/indie-dev-guide/miniprogram/cursor-wechat-miniprogram"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/indie-dev-guide/miniprogram/cursor-wechat-miniprogram"/>
+  </url>
+
+  <url>
+    <loc>https://www.lookai.top/cn/miniprogram/ui-degsin-first-principle</loc>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/indie-dev-guide/miniprogram/ui-degsin-first-principle"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/indie-dev-guide/miniprogram/ui-degsin-first-principle"/>
+  </url>
+
+  <!-- 后端教程文章 -->
+  <url>
+    <loc>https://www.lookai.top/cn/backend/web-login-register</loc>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lookai.top/en/indie-dev-guide/backend/web-login-register"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.lookai.top/cn/indie-dev-guide/backend/web-login-register"/>
+  </url>
 </urlset>
