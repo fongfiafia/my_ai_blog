@@ -15,6 +15,7 @@ const CN_ROUTES: EachRoute[] = [
     noLink: true,
     items: [
       { title: "引言", href: "/instruction" },
+      { title: "抛弃Cursor用Windsurf？", href: "/windsurf_vs_cursor" },
     ],
   },
   {
@@ -81,6 +82,7 @@ const EN_ROUTES: EachRoute[] = [
     noLink: true,
     items: [
       { title: "Preface", href: "/instruction" },
+      { title: "Should I Use Windsurf?", href: "/windsurf_vs_cursor" },
     ],
   },
   {
